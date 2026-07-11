@@ -22,7 +22,7 @@ pnpm install
 pnpm generate
 ```
 
-默认从 `input/source-page.html` 提取 `section#chapter-9`。也可传入相同页面结构的源文件与输出路径：
+默认优先从本地 `input/source-page.html` 提取 `section#chapter-9`；该文件不存在时使用已提交的 `input/chapter-01.html`，保证 CI 可复现。也可传入相同页面结构的源文件与输出路径：
 
 ```bash
 node run-pipeline.mjs input/source-page.html output/chapter-01.json
@@ -38,4 +38,3 @@ node run-pipeline.mjs input/source-page.html output/chapter-01.json
 - 每个知识点最多一个轻量回忆题、一个主要组件。
 - 章节闭卷题限制为 2～3 个；所有回答维度的 `minimumSignals >= 2`。
 - Ajv 2020 在每次生成时校验完整输出。
-

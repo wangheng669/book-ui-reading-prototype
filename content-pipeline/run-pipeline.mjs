@@ -4,7 +4,8 @@ import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
-const sourcePath = process.argv[2] || path.join(root, "input/source-page.html");
+const localSource = path.join(root, "input/source-page.html");
+const sourcePath = process.argv[2] || (fs.existsSync(localSource) ? localSource : path.join(root, "input/chapter-01.html"));
 const outputPath = process.argv[3] || path.join(root, "output/chapter-01.json");
 const source = fs.readFileSync(sourcePath, "utf8");
 
