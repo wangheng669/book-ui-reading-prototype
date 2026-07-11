@@ -25,6 +25,7 @@ export function adaptPipelineDocument(document) {
     const componentSteps = assistance?.componentData?.steps || [];
     const isStocksBonds = componentItems.some((item) => item.stocks || item.bonds);
     const sourceItems = componentItems.length ? componentItems : componentSteps;
+    const sourceInteraction = assistance?.componentData?.interaction || null;
     const aidItems = sourceItems.map((item, index) => ({
       id: index + 1,
       label: item.label || `检查 ${index + 1}`,
@@ -52,6 +53,13 @@ export function adaptPipelineDocument(document) {
       aidTitle: assistance?.componentData?.title || point.title,
       comparisonLabels: isStocksBonds ? ["股票", "债券"] : ["投资", "投机"],
       aidItems,
+      interaction: sourceInteraction ? {
+        ...sourceInteraction,
+        anchors: sourceInteraction.blockIds.map((blockId) => ({
+          blockId,
+          anchor: Math.max(1, point.blockIds.indexOf(blockId) + 1),
+        })).filter((item) => item.anchor > 0),
+      } : null,
       recallDimensions,
       paragraphs: point.blockIds.map((blockId, index) => ({
         id: blockId,

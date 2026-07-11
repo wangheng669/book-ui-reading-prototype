@@ -77,6 +77,25 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
   );
 }
 
+function InsightCheck({ point, onAnchor }) {
+  const [selected, setSelected] = useState(null);
+  const interaction = point.interaction;
+  if (!interaction) return null;
+  const selectedOption = interaction.options.find((option) => option.id === selected);
+  return <section className="insight-check" aria-label={`${point.title}理解判断`}>
+    <small>先判断，再看分析</small>
+    <h3>{interaction.prompt}</h3>
+    <div className="insight-options">
+      {interaction.options.map((option) => <button key={option.id} className={selected === option.id ? "selected" : ""} onClick={() => setSelected(option.id)}>{option.text}</button>)}
+    </div>
+    {selectedOption && <div className="insight-feedback">
+      <p className="selected-perspective"><span>你选择的路径</span>{selectedOption.perspective}</p>
+      <p>{interaction.analysis}</p>
+      <div className="insight-sources"><span>回到依据</span>{interaction.anchors.map((anchor, index) => <button className="anchor-button" key={anchor.blockId} onClick={() => onAnchor(point.id, anchor.blockId)}>原文 {anchor.anchor || index + 1}</button>)}</div>
+    </div>}
+  </section>;
+}
+
 function Recall({ point, onResult, onAnchor }) {
   const [mode, setMode] = useState("prompt");
   const [answer, setAnswer] = useState("");
@@ -214,6 +233,7 @@ export function App() {
           const kp = chapter.knowledgePoints.find((item) => item.id === segment.pointId);
           return <div key={segment.id}>
             <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
+            <InsightCheck point={kp} onAnchor={jumpToAnchor} />
             <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
           </div>;
         })}

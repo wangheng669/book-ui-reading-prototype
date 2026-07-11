@@ -99,7 +99,27 @@
                   "chapter-02-block-004"
                 ]
               }
-            ]
+            ],
+            "interaction": {
+              "prompt": "仅根据刚读过的两段，哪项判断可以直接成立？",
+              "options": [
+                {
+                  "id": "purchasing-power",
+                  "text": "通胀会侵蚀固定收益的购买力",
+                  "perspective": "这是原文明确支持的事实。"
+                },
+                {
+                  "id": "stocks-always-win",
+                  "text": "因此股票在任何价格下都优于债券",
+                  "perspective": "这跨过了估值、收益率和具体条件，是原文明确反对的绝对化推论。"
+                }
+              ],
+              "analysis": "关键不在于选出永远更好的资产，而在于区分事实和由事实延伸出的过度结论。",
+              "blockIds": [
+                "chapter-02-block-003",
+                "chapter-02-block-004"
+              ]
+            }
           }
         }
       },
@@ -336,7 +356,28 @@
                   "chapter-02-block-015"
                 ]
               }
-            ]
+            ],
+            "interaction": {
+              "prompt": "过去55年股票取得约8%的年收益，足以支持哪种判断？",
+              "options": [
+                {
+                  "id": "future-guarantee",
+                  "text": "未来股票仍会稳定取得同样收益",
+                  "perspective": "历史结果不能自动成为未来保证，原文强调未来表现高度不确定。"
+                },
+                {
+                  "id": "comparison-input",
+                  "text": "它是比较资产的证据之一，但还要结合当前收益率和时间尺度",
+                  "perspective": "这保留了历史证据，同时没有忽略当前债券收益率、长期结果和近期体验。"
+                }
+              ],
+              "analysis": "同一个历史数字，在‘描述过去’和‘保证未来’之间存在重要边界。",
+              "blockIds": [
+                "chapter-02-block-013",
+                "chapter-02-block-014",
+                "chapter-02-block-015"
+              ]
+            }
           }
         }
       },
@@ -527,7 +568,30 @@
                   "chapter-02-block-026"
                 ]
               }
-            ]
+            ],
+            "interaction": {
+              "prompt": "如果总体物价上涨3%，公司每股收益是否也会自动上涨约3%？",
+              "options": [
+                {
+                  "id": "automatic",
+                  "text": "会，产品售价上涨会直接进入每股收益",
+                  "perspective": "这忽略了工资、经营成本、新增资本和债务等中间约束。"
+                },
+                {
+                  "id": "transmission",
+                  "text": "不一定，需要检查利润传导中的成本、资本和债务",
+                  "perspective": "这与原文的历史观察一致：价格上涨没有自动维持原有资本利润率。"
+                }
+              ],
+              "analysis": "理解这一段的重点不是记住一个结论，而是看到通胀影响利润之前必须经过一条不稳定的传导链。",
+              "blockIds": [
+                "chapter-02-block-022",
+                "chapter-02-block-023",
+                "chapter-02-block-024",
+                "chapter-02-block-025",
+                "chapter-02-block-026"
+              ]
+            }
           }
         }
       },
