@@ -149,7 +149,8 @@ function ReviewStageTwo({ progress, answers, transfer, setTransfer, onAnchor }) 
 }
 
 function DebugPanel({ activePoint, openAid, readingState, progress, ratios }) {
-  if (!import.meta.env.DEV) return null;
+  const debugEnabled = import.meta.env.DEV && new URLSearchParams(window.location.search).get("debug") === "1";
+  if (!debugEnabled) return null;
   return <aside className="debug-panel" aria-label="开发状态调试">
     <strong>DEV STATE</strong>
     <dl><dt>contentSource</dt><dd>{sourceMode}</dd><dt>activePoint</dt><dd>{activePoint || "null"}</dd><dt>openAid</dt><dd>{openAid || "null"}</dd><dt>readingState</dt><dd>{readingState}</dd></dl>
