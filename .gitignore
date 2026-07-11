@@ -1,0 +1,9 @@
+.DS_Store
+work/
+prototype/node_modules/
+prototype/dist/
+prototype/implementation-reading.png
+prototype/qa-comparison.png
+prototype/AGENTS.md
+prototype/design-qa.md
+*.log
