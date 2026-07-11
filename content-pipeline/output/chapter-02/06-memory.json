@@ -1,0 +1,303 @@
+{
+  "recallQuestions": [
+    {
+      "id": "recall-inflation-choice",
+      "knowledgePointId": "kp-inflation-asset-choice",
+      "question": "为什么通胀会损害债券持有人，却仍不足以证明股票始终更好？",
+      "blockIds": [
+        "chapter-02-block-003",
+        "chapter-02-block-004",
+        "chapter-02-block-005",
+        "chapter-02-block-006",
+        "chapter-02-block-007",
+        "chapter-02-block-008",
+        "chapter-02-block-009",
+        "chapter-02-block-010",
+        "chapter-02-block-011",
+        "chapter-02-block-012",
+        "chapter-02-block-013",
+        "chapter-02-block-014",
+        "chapter-02-block-015"
+      ],
+      "requiredDimensionIds": [
+        "asset-choice",
+        "inflation-impact",
+        "time-horizon"
+      ]
+    },
+    {
+      "id": "recall-profit-link",
+      "knowledgePointId": "kp-inflation-profit-link",
+      "question": "原文用哪些中间因素解释通胀没有自动转化为更高的每股收益？",
+      "blockIds": [
+        "chapter-02-block-016",
+        "chapter-02-block-017",
+        "chapter-02-block-018",
+        "chapter-02-block-019",
+        "chapter-02-block-020",
+        "chapter-02-block-021",
+        "chapter-02-block-022",
+        "chapter-02-block-023",
+        "chapter-02-block-024",
+        "chapter-02-block-025",
+        "chapter-02-block-026",
+        "chapter-02-block-027"
+      ],
+      "requiredDimensionIds": [
+        "profit-link"
+      ]
+    },
+    {
+      "id": "recall-return-expectations",
+      "knowledgePointId": "kp-return-expectations",
+      "question": "面对通胀叙事和上涨行情，投资者应如何约束总体回报预期？",
+      "blockIds": [
+        "chapter-02-block-028",
+        "chapter-02-block-029"
+      ],
+      "requiredDimensionIds": [
+        "return-expectation"
+      ]
+    }
+  ],
+  "review": {
+    "closedBookQuestions": [
+      {
+        "id": "recall-inflation-choice",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "question": "为什么通胀会损害债券持有人，却仍不足以证明股票始终更好？",
+        "blockIds": [
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015"
+        ],
+        "requiredDimensionIds": [
+          "asset-choice",
+          "inflation-impact",
+          "time-horizon"
+        ]
+      },
+      {
+        "id": "recall-profit-link",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "question": "原文用哪些中间因素解释通胀没有自动转化为更高的每股收益？",
+        "blockIds": [
+          "chapter-02-block-016",
+          "chapter-02-block-017",
+          "chapter-02-block-018",
+          "chapter-02-block-019",
+          "chapter-02-block-020",
+          "chapter-02-block-021",
+          "chapter-02-block-022",
+          "chapter-02-block-023",
+          "chapter-02-block-024",
+          "chapter-02-block-025",
+          "chapter-02-block-026",
+          "chapter-02-block-027"
+        ],
+        "requiredDimensionIds": [
+          "profit-link"
+        ]
+      },
+      {
+        "id": "recall-return-expectations",
+        "knowledgePointId": "kp-return-expectations",
+        "question": "面对通胀叙事和上涨行情，投资者应如何约束总体回报预期？",
+        "blockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ],
+        "requiredDimensionIds": [
+          "return-expectation"
+        ]
+      }
+    ],
+    "structureSummary": [
+      {
+        "text": "先区分通胀对购买力的影响与资产优劣判断。",
+        "blockIds": [
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015"
+        ]
+      },
+      {
+        "text": "再检查通胀影响利润时经过的资本与债务约束。",
+        "blockIds": [
+          "chapter-02-block-016",
+          "chapter-02-block-017",
+          "chapter-02-block-018",
+          "chapter-02-block-019",
+          "chapter-02-block-020",
+          "chapter-02-block-021",
+          "chapter-02-block-022",
+          "chapter-02-block-023",
+          "chapter-02-block-024",
+          "chapter-02-block-025",
+          "chapter-02-block-026",
+          "chapter-02-block-027"
+        ]
+      },
+      {
+        "text": "最后用估值和证据约束收益预期。",
+        "blockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ]
+      }
+    ],
+    "transferQuestion": {
+      "question": "一位投资者因预期通胀上升，准备在高估值时卖出全部债券并满仓股票。请说明还必须检查哪些条件。",
+      "principles": [
+        {
+          "id": "asset-choice",
+          "label": "资产选择不能绝对化",
+          "description": "不能仅凭通胀就断言股票始终优于债券。",
+          "blockIds": [
+            "chapter-02-block-003",
+            "chapter-02-block-004"
+          ],
+          "signals": [
+            [
+              "股票",
+              "债券"
+            ],
+            [
+              "任何条件",
+              "绝对"
+            ],
+            [
+              "收益",
+              "价格"
+            ]
+          ],
+          "minimumSignals": 2
+        },
+        {
+          "id": "inflation-impact",
+          "label": "通胀对实际收益的影响",
+          "description": "区分名义收入与购买力损失。",
+          "blockIds": [
+            "chapter-02-block-010",
+            "chapter-02-block-011",
+            "chapter-02-block-012"
+          ],
+          "signals": [
+            [
+              "通货膨胀",
+              "生活费用"
+            ],
+            [
+              "实际收入",
+              "购买力"
+            ],
+            [
+              "债券利息",
+              "本金"
+            ]
+          ],
+          "minimumSignals": 2
+        },
+        {
+          "id": "time-horizon",
+          "label": "期限与不确定性",
+          "description": "分别考虑长期结果与近期价格。",
+          "blockIds": [
+            "chapter-02-block-013",
+            "chapter-02-block-014",
+            "chapter-02-block-015",
+            "chapter-02-block-016"
+          ],
+          "signals": [
+            [
+              "长期",
+              "25年"
+            ],
+            [
+              "短期",
+              "近期"
+            ],
+            [
+              "不确定",
+              "无法保证"
+            ]
+          ],
+          "minimumSignals": 2
+        },
+        {
+          "id": "return-expectation",
+          "label": "合理收益预期",
+          "description": "收益预期需要以估值和历史证据约束。",
+          "blockIds": [
+            "chapter-02-block-021",
+            "chapter-02-block-022",
+            "chapter-02-block-023",
+            "chapter-02-block-024",
+            "chapter-02-block-025",
+            "chapter-02-block-026",
+            "chapter-02-block-027",
+            "chapter-02-block-028",
+            "chapter-02-block-029"
+          ],
+          "signals": [
+            [
+              "股息收益",
+              "增值收益"
+            ],
+            [
+              "8%",
+              "总体回报"
+            ],
+            [
+              "股价水平",
+              "牛市"
+            ],
+            [
+              "风险信号",
+              "下跌"
+            ]
+          ],
+          "minimumSignals": 3
+        }
+      ],
+      "blockIds": [
+        "chapter-02-block-003",
+        "chapter-02-block-004",
+        "chapter-02-block-005",
+        "chapter-02-block-006",
+        "chapter-02-block-007",
+        "chapter-02-block-008",
+        "chapter-02-block-009",
+        "chapter-02-block-010",
+        "chapter-02-block-011",
+        "chapter-02-block-012",
+        "chapter-02-block-013",
+        "chapter-02-block-014",
+        "chapter-02-block-015",
+        "chapter-02-block-016",
+        "chapter-02-block-028",
+        "chapter-02-block-029"
+      ]
+    }
+  }
+}

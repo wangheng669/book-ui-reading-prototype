@@ -4,5 +4,6 @@
 
 任务：删除非正文节点，按 DOM 语义边界输出有序 blocks。保留每段原文和 `sourceHtml`，生成稳定 block id。不要总结、分类、识别知识点或生成组件。
 
-输出：`{ chapterMeta, blocks: [{ id, order, text, sourceHtml }] }`。
+输入已包含确定性 DOM 提取结果。不得改动其 block；只校验语义边界并原样输出。
 
+输出：`{ chapter: { id, title, intro }, blocks: [{ id, order, tagName, role, headingLevel, parentHeading, sourceSelector, sourceHtml, text, fingerprint }] }`。

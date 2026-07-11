@@ -1,40 +1,25 @@
-# Content Pipeline V0.1
+# Content Pipeline V0.2
 
-离线、单章内容生产原型。输入真实 HTML，输出符合 `schemas/chapter.schema.json` 的结构化 JSON；不连接模型、数据库、账号或在线服务。
+单章、六阶段内容生产原型。通用执行器不包含章节标题、selector、分类、知识点、组件或题目。
 
-## 目录
-
-```text
-input/chapter-01.html       第一章示例输入
-output/chapter-01.json      现有阅读原型消费的数据
-rules/                      六类独立规则
-prompts/                    六个分阶段 Prompt
-schemas/chapter.schema.json JSON Schema
-review/chapter-01-review.md 人工审核记录
-run-pipeline.mjs            离线生成与校验入口
-```
-
-## 运行
+## 两种运行模式
 
 ```bash
-cd content-pipeline
-pnpm install
-pnpm generate
+pnpm generate:fixture -- --fixture chapter-02
+OPENAI_API_KEY=... OPENAI_MODEL=... pnpm generate:model -- --input input/chapter-02.html --chapter-id chapter-02
 ```
 
-默认优先从本地 `input/source-page.html` 提取 `section#chapter-9`；该文件不存在时使用已提交的 `input/chapter-01.html`，保证 CI 可复现。也可传入相同页面结构的源文件与输出路径：
+- `fixture` 读取 `fixtures/<chapter>/` 已提交的六阶段结果，供 CI、测试和前端演示使用，不访问模型。
+- `model` 依次调用六个阶段；每阶段只加载同编号规则和 Prompt，并保存独立结果。没有 API key 或 model 时明确失败，绝不静默回退。
+- 可用 `--selector "main article"` 限定正文；selector 不存在会明确报错。未指定时优先 `main`，否则使用 `body`。
+
+输出位于 `output/<chapter>/`，包含 `01-segments.json` 至 `06-memory.json`、`chapter.json`、raw 结果和运行元数据。第二章人工修订通过 `src/apply-review.mjs` 从 raw 生成 reviewed，变更记录在 `review/chapter-02-revisions.json`。
+
+## 测试
 
 ```bash
-node run-pipeline.mjs input/source-page.html output/chapter-01.json
+pnpm generate:fixture
+pnpm test
 ```
 
-当前示例的分类、知识点和组件选择由这次人工/AI 审核后固化在离线脚本中。未来接入模型时，应逐阶段执行 `prompts/`，每一步只产出对应中间结果，并在最终写入前通过 Schema 与人工审核。
-
-## 约束
-
-- Step 1 验证 `decode(sourceHtml) === text`，防止原文被改写。
-- 稳定 block id 与 DOM 顺序绑定。
-- `needed = false` 强制搭配 `componentType = none` 和 `componentData = null`。
-- 每个知识点最多一个轻量回忆题、一个主要组件。
-- 章节闭卷题限制为 2～3 个；所有回答维度的 `minimumSignals >= 2`。
-- Ajv 2020 在每次生成时校验完整输出。
+测试覆盖原文不改写、DOM 顺序、稳定 ID、引用存在性、知识点引用、留白约束、单一主要组件、回忆题归属、`minimumSignals >= 2` 与最终 Schema。

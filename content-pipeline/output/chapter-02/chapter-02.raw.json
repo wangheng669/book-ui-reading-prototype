@@ -1,0 +1,1196 @@
+{
+  "chapter": {
+    "id": "chapter-02",
+    "title": "第2章 投资者与通货膨胀",
+    "intro": "第2章投资者与通货膨胀近年来，通货膨胀以及反通货膨胀的斗争已经成为公众非常熟悉的事情。美元购买力的缩水，特别是对其未来购买力还将进一步大幅下降的担心（也许，投机者正希望如此），已经对华尔街的思维模式产生了巨大的影响。显然，随着生活费用的上涨，以美元计息的固定收益将遭受损失，而且固定的本金也将面临同样的问题。但对于股票持有者来说，红利和股价的上涨，有可能会抵消美元购买力的下降。",
+    "blocks": [
+      {
+        "id": "chapter-02-block-001",
+        "order": 1,
+        "tagName": "h2",
+        "role": "heading",
+        "headingLevel": 2,
+        "parentHeading": null,
+        "sourceSelector": "section#chapter-11 > h2",
+        "sourceHtml": "<h2>第2章 投资者与通货膨胀</h2>",
+        "text": "第2章 投资者与通货膨胀",
+        "contentType": "transition",
+        "knowledgePointId": null,
+        "assistance": {
+          "needed": false,
+          "reason": "原文排版本身足够，应保持留白。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-002",
+        "order": 2,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(1)",
+        "sourceHtml": "<p>第2章投资者与通货膨胀近年来，通货膨胀以及反通货膨胀的斗争已经成为公众非常熟悉的事情。美元购买力的缩水，特别是对其未来购买力还将进一步大幅下降的担心（也许，投机者正希望如此），已经对华尔街的思维模式产生了巨大的影响。显然，随着生活费用的上涨，以美元计息的固定收益将遭受损失，而且固定的本金也将面临同样的问题。但对于股票持有者来说，红利和股价的上涨，有可能会抵消美元购买力的下降。</p>",
+        "text": "第2章投资者与通货膨胀近年来，通货膨胀以及反通货膨胀的斗争已经成为公众非常熟悉的事情。美元购买力的缩水，特别是对其未来购买力还将进一步大幅下降的担心（也许，投机者正希望如此），已经对华尔街的思维模式产生了巨大的影响。显然，随着生活费用的上涨，以美元计息的固定收益将遭受损失，而且固定的本金也将面临同样的问题。但对于股票持有者来说，红利和股价的上涨，有可能会抵消美元购买力的下降。",
+        "contentType": "narrative",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-003",
+        "order": 3,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(2)",
+        "sourceHtml": "<p>根据这一不可否认的事实，许多金融权威已经得出了以下结论：(1)债券本质上是一种不可取的投资形式；(2)因此，就其性质而言，股票是一种比债券更可取的投资。我们看到，有人建议慈善机构的投资组合应全部由股票组成，而债券的比例应为零。这种观点与以前的看法完全相反，那时，根据法律，信托投资只能用来购买债券（以及少量的优先股）。</p>",
+        "text": "根据这一不可否认的事实，许多金融权威已经得出了以下结论：(1)债券本质上是一种不可取的投资形式；(2)因此，就其性质而言，股票是一种比债券更可取的投资。我们看到，有人建议慈善机构的投资组合应全部由股票组成，而债券的比例应为零。这种观点与以前的看法完全相反，那时，根据法律，信托投资只能用来购买债券（以及少量的优先股）。",
+        "contentType": "claim",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-004",
+        "order": 4,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(3)",
+        "sourceHtml": "<p>我们的读者必须具有足够的智慧认识到，即使是优质股票，也不可能在任何条件下都优于债券。我们不能认为，无论股市已经涨到多高，股息收益比债券利率低多少，优质股票都是比债券更好的投资。相反的论断（任何债券都比股票安全，就像我们前几年经常听到的那样），同样是错误的。本章，我们将采用不同的衡量标准来观察通货膨胀，以确定未来物价上升的预期会对投资者产生多大的影响。</p>",
+        "text": "我们的读者必须具有足够的智慧认识到，即使是优质股票，也不可能在任何条件下都优于债券。我们不能认为，无论股市已经涨到多高，股息收益比债券利率低多少，优质股票都是比债券更好的投资。相反的论断（任何债券都比股票安全，就像我们前几年经常听到的那样），同样是错误的。本章，我们将采用不同的衡量标准来观察通货膨胀，以确定未来物价上升的预期会对投资者产生多大的影响。",
+        "contentType": "misconception",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": true,
+          "reason": "绝对化结论容易误导；对照能同时保留通胀影响、估值与期限条件。",
+          "componentType": "comparison",
+          "componentData": {
+            "title": "通胀环境下的资产判断",
+            "sourceBlockIds": [
+              "chapter-02-block-003",
+              "chapter-02-block-004",
+              "chapter-02-block-005",
+              "chapter-02-block-006",
+              "chapter-02-block-007",
+              "chapter-02-block-008",
+              "chapter-02-block-009",
+              "chapter-02-block-010",
+              "chapter-02-block-011",
+              "chapter-02-block-012",
+              "chapter-02-block-013",
+              "chapter-02-block-014",
+              "chapter-02-block-015"
+            ],
+            "items": [
+              {
+                "label": "债券",
+                "text": "购买力受通胀侵蚀，但收入与本金偿付条件相对明确。",
+                "blockIds": [
+                  "chapter-02-block-012"
+                ]
+              },
+              {
+                "label": "股票",
+                "text": "历史长期回报较高，但不能保证在任意估值与期限下占优。",
+                "blockIds": [
+                  "chapter-02-block-004",
+                  "chapter-02-block-014",
+                  "chapter-02-block-015"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-02-block-005",
+        "order": 5,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(4)",
+        "sourceHtml": "<p>就像对许多其他金融问题的探讨一样，关于这一问题，我们也必须根据对以往经验的了解，来确定我们对未来策略的看法。对于美国来说，通货膨胀（尤其是1965年以来发生的严重通货膨胀）是一种新事物吗？如果我们在现实生活中经历过类似（或更为严重）的通货膨胀，那么，在面对如今的通货膨胀时，以往的经历能够带给我们什么教训呢？我们首先从表2-1开始。该表简要地列出了许多历史数据，其中包括总体价格水平的变化，同期的利润和股市价值的变化。所列数据从1915年开始，因此一共包含了55年，并以5年期为时间间隔。（我们用1946年来代替1945年，以消除战时价格管制的影响。）</p>",
+        "text": "就像对许多其他金融问题的探讨一样，关于这一问题，我们也必须根据对以往经验的了解，来确定我们对未来策略的看法。对于美国来说，通货膨胀（尤其是1965年以来发生的严重通货膨胀）是一种新事物吗？如果我们在现实生活中经历过类似（或更为严重）的通货膨胀，那么，在面对如今的通货膨胀时，以往的经历能够带给我们什么教训呢？我们首先从表2-1开始。该表简要地列出了许多历史数据，其中包括总体价格水平的变化，同期的利润和股市价值的变化。所列数据从1915年开始，因此一共包含了55年，并以5年期为时间间隔。（我们用1946年来代替1945年，以消除战时价格管制的影响。）",
+        "contentType": "argument",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-006",
+        "order": 6,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(5)",
+        "sourceHtml": "<p>表2-11915～1970年的总体价格水平、股票利润和股票价格（时间间隔为5年）</p>",
+        "text": "表2-11915～1970年的总体价格水平、股票利润和股票价格（时间间隔为5年）",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-007",
+        "order": 7,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(6)",
+        "sourceHtml": "<p>年平均数。表中的价格以1957年为100；如果选择新的基期，以1967年为100，那么，1970年的消费价格平均数为116.3，批发价格指数为110.4。</p>",
+        "text": "年平均数。表中的价格以1957年为100；如果选择新的基期，以1967年为100，那么，1970年的消费价格平均数为116.3，批发价格指数为110.4。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-008",
+        "order": 8,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(7)",
+        "sourceHtml": "<p>1941～1943年的平均数为10。</p>",
+        "text": "1941～1943年的平均数为10。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-009",
+        "order": 9,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(8)",
+        "sourceHtml": "<p>采用了1946年的数字，以剔除价格管制因素的影响。</p>",
+        "text": "采用了1946年的数字，以剔除价格管制因素的影响。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-010",
+        "order": 10,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(9)",
+        "sourceHtml": "<p>我们首先发现，在过去几十年间，我们经历过许多次通货膨胀，其中最严重的一次发生在1915～1920年间。那几年，生活费用几乎上涨了一倍。相对而言，1965～1970年间只上涨了15%。在这两个时期之间的几十年中，我们有过3次价格下降期，接着是6次不同程度的价格上涨，其中有几次上涨幅度相当微弱。这表明，今后通货膨胀仍将继续或再次发生，投资者显然应该对此有所预期。</p>",
+        "text": "我们首先发现，在过去几十年间，我们经历过许多次通货膨胀，其中最严重的一次发生在1915～1920年间。那几年，生活费用几乎上涨了一倍。相对而言，1965～1970年间只上涨了15%。在这两个时期之间的几十年中，我们有过3次价格下降期，接着是6次不同程度的价格上涨，其中有几次上涨幅度相当微弱。这表明，今后通货膨胀仍将继续或再次发生，投资者显然应该对此有所预期。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-011",
+        "order": 11,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(10)",
+        "sourceHtml": "<p>我们能否知道将来的通货膨胀率有多高？表格中并没有给出明确的答案，它显示了多种可能的变化。然而，我们似乎可以从过去20年较为一致的记录中得到一些线索。在此期间，消费价格的平均年上涨率为2.5%；其中1965～1970年间为4.5%，1970年这一年为5.4%。政府的官方政策具有强烈的反通货膨胀倾向，而且我们有理由相信，未来美联储的政策会比近几年更有效。我们认为，此时，投资者可以设想未来若干年通货膨胀率可能在（比如）3%左右（这一点很难肯定），并据此进行思考和决策。（整个1915～1970年期间的年通货膨胀率为2.5%。）</p>",
+        "text": "我们能否知道将来的通货膨胀率有多高？表格中并没有给出明确的答案，它显示了多种可能的变化。然而，我们似乎可以从过去20年较为一致的记录中得到一些线索。在此期间，消费价格的平均年上涨率为2.5%；其中1965～1970年间为4.5%，1970年这一年为5.4%。政府的官方政策具有强烈的反通货膨胀倾向，而且我们有理由相信，未来美联储的政策会比近几年更有效。我们认为，此时，投资者可以设想未来若干年通货膨胀率可能在（比如）3%左右（这一点很难肯定），并据此进行思考和决策。（整个1915～1970年期间的年通货膨胀率为2.5%。）",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-012",
+        "order": 12,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(11)",
+        "sourceHtml": "<p>这种上涨幅度意味着什么？由此导致的较高生活费用，将使中期免税优质债券（或高等级公司债的税后）利息的一半化为乌有。这确实是一个严重损失，但也不要过分夸大。它并不意味着，投资者财富的真正价值或其购买力在此期间会有所减少。如果考虑税后利息收益一半的支出，他仍然能够维持其原先的购买力，即使年通货膨胀率达到3%。</p>",
+        "text": "这种上涨幅度意味着什么？由此导致的较高生活费用，将使中期免税优质债券（或高等级公司债的税后）利息的一半化为乌有。这确实是一个严重损失，但也不要过分夸大。它并不意味着，投资者财富的真正价值或其购买力在此期间会有所减少。如果考虑税后利息收益一半的支出，他仍然能够维持其原先的购买力，即使年通货膨胀率达到3%。",
+        "contentType": "causality",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-013",
+        "order": 13,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(12)",
+        "sourceHtml": "<p>但接下来人们自然会问：“买入并持有高等级债券以外的证券，是否肯定会获得更好的收益，即使前者在1970～1971年的利率达到了前所未有的高度？”比方说，全部投资股票不比部分股票、部分债券的投资组合更好吗？股票不是具有某种内在的防护机制，可以抵御通货膨胀吗？而且从长期角度来看，其收益不是几乎肯定会比债券更高吗？从我们所观察的55年来看，股票给投资者带来的收益难道不是远远高于债券吗？</p>",
+        "text": "但接下来人们自然会问：“买入并持有高等级债券以外的证券，是否肯定会获得更好的收益，即使前者在1970～1971年的利率达到了前所未有的高度？”比方说，全部投资股票不比部分股票、部分债券的投资组合更好吗？股票不是具有某种内在的防护机制，可以抵御通货膨胀吗？而且从长期角度来看，其收益不是几乎肯定会比债券更高吗？从我们所观察的55年来看，股票给投资者带来的收益难道不是远远高于债券吗？",
+        "contentType": "transition",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-014",
+        "order": 14,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(13)",
+        "sourceHtml": "<p>这些问题的答案有些复杂。从过去几十年来看，普通股的表现确实优于债券。道琼斯指数从1915年的平均77点，上涨到了1970年的平均753点，其年复合增长率达4%，此外还获得了大约4%的股息收益（标准普尔指数的情况与此类似）。以上两者相加共8%的收益，当然远远优于这55年的债券收益。但这一数字并没有超过目前高等级债券所提供的收益。由此会顺理成章地引出以下问题：我们是否具有充分的理由相信，未来年份普通股的表现要大大超过过去的55年？</p>",
+        "text": "这些问题的答案有些复杂。从过去几十年来看，普通股的表现确实优于债券。道琼斯指数从1915年的平均77点，上涨到了1970年的平均753点，其年复合增长率达4%，此外还获得了大约4%的股息收益（标准普尔指数的情况与此类似）。以上两者相加共8%的收益，当然远远优于这55年的债券收益。但这一数字并没有超过目前高等级债券所提供的收益。由此会顺理成章地引出以下问题：我们是否具有充分的理由相信，未来年份普通股的表现要大大超过过去的55年？",
+        "contentType": "comparison",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-015",
+        "order": 15,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(14)",
+        "sourceHtml": "<p>我们对这一关键问题的回答是否定的。普通股的表现也许会比以前更好，但这种结果是高度不确定的。在此，我们必须考虑两个与投资结果有关的时间因素。首先，从长期角度（比如今后25年）来看，未来会发生什么情况；其次，从短期或中期（比如5年或更短的时间）来看，投资者的财务和心理状况会发生什么变化。他的想法，他的希望和担心，他对以前结果的满意与否，尤其是他的下一步打算，所有这一切都不是通过思考以往的投资来决定的，而是通过年复一年的经历来决定的。</p>",
+        "text": "我们对这一关键问题的回答是否定的。普通股的表现也许会比以前更好，但这种结果是高度不确定的。在此，我们必须考虑两个与投资结果有关的时间因素。首先，从长期角度（比如今后25年）来看，未来会发生什么情况；其次，从短期或中期（比如5年或更短的时间）来看，投资者的财务和心理状况会发生什么变化。他的想法，他的希望和担心，他对以前结果的满意与否，尤其是他的下一步打算，所有这一切都不是通过思考以往的投资来决定的，而是通过年复一年的经历来决定的。",
+        "contentType": "argument",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-016",
+        "order": 16,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(15)",
+        "sourceHtml": "<p>关于这一点，我们的态度是明确的。从时间上看，通货膨胀（或通货紧缩）状况与普通股的利润和价格之间并不存在密切联系。最近的1966～1970年就是一个明显的例子。在此期间，生活费用上涨幅度达22%，是自1946～1950年以来最大的一个5年期涨幅。但是从整体上来说，自1965年以来，无论股票的利润还是价格均有所下降。在此前的几个5年中，也有类似相反的变化。</p>",
+        "text": "关于这一点，我们的态度是明确的。从时间上看，通货膨胀（或通货紧缩）状况与普通股的利润和价格之间并不存在密切联系。最近的1966～1970年就是一个明显的例子。在此期间，生活费用上涨幅度达22%，是自1946～1950年以来最大的一个5年期涨幅。但是从整体上来说，自1965年以来，无论股票的利润还是价格均有所下降。在此前的几个5年中，也有类似相反的变化。",
+        "contentType": "causality",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-017",
+        "order": 17,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(16)",
+        "sourceHtml": "<p>通货膨胀与公司利润关于这一话题的另一个极为重要的研究角度，是观察美国公司的资本利润率。当然，这种利润率会随着经济水平的总体变化而波动，但它并没有随着批发价格或生活费用的上涨而呈现出一般趋势。实际上，过去20年内，尽管存在通货膨胀，但是公司的利润率却有明显的下降。（在某种程度上，这种下降应归因于较高的折旧率。参见表2-2）。更广泛的研究表明，投资者不能期望其收益比近5年道琼斯成分股的收益——大约为这些股票有形资产（账面值）的10%——高出多少。由于这些股票的市值远远高于其账面值（比如，1971年中期，市值为900，而账面值为560），因此，按当期市价计算出的利润率仅有大约6.25%。（通常，人们会用相反的形式“利润乘数”（市盈率）来表达这种关系，即道琼斯900点的价格，为截止于1971年1月的年利润的18倍。）</p>",
+        "text": "通货膨胀与公司利润关于这一话题的另一个极为重要的研究角度，是观察美国公司的资本利润率。当然，这种利润率会随着经济水平的总体变化而波动，但它并没有随着批发价格或生活费用的上涨而呈现出一般趋势。实际上，过去20年内，尽管存在通货膨胀，但是公司的利润率却有明显的下降。（在某种程度上，这种下降应归因于较高的折旧率。参见表2-2）。更广泛的研究表明，投资者不能期望其收益比近5年道琼斯成分股的收益——大约为这些股票有形资产（账面值）的10%——高出多少。由于这些股票的市值远远高于其账面值（比如，1971年中期，市值为900，而账面值为560），因此，按当期市价计算出的利润率仅有大约6.25%。（通常，人们会用相反的形式“利润乘数”（市盈率）来表达这种关系，即道琼斯900点的价格，为截止于1971年1月的年利润的18倍。）",
+        "contentType": "transition",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-018",
+        "order": 18,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(17)",
+        "sourceHtml": "<p>表2-2公司债务、利润和资本利润率（1950～1969年）</p>",
+        "text": "表2-2公司债务、利润和资本利润率（1950～1969年）",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-019",
+        "order": 19,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(18)",
+        "sourceHtml": "<p>标准普尔工业指数的利润，除以同年平均账面值。</p>",
+        "text": "标准普尔工业指数的利润，除以同年平均账面值。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-020",
+        "order": 20,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(19)",
+        "sourceHtml": "<p>1950年和1955年的数据，来自于CoeandWhman;1960～1969年的数据，来自于《财富》杂志。</p>",
+        "text": "1950年和1955年的数据，来自于CoeandWhman;1960～1969年的数据，来自于《财富》杂志。",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-021",
+        "order": 21,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(20)",
+        "sourceHtml": "<p>我们的这些数字与上一章提出的建议是完全一致的，即投资者可以期望得到相当于股票市值3.5%的股息收益，另外再加上来自于利润再投资的4%的股票增值收益。（请注意，这里假定，股票账面价值每增加1美元，其市价将增加约1.6美元。）</p>",
+        "text": "我们的这些数字与上一章提出的建议是完全一致的，即投资者可以期望得到相当于股票市值3.5%的股息收益，另外再加上来自于利润再投资的4%的股票增值收益。（请注意，这里假定，股票账面价值每增加1美元，其市价将增加约1.6美元。）",
+        "contentType": "data",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-022",
+        "order": 22,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(21)",
+        "sourceHtml": "<p>读者也许会反驳说，我们的最终计算结果并没有将预计每年3%的通货膨胀率所导致的股票收益和价值增加考虑进来。我们这样做的理由是：根据历史数据，通货膨胀率的高低对公司每股收益并没有任何直接影响。确凿的数据表明，过去20年道琼斯成分股所有大幅增长的利润，都来自于利润再投资所形成的投资资本的大幅增长。</p>",
+        "text": "读者也许会反驳说，我们的最终计算结果并没有将预计每年3%的通货膨胀率所导致的股票收益和价值增加考虑进来。我们这样做的理由是：根据历史数据，通货膨胀率的高低对公司每股收益并没有任何直接影响。确凿的数据表明，过去20年道琼斯成分股所有大幅增长的利润，都来自于利润再投资所形成的投资资本的大幅增长。",
+        "contentType": "argument",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-023",
+        "order": 23,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(22)",
+        "sourceHtml": "<p>如果通货膨胀是一个独立的有利因素，它将促进公司此前资本“价值”的上升，继而提升这种已有的资本利润率，并因此使已有资本与新形成资本的利润率都增加。但在过去20年，这种情况从来没有发生过，尽管在此期间批发价格指数上升了40%。（批发价格对公司利润的影响要大于“消费价格”。）通货膨胀能够促进股票价值增加的惟一途径，就是提升企业资本投资的利润率。但是，根据历史纪录，这种情况并没有出现过。</p>",
+        "text": "如果通货膨胀是一个独立的有利因素，它将促进公司此前资本“价值”的上升，继而提升这种已有的资本利润率，并因此使已有资本与新形成资本的利润率都增加。但在过去20年，这种情况从来没有发生过，尽管在此期间批发价格指数上升了40%。（批发价格对公司利润的影响要大于“消费价格”。）通货膨胀能够促进股票价值增加的惟一途径，就是提升企业资本投资的利润率。但是，根据历史纪录，这种情况并没有出现过。",
+        "contentType": "causality",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": true,
+          "reason": "论证跨越利润、资本投入与债务，因果链能显化中间约束。",
+          "componentType": "causal-chain",
+          "componentData": {
+            "title": "为什么通胀未必提高每股收益",
+            "sourceBlockIds": [
+              "chapter-02-block-016",
+              "chapter-02-block-017",
+              "chapter-02-block-018",
+              "chapter-02-block-019",
+              "chapter-02-block-020",
+              "chapter-02-block-021",
+              "chapter-02-block-022",
+              "chapter-02-block-023",
+              "chapter-02-block-024",
+              "chapter-02-block-025",
+              "chapter-02-block-026"
+            ],
+            "steps": [
+              {
+                "text": "价格与成本同时变化",
+                "blockIds": [
+                  "chapter-02-block-016",
+                  "chapter-02-block-024"
+                ]
+              },
+              {
+                "text": "新增资本需求增加",
+                "blockIds": [
+                  "chapter-02-block-023",
+                  "chapter-02-block-025"
+                ]
+              },
+              {
+                "text": "债务与融资成本上升",
+                "blockIds": [
+                  "chapter-02-block-026"
+                ]
+              },
+              {
+                "text": "每股收益未形成稳定增幅",
+                "blockIds": [
+                  "chapter-02-block-022",
+                  "chapter-02-block-023"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-02-block-024",
+        "order": 24,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(23)",
+        "sourceHtml": "<p>按照以往经济周期的情况来看，企业的好年景与通货膨胀是同时出现的，而坏年景则与价格的下跌如影随形。人们通常认为，“适度的通货膨胀”对企业利润是有益的。这种看法与1950～1970年的历史相一致，在此期间，从整体上来看，持续的繁荣与物价的上涨是相辅相成的。但数据显示，通货膨胀对股本（权益资本）盈利能力的影响并不大；事实上，它甚至不能维持投资原先的利润率。显然，这里一定有某些重要因素妨碍了美国公司整体实际利润率的增长。或许，最重要的因素是：(1)工资的增长超过了生产率的增长；</p>",
+        "text": "按照以往经济周期的情况来看，企业的好年景与通货膨胀是同时出现的，而坏年景则与价格的下跌如影随形。人们通常认为，“适度的通货膨胀”对企业利润是有益的。这种看法与1950～1970年的历史相一致，在此期间，从整体上来看，持续的繁荣与物价的上涨是相辅相成的。但数据显示，通货膨胀对股本（权益资本）盈利能力的影响并不大；事实上，它甚至不能维持投资原先的利润率。显然，这里一定有某些重要因素妨碍了美国公司整体实际利润率的增长。或许，最重要的因素是：(1)工资的增长超过了生产率的增长；",
+        "contentType": "argument",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-025",
+        "order": 25,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(24)",
+        "sourceHtml": "<p>(2)对巨额新增资本的需要压低了销售额与投入资本的比例。</p>",
+        "text": "(2)对巨额新增资本的需要压低了销售额与投入资本的比例。",
+        "contentType": "causality",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-026",
+        "order": 26,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(25)",
+        "sourceHtml": "<p>表2-2的数据所显示的情况，与通货膨胀有利于企业及其股东的说法相去甚远，其实际效应恰恰相反。该表最突出的数据，是1950～1969年间公司债务的增长。奇怪的是，经济学家和华尔街对此很少关注。公司的债务在此期间增长了近4倍，而其税前利润仅增加了一倍多一点。由于利率的大幅增加，现在，公司的总体债务水平显然成了较为重要的负面经济因素，而对许多具体的公司来说，则是一个真正的麻烦。（请注意，公司1950年的息后税前利润大约为其债务额的30%，而1969年仅为13.2%。1970年的情况一定会更不令人满意。）从总体上看，11%的公司资本利润率中，有很大一部分来自其巨额的新增债务（这些债务的成本为4%，考虑税收优惠后要更低一些）。尽管存在通货膨胀，但如果我们的公司债务仍保持在1950年的水平，则其股权资本的利润还会进一步下降。</p>",
+        "text": "表2-2的数据所显示的情况，与通货膨胀有利于企业及其股东的说法相去甚远，其实际效应恰恰相反。该表最突出的数据，是1950～1969年间公司债务的增长。奇怪的是，经济学家和华尔街对此很少关注。公司的债务在此期间增长了近4倍，而其税前利润仅增加了一倍多一点。由于利率的大幅增加，现在，公司的总体债务水平显然成了较为重要的负面经济因素，而对许多具体的公司来说，则是一个真正的麻烦。（请注意，公司1950年的息后税前利润大约为其债务额的30%，而1969年仅为13.2%。1970年的情况一定会更不令人满意。）从总体上看，11%的公司资本利润率中，有很大一部分来自其巨额的新增债务（这些债务的成本为4%，考虑税收优惠后要更低一些）。尽管存在通货膨胀，但如果我们的公司债务仍保持在1950年的水平，则其股权资本的利润还会进一步下降。",
+        "contentType": "causality",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-027",
+        "order": 27,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(26)",
+        "sourceHtml": "<p>股票市场认为，公用事业公司是通货膨胀的最大牺牲者。一方面，其债务成本大幅上升；另一方面，由于价格管制的存在，其服务价格很难提高。但这里应该说明的是，电力、天然气和电信服务的单位成本的增长，要远低于同期价格指数的增长，从而使这些公司在未来处于很强的战略地位。根据法律，它们有权收取足以使其资本投资获得适当回报的费用，这会令其股东像过去一样，免受通货膨胀之害。</p>",
+        "text": "股票市场认为，公用事业公司是通货膨胀的最大牺牲者。一方面，其债务成本大幅上升；另一方面，由于价格管制的存在，其服务价格很难提高。但这里应该说明的是，电力、天然气和电信服务的单位成本的增长，要远低于同期价格指数的增长，从而使这些公司在未来处于很强的战略地位。根据法律，它们有权收取足以使其资本投资获得适当回报的费用，这会令其股东像过去一样，免受通货膨胀之害。",
+        "contentType": "example",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-028",
+        "order": 28,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(27)",
+        "sourceHtml": "<p>所有这些分析，把我们带回到以前曾得出过的结论：投资者没有理由期望，按照1971年下半年的股价水平购买道琼斯成分股，能够获得高于8%的总体平均回报。但是，即使事实证明这些期望被大大低估了，这种低估现象也不会发生在完全进行股票投资的人的身上。如果未来有一种事情是确信无疑的，那就是：股票组合的利润和年均市场价值，将不会统一地按照4%这个速度（或统一的按照其他任何的速度）增长。用摩根这位老前辈的名言来说就是：“它们会起伏不定”。首先，这意味着，以今天或明天的股价买进股票的人，在此后多年都可能无法获得满意的回报。自1929～1932年股市崩盘以来，通用电气的股票（以及道琼斯工业指数）费时25年才收复失地。其次，这意味着，如果投资者将其资金全部集中于股票，他很可能被股市亢奋的上涨或惨痛的下跌所左右而误入歧途。</p>",
+        "text": "所有这些分析，把我们带回到以前曾得出过的结论：投资者没有理由期望，按照1971年下半年的股价水平购买道琼斯成分股，能够获得高于8%的总体平均回报。但是，即使事实证明这些期望被大大低估了，这种低估现象也不会发生在完全进行股票投资的人的身上。如果未来有一种事情是确信无疑的，那就是：股票组合的利润和年均市场价值，将不会统一地按照4%这个速度（或统一的按照其他任何的速度）增长。用摩根这位老前辈的名言来说就是：“它们会起伏不定”。首先，这意味着，以今天或明天的股价买进股票的人，在此后多年都可能无法获得满意的回报。自1929～1932年股市崩盘以来，通用电气的股票（以及道琼斯工业指数）费时25年才收复失地。其次，这意味着，如果投资者将其资金全部集中于股票，他很可能被股市亢奋的上涨或惨痛的下跌所左右而误入歧途。",
+        "contentType": "summary",
+        "knowledgePointId": "kp-return-expectations",
+        "assistance": {
+          "needed": true,
+          "reason": "结论分散在收益预期与行为风险中，概念卡可形成简洁约束。",
+          "componentType": "concept",
+          "componentData": {
+            "title": "收益预期的边界",
+            "sourceBlockIds": [
+              "chapter-02-block-028",
+              "chapter-02-block-029"
+            ],
+            "definition": "不能因通胀担忧或牛市上涨而抬高缺乏证据支持的收益预期。",
+            "blockIds": [
+              "chapter-02-block-028",
+              "chapter-02-block-029"
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-02-block-029",
+        "order": 29,
+        "tagName": "p",
+        "role": "paragraph",
+        "headingLevel": null,
+        "parentHeading": "第2章 投资者与通货膨胀",
+        "sourceSelector": "section#chapter-11 > p:nth-of-type(28)",
+        "sourceHtml": "<p>特别是当他认为通货膨胀会进一步深化时，这种情况出现的可能性更大。因为此时，如果新一轮牛市降临，他不会把大幅上涨看成是终将下跌的危险信号以及赚取丰厚利润的机会；而反过来认为，这</p>",
+        "text": "特别是当他认为通货膨胀会进一步深化时，这种情况出现的可能性更大。因为此时，如果新一轮牛市降临，他不会把大幅上涨看成是终将下跌的危险信号以及赚取丰厚利润的机会；而反过来认为，这",
+        "contentType": "misconception",
+        "knowledgePointId": "kp-return-expectations",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由知识点的主要组件覆盖，正文保持连续。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-030",
+        "order": 30,
+        "tagName": "h2",
+        "role": "heading",
+        "headingLevel": 2,
+        "parentHeading": null,
+        "sourceSelector": "section#chapter-12 > h2",
+        "sourceHtml": "<h2>通货膨胀与公司利润</h2>",
+        "text": "通货膨胀与公司利润",
+        "contentType": "transition",
+        "knowledgePointId": null,
+        "assistance": {
+          "needed": false,
+          "reason": "原文排版本身足够，应保持留白。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-02-block-031",
+        "order": 31,
+        "tagName": "figure",
+        "role": "figure",
+        "headingLevel": null,
+        "parentHeading": "通货膨胀与公司利润",
+        "sourceSelector": "section#chapter-12 > figure",
+        "sourceHtml": "<figure><img src=\"images/ch0023_img01.jpg\" alt=\"书中插图\"></figure>",
+        "text": "书中插图",
+        "contentType": "example",
+        "knowledgePointId": null,
+        "assistance": {
+          "needed": false,
+          "reason": "原文排版本身足够，应保持留白。",
+          "componentType": "none",
+          "componentData": null
+        }
+      }
+    ],
+    "knowledgePoints": [
+      {
+        "id": "kp-inflation-asset-choice",
+        "title": "通胀不能直接决定股票与债券的优劣",
+        "summary": "通胀侵蚀固定收入的购买力，但不能由此推出股票在任何价格下都优于债券。",
+        "blockIds": [
+          "chapter-02-block-002",
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015"
+        ],
+        "primaryComponent": "comparison",
+        "requiredDimensions": [
+          {
+            "id": "asset-choice",
+            "label": "资产选择不能绝对化",
+            "description": "不能仅凭通胀就断言股票始终优于债券。",
+            "blockIds": [
+              "chapter-02-block-003",
+              "chapter-02-block-004"
+            ],
+            "signals": [
+              [
+                "股票",
+                "债券"
+              ],
+              [
+                "任何条件",
+                "绝对"
+              ],
+              [
+                "收益",
+                "价格"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "inflation-impact",
+            "label": "通胀对实际收益的影响",
+            "description": "区分名义收入与购买力损失。",
+            "blockIds": [
+              "chapter-02-block-010",
+              "chapter-02-block-011",
+              "chapter-02-block-012"
+            ],
+            "signals": [
+              [
+                "通货膨胀",
+                "生活费用"
+              ],
+              [
+                "实际收入",
+                "购买力"
+              ],
+              [
+                "债券利息",
+                "本金"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "time-horizon",
+            "label": "期限与不确定性",
+            "description": "分别考虑长期结果与近期价格。",
+            "blockIds": [
+              "chapter-02-block-013",
+              "chapter-02-block-014",
+              "chapter-02-block-015",
+              "chapter-02-block-016"
+            ],
+            "signals": [
+              [
+                "长期",
+                "25年"
+              ],
+              [
+                "短期",
+                "近期"
+              ],
+              [
+                "不确定",
+                "无法保证"
+              ]
+            ],
+            "minimumSignals": 2
+          }
+        ]
+      },
+      {
+        "id": "kp-inflation-profit-link",
+        "title": "通胀与公司利润不存在稳定直线关系",
+        "summary": "历史数据不支持通胀自动提高每股收益；资本需求与债务增长会改变结果。",
+        "blockIds": [
+          "chapter-02-block-016",
+          "chapter-02-block-017",
+          "chapter-02-block-018",
+          "chapter-02-block-019",
+          "chapter-02-block-020",
+          "chapter-02-block-021",
+          "chapter-02-block-022",
+          "chapter-02-block-023",
+          "chapter-02-block-024",
+          "chapter-02-block-025",
+          "chapter-02-block-026",
+          "chapter-02-block-027"
+        ],
+        "primaryComponent": "causal-chain",
+        "requiredDimensions": [
+          {
+            "id": "profit-link",
+            "label": "通胀与公司利润关系",
+            "description": "历史上通胀与每股收益不存在稳定直接关系。",
+            "blockIds": [
+              "chapter-02-block-016",
+              "chapter-02-block-017",
+              "chapter-02-block-018",
+              "chapter-02-block-019",
+              "chapter-02-block-020",
+              "chapter-02-block-021",
+              "chapter-02-block-022",
+              "chapter-02-block-023",
+              "chapter-02-block-024",
+              "chapter-02-block-025",
+              "chapter-02-block-026"
+            ],
+            "signals": [
+              [
+                "通货膨胀",
+                "价格"
+              ],
+              [
+                "公司利润",
+                "每股收益"
+              ],
+              [
+                "资本利润率",
+                "债务"
+              ],
+              [
+                "历史数据",
+                "1950"
+              ]
+            ],
+            "minimumSignals": 3
+          }
+        ]
+      },
+      {
+        "id": "kp-return-expectations",
+        "title": "在不确定性下约束收益预期",
+        "summary": "投资者应以可支持的长期回报为基准，而非把通胀叙事当作追涨理由。",
+        "blockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ],
+        "primaryComponent": "concept",
+        "requiredDimensions": [
+          {
+            "id": "return-expectation",
+            "label": "合理收益预期",
+            "description": "收益预期需要以估值和历史证据约束。",
+            "blockIds": [
+              "chapter-02-block-021",
+              "chapter-02-block-022",
+              "chapter-02-block-023",
+              "chapter-02-block-024",
+              "chapter-02-block-025",
+              "chapter-02-block-026",
+              "chapter-02-block-027",
+              "chapter-02-block-028",
+              "chapter-02-block-029"
+            ],
+            "signals": [
+              [
+                "股息收益",
+                "增值收益"
+              ],
+              [
+                "8%",
+                "总体回报"
+              ],
+              [
+                "股价水平",
+                "牛市"
+              ],
+              [
+                "风险信号",
+                "下跌"
+              ]
+            ],
+            "minimumSignals": 3
+          }
+        ]
+      }
+    ],
+    "recallQuestions": [
+      {
+        "id": "recall-inflation-choice",
+        "knowledgePointId": "kp-inflation-asset-choice",
+        "question": "为什么通胀会损害债券持有人，却仍不足以证明股票始终更好？",
+        "blockIds": [
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015"
+        ],
+        "requiredDimensionIds": [
+          "asset-choice",
+          "inflation-impact",
+          "time-horizon"
+        ]
+      },
+      {
+        "id": "recall-profit-link",
+        "knowledgePointId": "kp-inflation-profit-link",
+        "question": "原文用哪些中间因素解释通胀没有自动转化为更高的每股收益？",
+        "blockIds": [
+          "chapter-02-block-016",
+          "chapter-02-block-017",
+          "chapter-02-block-018",
+          "chapter-02-block-019",
+          "chapter-02-block-020",
+          "chapter-02-block-021",
+          "chapter-02-block-022",
+          "chapter-02-block-023",
+          "chapter-02-block-024",
+          "chapter-02-block-025",
+          "chapter-02-block-026",
+          "chapter-02-block-027"
+        ],
+        "requiredDimensionIds": [
+          "profit-link"
+        ]
+      },
+      {
+        "id": "recall-return-expectations",
+        "knowledgePointId": "kp-return-expectations",
+        "question": "面对通胀叙事和上涨行情，投资者应如何约束总体回报预期？",
+        "blockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ],
+        "requiredDimensionIds": [
+          "return-expectation"
+        ]
+      }
+    ],
+    "review": {
+      "closedBookQuestions": [
+        {
+          "id": "recall-inflation-choice",
+          "knowledgePointId": "kp-inflation-asset-choice",
+          "question": "为什么通胀会损害债券持有人，却仍不足以证明股票始终更好？",
+          "blockIds": [
+            "chapter-02-block-003",
+            "chapter-02-block-004",
+            "chapter-02-block-005",
+            "chapter-02-block-006",
+            "chapter-02-block-007",
+            "chapter-02-block-008",
+            "chapter-02-block-009",
+            "chapter-02-block-010",
+            "chapter-02-block-011",
+            "chapter-02-block-012",
+            "chapter-02-block-013",
+            "chapter-02-block-014",
+            "chapter-02-block-015"
+          ],
+          "requiredDimensionIds": [
+            "asset-choice",
+            "inflation-impact",
+            "time-horizon"
+          ]
+        },
+        {
+          "id": "recall-profit-link",
+          "knowledgePointId": "kp-inflation-profit-link",
+          "question": "原文用哪些中间因素解释通胀没有自动转化为更高的每股收益？",
+          "blockIds": [
+            "chapter-02-block-016",
+            "chapter-02-block-017",
+            "chapter-02-block-018",
+            "chapter-02-block-019",
+            "chapter-02-block-020",
+            "chapter-02-block-021",
+            "chapter-02-block-022",
+            "chapter-02-block-023",
+            "chapter-02-block-024",
+            "chapter-02-block-025",
+            "chapter-02-block-026",
+            "chapter-02-block-027"
+          ],
+          "requiredDimensionIds": [
+            "profit-link"
+          ]
+        },
+        {
+          "id": "recall-return-expectations",
+          "knowledgePointId": "kp-return-expectations",
+          "question": "面对通胀叙事和上涨行情，投资者应如何约束总体回报预期？",
+          "blockIds": [
+            "chapter-02-block-028",
+            "chapter-02-block-029"
+          ],
+          "requiredDimensionIds": [
+            "return-expectation"
+          ]
+        }
+      ],
+      "structureSummary": [
+        {
+          "text": "先区分通胀对购买力的影响与资产优劣判断。",
+          "blockIds": [
+            "chapter-02-block-003",
+            "chapter-02-block-004",
+            "chapter-02-block-005",
+            "chapter-02-block-006",
+            "chapter-02-block-007",
+            "chapter-02-block-008",
+            "chapter-02-block-009",
+            "chapter-02-block-010",
+            "chapter-02-block-011",
+            "chapter-02-block-012",
+            "chapter-02-block-013",
+            "chapter-02-block-014",
+            "chapter-02-block-015"
+          ]
+        },
+        {
+          "text": "再检查通胀影响利润时经过的资本与债务约束。",
+          "blockIds": [
+            "chapter-02-block-016",
+            "chapter-02-block-017",
+            "chapter-02-block-018",
+            "chapter-02-block-019",
+            "chapter-02-block-020",
+            "chapter-02-block-021",
+            "chapter-02-block-022",
+            "chapter-02-block-023",
+            "chapter-02-block-024",
+            "chapter-02-block-025",
+            "chapter-02-block-026",
+            "chapter-02-block-027"
+          ]
+        },
+        {
+          "text": "最后用估值和证据约束收益预期。",
+          "blockIds": [
+            "chapter-02-block-028",
+            "chapter-02-block-029"
+          ]
+        }
+      ],
+      "transferQuestion": {
+        "question": "一位投资者因预期通胀上升，准备在高估值时卖出全部债券并满仓股票。请说明还必须检查哪些条件。",
+        "principles": [
+          {
+            "id": "asset-choice",
+            "label": "资产选择不能绝对化",
+            "description": "不能仅凭通胀就断言股票始终优于债券。",
+            "blockIds": [
+              "chapter-02-block-003",
+              "chapter-02-block-004"
+            ],
+            "signals": [
+              [
+                "股票",
+                "债券"
+              ],
+              [
+                "任何条件",
+                "绝对"
+              ],
+              [
+                "收益",
+                "价格"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "inflation-impact",
+            "label": "通胀对实际收益的影响",
+            "description": "区分名义收入与购买力损失。",
+            "blockIds": [
+              "chapter-02-block-010",
+              "chapter-02-block-011",
+              "chapter-02-block-012"
+            ],
+            "signals": [
+              [
+                "通货膨胀",
+                "生活费用"
+              ],
+              [
+                "实际收入",
+                "购买力"
+              ],
+              [
+                "债券利息",
+                "本金"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "time-horizon",
+            "label": "期限与不确定性",
+            "description": "分别考虑长期结果与近期价格。",
+            "blockIds": [
+              "chapter-02-block-013",
+              "chapter-02-block-014",
+              "chapter-02-block-015",
+              "chapter-02-block-016"
+            ],
+            "signals": [
+              [
+                "长期",
+                "25年"
+              ],
+              [
+                "短期",
+                "近期"
+              ],
+              [
+                "不确定",
+                "无法保证"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "return-expectation",
+            "label": "合理收益预期",
+            "description": "收益预期需要以估值和历史证据约束。",
+            "blockIds": [
+              "chapter-02-block-021",
+              "chapter-02-block-022",
+              "chapter-02-block-023",
+              "chapter-02-block-024",
+              "chapter-02-block-025",
+              "chapter-02-block-026",
+              "chapter-02-block-027",
+              "chapter-02-block-028",
+              "chapter-02-block-029"
+            ],
+            "signals": [
+              [
+                "股息收益",
+                "增值收益"
+              ],
+              [
+                "8%",
+                "总体回报"
+              ],
+              [
+                "股价水平",
+                "牛市"
+              ],
+              [
+                "风险信号",
+                "下跌"
+              ]
+            ],
+            "minimumSignals": 3
+          }
+        ],
+        "blockIds": [
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015",
+          "chapter-02-block-016",
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ]
+      }
+    }
+  }
+}

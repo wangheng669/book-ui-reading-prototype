@@ -1,0 +1,8 @@
+[
+  {
+    "id": "R-01",
+    "target": "kp-return-expectations / chapter-02-block-028",
+    "change": "将 concept 主要组件改为 none，并保持正文留白",
+    "reason": "两段原文的结论已经直接、紧凑；概念卡只会复述原文，属于强行可视化。"
+  }
+]

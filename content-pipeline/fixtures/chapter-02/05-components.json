@@ -1,0 +1,112 @@
+{
+  "components": [
+    {
+      "blockId": "chapter-02-block-004",
+      "knowledgePointId": "kp-inflation-asset-choice",
+      "componentType": "comparison",
+      "componentData": {
+        "title": "通胀环境下的资产判断",
+        "sourceBlockIds": [
+          "chapter-02-block-003",
+          "chapter-02-block-004",
+          "chapter-02-block-005",
+          "chapter-02-block-006",
+          "chapter-02-block-007",
+          "chapter-02-block-008",
+          "chapter-02-block-009",
+          "chapter-02-block-010",
+          "chapter-02-block-011",
+          "chapter-02-block-012",
+          "chapter-02-block-013",
+          "chapter-02-block-014",
+          "chapter-02-block-015"
+        ],
+        "items": [
+          {
+            "label": "债券",
+            "text": "购买力受通胀侵蚀，但收入与本金偿付条件相对明确。",
+            "blockIds": [
+              "chapter-02-block-012"
+            ]
+          },
+          {
+            "label": "股票",
+            "text": "历史长期回报较高，但不能保证在任意估值与期限下占优。",
+            "blockIds": [
+              "chapter-02-block-004",
+              "chapter-02-block-014",
+              "chapter-02-block-015"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "chapter-02-block-023",
+      "knowledgePointId": "kp-inflation-profit-link",
+      "componentType": "causal-chain",
+      "componentData": {
+        "title": "为什么通胀未必提高每股收益",
+        "sourceBlockIds": [
+          "chapter-02-block-016",
+          "chapter-02-block-017",
+          "chapter-02-block-018",
+          "chapter-02-block-019",
+          "chapter-02-block-020",
+          "chapter-02-block-021",
+          "chapter-02-block-022",
+          "chapter-02-block-023",
+          "chapter-02-block-024",
+          "chapter-02-block-025",
+          "chapter-02-block-026"
+        ],
+        "steps": [
+          {
+            "text": "价格与成本同时变化",
+            "blockIds": [
+              "chapter-02-block-016",
+              "chapter-02-block-024"
+            ]
+          },
+          {
+            "text": "新增资本需求增加",
+            "blockIds": [
+              "chapter-02-block-023",
+              "chapter-02-block-025"
+            ]
+          },
+          {
+            "text": "债务与融资成本上升",
+            "blockIds": [
+              "chapter-02-block-026"
+            ]
+          },
+          {
+            "text": "每股收益未形成稳定增幅",
+            "blockIds": [
+              "chapter-02-block-022",
+              "chapter-02-block-023"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blockId": "chapter-02-block-028",
+      "knowledgePointId": "kp-return-expectations",
+      "componentType": "concept",
+      "componentData": {
+        "title": "收益预期的边界",
+        "sourceBlockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ],
+        "definition": "不能因通胀担忧或牛市上涨而抬高缺乏证据支持的收益预期。",
+        "blockIds": [
+          "chapter-02-block-028",
+          "chapter-02-block-029"
+        ]
+      }
+    }
+  ]
+}

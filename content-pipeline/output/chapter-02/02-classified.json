@@ -1,0 +1,128 @@
+{
+  "blocks": [
+    {
+      "id": "chapter-02-block-001",
+      "contentType": "transition"
+    },
+    {
+      "id": "chapter-02-block-002",
+      "contentType": "narrative"
+    },
+    {
+      "id": "chapter-02-block-003",
+      "contentType": "claim"
+    },
+    {
+      "id": "chapter-02-block-004",
+      "contentType": "misconception"
+    },
+    {
+      "id": "chapter-02-block-005",
+      "contentType": "argument"
+    },
+    {
+      "id": "chapter-02-block-006",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-007",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-008",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-009",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-010",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-011",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-012",
+      "contentType": "causality"
+    },
+    {
+      "id": "chapter-02-block-013",
+      "contentType": "transition"
+    },
+    {
+      "id": "chapter-02-block-014",
+      "contentType": "comparison"
+    },
+    {
+      "id": "chapter-02-block-015",
+      "contentType": "argument"
+    },
+    {
+      "id": "chapter-02-block-016",
+      "contentType": "causality"
+    },
+    {
+      "id": "chapter-02-block-017",
+      "contentType": "transition"
+    },
+    {
+      "id": "chapter-02-block-018",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-019",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-020",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-021",
+      "contentType": "data"
+    },
+    {
+      "id": "chapter-02-block-022",
+      "contentType": "argument"
+    },
+    {
+      "id": "chapter-02-block-023",
+      "contentType": "causality"
+    },
+    {
+      "id": "chapter-02-block-024",
+      "contentType": "argument"
+    },
+    {
+      "id": "chapter-02-block-025",
+      "contentType": "causality"
+    },
+    {
+      "id": "chapter-02-block-026",
+      "contentType": "causality"
+    },
+    {
+      "id": "chapter-02-block-027",
+      "contentType": "example"
+    },
+    {
+      "id": "chapter-02-block-028",
+      "contentType": "summary"
+    },
+    {
+      "id": "chapter-02-block-029",
+      "contentType": "misconception"
+    },
+    {
+      "id": "chapter-02-block-030",
+      "contentType": "transition"
+    },
+    {
+      "id": "chapter-02-block-031",
+      "contentType": "example"
+    }
+  ]
+}
