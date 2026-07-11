@@ -46,54 +46,45 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
     <aside className={`knowledge-aid ${open ? "knowledge-aid--open" : ""}`} aria-label={`${point.title}辅助内容`}>
       {!open ? (
         <button className="aid-peek" onClick={onOpen}>
-          <span>{point.title}</span>
-          <small>查看关系</small>
+          <span><small>右侧互动</small>{point.interaction?.cta || point.title}</span>
+          <b>开始</b>
         </button>
       ) : (
-        <div className="aid-panel">
-          <div className="aid-heading">
-            <div><small>当前知识点</small><h3>{point.aidTitle || point.title}</h3></div>
-            <button className="text-button" onClick={onClose}>收起</button>
-          </div>
-          <div className="vertical-compare">
-            {!point.aidSupported && <p className="aid-degraded">此组件类型暂未支持交互展示。原文与锚点仍完整保留。</p>}
-            {point.aidSupported && point.primaryComponent === "none" && <p className="aid-degraded">当前知识点不需要辅助组件，请继续阅读原文。</p>}
-            {(point.aidItems || point.anchors || []).map((item) => (
-              <section key={item.id} className="compare-item">
-                <button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId || item.id)}>原文 {item.id}</button>
-                <h4>{item.label}</h4>
-                {(item.left || item.investment) ? (
-                  <div className="compare-pair">
-                    <div><small>{point.comparisonLabels?.[0] || "投资"}</small><p>{item.left || item.investment}</p></div>
-                    <div><small>{point.comparisonLabels?.[1] || "投机"}</small><p>{item.right || item.speculation}</p></div>
-                  </div>
-                ) : <p className="detail-copy">{item.detail}</p>}
-              </section>
-            ))}
-          </div>
-        </div>
+        <AidWorkspace key={point.id} point={point} onClose={onClose} onAnchor={onAnchor} />
       )}
     </aside>
   );
 }
 
-function InsightCheck({ point, onAnchor }) {
+function AidWorkspace({ point, onClose, onAnchor }) {
   const [selected, setSelected] = useState(null);
+  const [perspective, setPerspective] = useState(0);
+  const [visibleSteps, setVisibleSteps] = useState(0);
   const interaction = point.interaction;
-  if (!interaction) return null;
-  const selectedOption = interaction.options.find((option) => option.id === selected);
-  return <section className="insight-check" aria-label={`${point.title}理解判断`}>
-    <small>先判断，再看分析</small>
-    <h3>{interaction.prompt}</h3>
-    <div className="insight-options">
-      {interaction.options.map((option) => <button key={option.id} className={selected === option.id ? "selected" : ""} onClick={() => setSelected(option.id)}>{option.text}</button>)}
-    </div>
-    {selectedOption && <div className="insight-feedback">
-      <p className="selected-perspective"><span>你选择的路径</span>{selectedOption.perspective}</p>
-      <p>{interaction.analysis}</p>
-      <div className="insight-sources"><span>回到依据</span>{interaction.anchors.map((anchor, index) => <button className="anchor-button" key={anchor.blockId} onClick={() => onAnchor(point.id, anchor.blockId)}>原文 {anchor.anchor || index + 1}</button>)}</div>
+  const selectedOption = interaction?.options.find((option) => option.id === selected);
+  const activePerspective = point.aidItems[perspective];
+  return <div className="aid-panel">
+    <div className="aid-heading"><div><small>当前知识点 · 互动</small><h3>{point.aidTitle || point.title}</h3></div><button className="text-button" onClick={onClose}>收起</button></div>
+    {!point.aidSupported && <p className="aid-degraded">此组件类型暂未支持交互展示。原文与锚点仍完整保留。</p>}
+    {interaction?.mode === "perspective" ? <div className="perspective-workspace">
+      <p className="aid-question">{interaction.prompt}</p>
+      <div className="perspective-tabs">{point.aidItems.map((item, index) => <button key={item.id} className={perspective === index ? "active" : ""} onClick={() => setPerspective(index)}>{item.label}</button>)}</div>
+      <div className="perspective-content"><small>当前观察</small><p>{activePerspective?.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, activePerspective?.targetBlockId)}>查看对应原文</button></div>
+      <p className="aid-takeaway">切换时间尺度，不是为了选一个正确答案，而是避免用长期平均掩盖近期风险，或用近期波动否定长期证据。</p>
+    </div> : <div className="judgment-workspace">
+      <small>先判断，再展开结构</small><p className="aid-question">{interaction?.prompt}</p>
+      <div className="aid-options">{interaction?.options.map((option) => <button key={option.id} className={selected === option.id ? "selected" : ""} onClick={() => { setSelected(option.id); setVisibleSteps(interaction.mode === "causal" ? 1 : point.aidItems.length); }}>{option.text}</button>)}</div>
+      {selectedOption && <div className="aid-feedback"><p><span>这条思考路径</span>{selectedOption.perspective}</p><p>{interaction.analysis}</p></div>}
+      {selectedOption && <div className={`aid-structure aid-structure--${interaction.mode}`}>{point.aidItems.slice(0, visibleSteps).map((item, index) => <section key={item.id}><span>{index + 1}</span><div><strong>{item.label}</strong><p>{item.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId)}>原文 {item.id}</button></div></section>)}</div>}
+      {selectedOption && interaction.mode === "causal" && visibleSteps < point.aidItems.length && <button className="reveal-step" onClick={() => setVisibleSteps((count) => count + 1)}>展开下一环</button>}
     </div>}
-  </section>;
+    {interaction && <div className="aid-source-range"><span>依据范围</span>{interaction.anchors.map((anchor) => <button className="anchor-button" key={anchor.blockId} onClick={() => onAnchor(point.id, anchor.blockId)}>原文 {anchor.anchor}</button>)}</div>}
+  </div>;
+}
+
+function AidPrompt({ point, onOpen }) {
+  if (!point.interaction || point.primaryComponent === "none") return null;
+  return <button className="aid-inline-prompt" onClick={onOpen}><span>本段有理解互动</span><strong>{point.interaction.cta}</strong><b>在右侧开始 →</b></button>;
 }
 
 function Recall({ point, onResult, onAnchor }) {
@@ -232,8 +223,10 @@ export function App() {
           if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => <ReadingBlock key={block.id} block={block} />)}</section>;
           const kp = chapter.knowledgePoints.find((item) => item.id === segment.pointId);
           return <div key={segment.id}>
-            <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
-            <InsightCheck point={kp} onAnchor={jumpToAnchor} />
+            <div className="knowledge-unit" data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}>
+              <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
+              <AidPrompt point={kp} onOpen={() => { pointRefs.current[kp.id]?.scrollIntoView({ behavior: "auto", block: "center" }); setActivePoint(kp.id); activePointRef.current = kp.id; setOpenAid(kp.id); }} />
+            </div>
             <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
           </div>;
         })}
