@@ -49,9 +49,32 @@
         "sourceSelector": { "type": "string", "minLength": 1 },
         "text": { "type": "string", "minLength": 1 },
         "sourceHtml": { "type": "string", "minLength": 1 },
+        "companion": { "$ref": "#/$defs/companion" },
         "contentType": { "$ref": "#/$defs/contentType" },
         "knowledgePointId": { "type": ["string", "null"] },
         "assistance": { "$ref": "#/$defs/assistance" }
+      },
+      "additionalProperties": false
+    },
+    "companion": {
+      "type": "object",
+      "required": ["visualType", "eyebrow", "title", "nodes", "takeaway", "blockIds"],
+      "properties": {
+        "visualType": { "enum": ["context", "inference", "comparison", "timeline", "metric", "causal", "evidence", "conclusion"] },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "value"],
+            "properties": { "label": { "type": "string" }, "value": { "type": "string" } },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "takeaway": { "type": "string" },
+        "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true }
       },
       "additionalProperties": false
     },

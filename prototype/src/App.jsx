@@ -31,27 +31,32 @@ function pointAbility(point, dimensions) {
   return point.requiredDimensions.every((id) => dimensions[id] === "covered");
 }
 
-function ReadingBlock({ block }) {
-  if (block.role === "heading") return <h2 className="source-heading">{block.text}</h2>;
-  if (block.role === "figure") return <figure className="source-figure"><div className="figure-placeholder" aria-hidden="true"><span>原书图示</span></div><figcaption>{block.text}<small>当前 HTML 仅包含图片引用，图像文件未随章节提供。</small></figcaption></figure>;
+function ReadingBlock({ block, blockRef }) {
+  if (block.role === "heading") return <h2 ref={blockRef} data-block={block.id} className="source-heading">{block.text}</h2>;
+  if (block.role === "figure") return <figure ref={blockRef} data-block={block.id} className="source-figure"><div className="figure-placeholder" aria-hidden="true"><span>原书图示</span></div><figcaption>{block.text}<small>当前 HTML 仅包含图片引用，图像文件未随章节提供。</small></figcaption></figure>;
   const isCaption = block.contentType === "data" && /^表\s*\d/i.test(block.text);
   const isNote = block.contentType === "data" && block.text.length < 110 && !isCaption;
   const className = ["source-block", `source-block--${block.contentType || "narrative"}`, isCaption ? "data-caption" : "", isNote ? "data-note" : ""].filter(Boolean).join(" ");
-  return <p className={className}>{block.text}</p>;
+  return <p ref={blockRef} data-block={block.id} className={className}>{block.text}</p>;
 }
 
-function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
-  if (!point || point.primaryComponent === "none") return <aside className="knowledge-aid knowledge-aid--empty" aria-hidden="true" />;
+function ParagraphCompanion({ companion, point, onOpen, onAnchor }) {
+  if (!companion) return null;
+  return <div className={`paragraph-companion paragraph-companion--${companion.visualType}`}>
+    <div className="companion-heading"><small>{companion.eyebrow}</small><h3>{companion.title}</h3></div>
+    <div className="companion-visual">{companion.nodes.map((node, index) => <section key={`${node.label}-${index}`}><span>{node.label}</span><strong>{node.value}</strong>{["causal", "inference", "timeline"].includes(companion.visualType) && index < companion.nodes.length - 1 && <i aria-hidden="true">↓</i>}</section>)}</div>
+    <p className="companion-takeaway">{companion.takeaway}</p>
+    <div className="companion-actions"><button className="anchor-button" onClick={() => onAnchor(companion.pointId, companion.blockId)}>定位当前原文</button>{point?.interaction && <button className="deep-interaction" onClick={onOpen}>进入完整互动 →</button>}</div>
+  </div>;
+}
+
+function KnowledgeAid({ point, companion, open, onOpen, onClose, onAnchor }) {
+  if (!companion && (!point || point.primaryComponent === "none")) return <aside className="knowledge-aid knowledge-aid--empty" aria-hidden="true" />;
   return (
-    <aside className={`knowledge-aid ${open ? "knowledge-aid--open" : ""}`} aria-label={`${point.title}辅助内容`}>
-      {!open ? (
-        <button className="aid-peek" onClick={onOpen}>
-          <span><small>右侧互动</small>{point.interaction?.cta || point.title}</span>
-          <b>开始</b>
-        </button>
-      ) : (
+    <aside className={`knowledge-aid ${open ? "knowledge-aid--open" : ""}`} aria-label={`${point?.title || companion?.title || "当前段落"}辅助内容`}>
+      {open && point ? (
         <AidWorkspace key={point.id} point={point} onClose={onClose} onAnchor={onAnchor} />
-      )}
+      ) : companion ? <ParagraphCompanion companion={companion} point={point} onOpen={onOpen} onAnchor={onAnchor} /> : point ? <button className="aid-peek" onClick={onOpen}><span><small>当前知识点</small>{point.title}</span><b>查看</b></button> : null}
     </aside>
   );
 }
@@ -165,10 +170,12 @@ function DebugPanel({ activePoint, openAid, readingState, progress, ratios }) {
 
 export function App() {
   const [activePoint, setActivePoint] = useState(null);
+  const [activeBlockId, setActiveBlockId] = useState(chapter.introBlockId);
   const [openAid, setOpenAid] = useState(null);
   const [progress, setProgress] = useState(createInitialProgress);
   const [ratios, setRatios] = useState(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
   const pointRefs = useRef({});
+  const blockRefs = useRef({});
   const ratiosRef = useRef(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
   const activePointRef = useRef(null);
   const clearTimerRef = useRef(null);
@@ -201,20 +208,40 @@ export function App() {
         activePointRef.current = nextId;
         setActivePoint(nextId);
         setProgress((current) => ({ ...current, [nextId]: { ...current[nextId], exposure: true } }));
-        const nextPoint = chapter.knowledgePoints.find((item) => item.id === nextId);
-        setOpenAid(nextPoint?.primaryComponent !== "none" ? nextId : null);
+        setOpenAid(null);
       }
     }, { rootMargin: "-28% 0px -42% 0px", threshold: [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 1] });
     Object.values(pointRefs.current).forEach((node) => node && observer.observe(node));
     return () => { observer.disconnect(); if (clearTimerRef.current) window.clearTimeout(clearTimerRef.current); };
   }, []);
 
+  useEffect(() => {
+    const blockRatios = {};
+    let currentBlock = chapter.introBlockId;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { blockRatios[entry.target.dataset.block] = entry.isIntersecting ? entry.intersectionRatio : 0; });
+      const [nextBlock, ratio] = Object.entries(blockRatios).sort((a, b) => b[1] - a[1])[0] || [null, 0];
+      if (nextBlock && ratio > 0 && nextBlock !== currentBlock) {
+        currentBlock = nextBlock;
+        setActiveBlockId(nextBlock);
+        setOpenAid(null);
+      }
+    }, { rootMargin: "-22% 0px -55% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+    Object.values(blockRefs.current).forEach((node) => node && observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+
   const jumpToAnchor = (pointId, anchor) => {
+    if (!pointId && typeof anchor === "string") {
+      document.querySelector(`[data-block="${anchor}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
     const point = chapter.knowledgePoints.find((item) => item.id === pointId);
     const paragraph = typeof anchor === "string" ? point?.paragraphs.find((item) => item.id === anchor) : point?.paragraphs.find((item) => item.anchor === anchor);
     document.getElementById(`${pointId}-anchor-${paragraph?.anchor || anchor}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
-  const point = chapter.knowledgePoints.find((item) => item.id === activePoint);
+  const companion = chapter.blockCompanions?.[activeBlockId] || null;
+  const point = chapter.knowledgePoints.find((item) => item.id === (openAid || companion?.pointId || activePoint));
   const readingState = openAid ? "用户主动深入查看" : activePoint ? "当前关键知识点激活" : "安静阅读";
   const switchChapter = (number) => {
     const url = new URL(window.location.href);
@@ -225,20 +252,20 @@ export function App() {
     <header className="topbar"><span>{chapter.book}</span><div className="chapter-switch" aria-label="章节切换"><button className={chapterNumber === "01" ? "active" : ""} onClick={() => switchChapter("01")}>第 1 章</button><button className={chapterNumber === "02" ? "active" : ""} onClick={() => switchChapter("02")}>第 2 章</button></div><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
     <div className="knowledge-nav" aria-label="知识节点">{chapter.knowledgePoints.map((item) => <button key={item.id} className={activePoint === item.id ? "active" : ""} onClick={() => pointRefs.current[item.id]?.scrollIntoView({ behavior: "smooth", block: "center" })}><span className={`node-mark ${progress[item.id].recalled ? "recalled" : ""}`} />{item.title}<small>{progress[item.id].recalled ? "能够回忆" : progress[item.id].explained ? "能够解释" : progress[item.id].exposure ? "仅接触" : ""}</small></button>)}</div>
     <main className="reading-layout">
-      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><div className="chapter-meta"><span>完整章节</span><span>{chapter.stats?.blocks || "—"} 个原文块</span><span>{chapter.stats?.knowledgePoints || chapter.knowledgePoints.length} 个知识节点</span><span>{chapter.stats?.assistedPoints || "—"} 个辅助结构</span></div><p className="lead">{chapter.intro}</p>
+      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><div className="chapter-meta"><span>完整章节</span><span>{chapter.stats?.blocks || "—"} 个原文块</span><span>{chapter.stats?.knowledgePoints || chapter.knowledgePoints.length} 个知识节点</span><span>{chapter.stats?.assistedPoints || "—"} 个辅助结构</span></div><p ref={(node) => { if (chapter.introBlockId) blockRefs.current[chapter.introBlockId] = node; }} data-block={chapter.introBlockId} className="lead">{chapter.intro}</p>
         {(chapter.readingSegments || chapter.knowledgePoints.map((kp) => ({ id: kp.id, pointId: kp.id, blocks: kp.paragraphs }))).map((segment) => {
-          if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => <ReadingBlock key={block.id} block={block} />)}</section>;
+          if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => <ReadingBlock key={block.id} block={block} blockRef={(node) => { blockRefs.current[block.id] = node; }} />)}</section>;
           const kp = chapter.knowledgePoints.find((item) => item.id === segment.pointId);
           return <div key={segment.id}>
             <div className="knowledge-unit" data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}>
-              <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
+              <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p ref={(node) => { blockRefs.current[block.id] = node; }} data-block={block.id} id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
               <AidPrompt point={kp} onOpen={() => { pointRefs.current[kp.id]?.scrollIntoView({ behavior: "auto", block: "center" }); setActivePoint(kp.id); activePointRef.current = kp.id; setOpenAid(kp.id); }} />
             </div>
             <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
           </div>;
         })}
       </article>
-      <KnowledgeAid point={point} open={openAid === activePoint} onOpen={() => setOpenAid(activePoint)} onClose={() => setOpenAid(null)} onAnchor={jumpToAnchor} />
+      <KnowledgeAid point={point} companion={companion} open={Boolean(openAid && point?.id === openAid)} onOpen={() => point && setOpenAid(point.id)} onClose={() => setOpenAid(null)} onAnchor={jumpToAnchor} />
     </main>
     <Review progress={progress} setProgress={setProgress} onAnchor={jumpToAnchor} />
     <DebugPanel activePoint={activePoint} openAid={openAid} readingState={readingState} progress={progress} ratios={ratios} />

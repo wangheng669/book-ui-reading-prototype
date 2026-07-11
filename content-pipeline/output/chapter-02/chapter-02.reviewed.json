@@ -21,6 +21,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "context",
+          "eyebrow": "章节位置",
+          "title": "投资者与通货膨胀",
+          "nodes": [
+            {
+              "label": "起点",
+              "value": "购买力焦虑"
+            },
+            {
+              "label": "问题",
+              "value": "股票是否天然防通胀"
+            }
+          ],
+          "takeaway": "本章不是寻找永远占优的资产，而是检查通胀叙事能支持多强的结论。",
+          "blockIds": [
+            "chapter-02-block-001"
+          ]
         }
       },
       {
@@ -40,6 +59,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "comparison",
+          "eyebrow": "问题背景",
+          "title": "通胀对两类持有者的初步影响",
+          "nodes": [
+            {
+              "label": "固定收益",
+              "value": "利息与本金购买力承压"
+            },
+            {
+              "label": "股票",
+              "value": "红利和股价可能抵消损失"
+            }
+          ],
+          "takeaway": "“可能抵消”还不是“必然更优”。",
+          "blockIds": [
+            "chapter-02-block-002"
+          ]
         }
       },
       {
@@ -59,6 +97,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "inference",
+          "eyebrow": "常见推论",
+          "title": "从事实跳到资产结论",
+          "nodes": [
+            {
+              "label": "事实",
+              "value": "通胀损害固定美元收入"
+            },
+            {
+              "label": "推论",
+              "value": "债券不可取"
+            },
+            {
+              "label": "跳跃",
+              "value": "组合应全部持有股票"
+            }
+          ],
+          "takeaway": "这段呈现的是待检验的推论，不是作者最终结论。",
+          "blockIds": [
+            "chapter-02-block-003"
+          ]
         }
       },
       {
@@ -123,6 +184,25 @@
               ]
             }
           }
+        },
+        "companion": {
+          "visualType": "comparison",
+          "eyebrow": "推论边界",
+          "title": "两个绝对判断都不成立",
+          "nodes": [
+            {
+              "label": "股票永远优于债券",
+              "value": "错误"
+            },
+            {
+              "label": "债券永远比股票安全",
+              "value": "同样错误"
+            }
+          ],
+          "takeaway": "资产质量不能脱离价格、收益率和具体条件。",
+          "blockIds": [
+            "chapter-02-block-004"
+          ]
         }
       },
       {
@@ -142,6 +222,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "context",
+          "eyebrow": "论证方法",
+          "title": "先回到历史经验",
+          "nodes": [
+            {
+              "label": "输入",
+              "value": "55年价格、利润与市场数据"
+            },
+            {
+              "label": "目的",
+              "value": "约束对未来的判断"
+            }
+          ],
+          "takeaway": "作者选择用历史区间检验直觉，而不是直接预测未来。",
+          "blockIds": [
+            "chapter-02-block-005"
+          ]
         }
       },
       {
@@ -161,6 +260,29 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "证据入口",
+          "title": "表2-1观察什么",
+          "nodes": [
+            {
+              "label": "价格",
+              "value": "总体物价水平"
+            },
+            {
+              "label": "企业",
+              "value": "股票利润"
+            },
+            {
+              "label": "市场",
+              "value": "股票价格"
+            }
+          ],
+          "takeaway": "真正的问题是三组数据是否稳定同步。",
+          "blockIds": [
+            "chapter-02-block-006"
+          ]
         }
       },
       {
@@ -180,6 +302,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "数据口径",
+          "title": "指数基期会改变数字外观",
+          "nodes": [
+            {
+              "label": "1957",
+              "value": "原表基期=100"
+            },
+            {
+              "label": "1967",
+              "value": "换基期=100"
+            }
+          ],
+          "takeaway": "比较趋势前要先理解统计口径。",
+          "blockIds": [
+            "chapter-02-block-007"
+          ]
         }
       },
       {
@@ -199,6 +340,21 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "表格注释",
+          "title": "特殊年份的平均口径",
+          "nodes": [
+            {
+              "label": "1941–1943",
+              "value": "平均数=10"
+            }
+          ],
+          "takeaway": "这是数据解释条件，不承担新的投资结论。",
+          "blockIds": [
+            "chapter-02-block-008"
+          ]
         }
       },
       {
@@ -218,6 +374,21 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "表格注释",
+          "title": "为什么使用1946年",
+          "nodes": [
+            {
+              "label": "目的",
+              "value": "剔除战时价格管制影响"
+            }
+          ],
+          "takeaway": "异常制度环境会扭曲历史比较。",
+          "blockIds": [
+            "chapter-02-block-009"
+          ]
         }
       },
       {
@@ -237,6 +408,29 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "timeline",
+          "eyebrow": "历史波动",
+          "title": "通胀并不是单向直线",
+          "nodes": [
+            {
+              "label": "1915–1920",
+              "value": "生活费用近乎翻倍"
+            },
+            {
+              "label": "中间时期",
+              "value": "3次下降、6次上涨"
+            },
+            {
+              "label": "1965–1970",
+              "value": "上涨约15%"
+            }
+          ],
+          "takeaway": "历史支持“通胀会反复出现”，不支持固定速度预测。",
+          "blockIds": [
+            "chapter-02-block-010"
+          ]
         }
       },
       {
@@ -256,6 +450,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "未来假设",
+          "title": "从已知数据到不确定预期",
+          "nodes": [
+            {
+              "label": "过去20年",
+              "value": "年均约2.5%"
+            },
+            {
+              "label": "1965–1970",
+              "value": "约4.5%"
+            },
+            {
+              "label": "思考假设",
+              "value": "未来约3%"
+            }
+          ],
+          "takeaway": "3%是用于决策思考的假设，不是确定预测。",
+          "blockIds": [
+            "chapter-02-block-011"
+          ]
         }
       },
       {
@@ -275,6 +492,25 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "comparison",
+          "eyebrow": "实际购买力",
+          "title": "通胀损失不等于财富归零",
+          "nodes": [
+            {
+              "label": "损失",
+              "value": "约一半税后利息被侵蚀"
+            },
+            {
+              "label": "保留",
+              "value": "本金真实价值未必下降"
+            }
+          ],
+          "takeaway": "必须区分收入的购买力损失与资本本身的真实价值。",
+          "blockIds": [
+            "chapter-02-block-012"
+          ]
         }
       },
       {
@@ -294,6 +530,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "inference",
+          "eyebrow": "资产追问",
+          "title": "股票防通胀命题需要拆开",
+          "nodes": [
+            {
+              "label": "疑问1",
+              "value": "股票是否肯定收益更好"
+            },
+            {
+              "label": "疑问2",
+              "value": "是否有内在防护"
+            },
+            {
+              "label": "疑问3",
+              "value": "长期是否几乎必胜"
+            }
+          ],
+          "takeaway": "三个问法都把历史优势推向了未来保证。",
+          "blockIds": [
+            "chapter-02-block-013"
+          ]
         }
       },
       {
@@ -313,6 +572,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "历史收益",
+          "title": "55年股票回报的组成",
+          "nodes": [
+            {
+              "label": "价格复合增长",
+              "value": "约4%"
+            },
+            {
+              "label": "股息收益",
+              "value": "约4%"
+            },
+            {
+              "label": "合计",
+              "value": "约8%"
+            }
+          ],
+          "takeaway": "历史8%是证据，但没有超过当时高等级债券提供的收益。",
+          "blockIds": [
+            "chapter-02-block-014"
+          ]
         }
       },
       {
@@ -398,6 +680,25 @@
               }
             }
           }
+        },
+        "companion": {
+          "visualType": "comparison",
+          "eyebrow": "时间尺度",
+          "title": "同一资产需要两套观察",
+          "nodes": [
+            {
+              "label": "长期约25年",
+              "value": "实际回报与企业结果"
+            },
+            {
+              "label": "近期约5年",
+              "value": "价格、财务和心理变化"
+            }
+          ],
+          "takeaway": "长期平均无法替代投资者逐年的真实经历。",
+          "blockIds": [
+            "chapter-02-block-015"
+          ]
         }
       },
       {
@@ -417,6 +718,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "反例",
+          "title": "通胀、利润与股价并不同步",
+          "nodes": [
+            {
+              "label": "1966–1970",
+              "value": "生活费用上涨22%"
+            },
+            {
+              "label": "同期",
+              "value": "股票利润和价格下降"
+            }
+          ],
+          "takeaway": "一个反向变化区间足以否定“必然同步”。",
+          "blockIds": [
+            "chapter-02-block-016"
+          ]
         }
       },
       {
@@ -436,6 +756,29 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "盈利能力",
+          "title": "价格上涨没有抬高资本利润率",
+          "nodes": [
+            {
+              "label": "过去20年",
+              "value": "公司利润率下降"
+            },
+            {
+              "label": "账面收益",
+              "value": "约10%"
+            },
+            {
+              "label": "按市价收益",
+              "value": "约6.25%"
+            }
+          ],
+          "takeaway": "估值越高，同样利润对应的投资收益率越低。",
+          "blockIds": [
+            "chapter-02-block-017"
+          ]
         }
       },
       {
@@ -455,6 +798,29 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "证据入口",
+          "title": "表2-2观察什么",
+          "nodes": [
+            {
+              "label": "公司债务",
+              "value": "资本结构变化"
+            },
+            {
+              "label": "利润",
+              "value": "增长幅度"
+            },
+            {
+              "label": "资本利润率",
+              "value": "盈利效率"
+            }
+          ],
+          "takeaway": "这张表检验通胀是否真正改善股东经济结果。",
+          "blockIds": [
+            "chapter-02-block-018"
+          ]
         }
       },
       {
@@ -474,6 +840,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "计算口径",
+          "title": "利润率的分母",
+          "nodes": [
+            {
+              "label": "利润",
+              "value": "标准普尔工业指数利润"
+            },
+            {
+              "label": "资本",
+              "value": "同年平均账面值"
+            }
+          ],
+          "takeaway": "口径决定利润率表达的含义。",
+          "blockIds": [
+            "chapter-02-block-019"
+          ]
         }
       },
       {
@@ -493,6 +878,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "数据来源",
+          "title": "跨时期数据来自不同资料",
+          "nodes": [
+            {
+              "label": "1950、1955",
+              "value": "Coe and Whman"
+            },
+            {
+              "label": "1960–1969",
+              "value": "《财富》杂志"
+            }
+          ],
+          "takeaway": "跨来源比较需要保留数据来源意识。",
+          "blockIds": [
+            "chapter-02-block-020"
+          ]
         }
       },
       {
@@ -512,6 +916,29 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "收益预期",
+          "title": "股票总体回报的简化组成",
+          "nodes": [
+            {
+              "label": "股息",
+              "value": "约3.5%"
+            },
+            {
+              "label": "利润再投资增值",
+              "value": "约4%"
+            },
+            {
+              "label": "合计",
+              "value": "约7.5%"
+            }
+          ],
+          "takeaway": "预期回报来自可解释的组成，而不是额外加入通胀红利。",
+          "blockIds": [
+            "chapter-02-block-021"
+          ]
         }
       },
       {
@@ -531,6 +958,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "causal",
+          "eyebrow": "利润来源",
+          "title": "利润增长来自哪里",
+          "nodes": [
+            {
+              "label": "通胀率",
+              "value": "没有直接影响每股收益"
+            },
+            {
+              "label": "利润再投资",
+              "value": "形成新增投资资本"
+            },
+            {
+              "label": "利润增长",
+              "value": "来自资本增长"
+            }
+          ],
+          "takeaway": "作者把利润增长归因于再投资资本，而不是物价本身。",
+          "blockIds": [
+            "chapter-02-block-022"
+          ]
         }
       },
       {
@@ -614,6 +1064,29 @@
               ]
             }
           }
+        },
+        "companion": {
+          "visualType": "inference",
+          "eyebrow": "反事实检验",
+          "title": "如果通胀真是独立利好",
+          "nodes": [
+            {
+              "label": "假设",
+              "value": "旧资本价值上升"
+            },
+            {
+              "label": "应观察到",
+              "value": "资本利润率提高"
+            },
+            {
+              "label": "历史结果",
+              "value": "并未出现"
+            }
+          ],
+          "takeaway": "反事实预测没有被历史数据支持。",
+          "blockIds": [
+            "chapter-02-block-023"
+          ]
         }
       },
       {
@@ -633,6 +1106,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "causal",
+          "eyebrow": "传导阻力",
+          "title": "价格上涨之外还有成本",
+          "nodes": [
+            {
+              "label": "繁荣与通胀",
+              "value": "可能同时出现"
+            },
+            {
+              "label": "工资增长",
+              "value": "超过生产率"
+            },
+            {
+              "label": "结果",
+              "value": "股本盈利能力未改善"
+            }
+          ],
+          "takeaway": "相关出现不能证明通胀提升了真实盈利能力。",
+          "blockIds": [
+            "chapter-02-block-024"
+          ]
         }
       },
       {
@@ -652,6 +1148,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "causal",
+          "eyebrow": "资本效率",
+          "title": "新增资本为何压低回报",
+          "nodes": [
+            {
+              "label": "新增资本需求",
+              "value": "上升"
+            },
+            {
+              "label": "销售/投入资本",
+              "value": "比例下降"
+            },
+            {
+              "label": "资本利润率",
+              "value": "承压"
+            }
+          ],
+          "takeaway": "更多资本不自动带来同比例的销售与利润。",
+          "blockIds": [
+            "chapter-02-block-025"
+          ]
         }
       },
       {
@@ -671,6 +1190,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "metric",
+          "eyebrow": "债务约束",
+          "title": "债务增长快于利润",
+          "nodes": [
+            {
+              "label": "公司债务",
+              "value": "近4倍"
+            },
+            {
+              "label": "税前利润",
+              "value": "仅一倍多"
+            },
+            {
+              "label": "息后税前利润/债务",
+              "value": "30% → 13.2%"
+            }
+          ],
+          "takeaway": "通胀期间扩张的债务可能放大股权利润，也提高脆弱性。",
+          "blockIds": [
+            "chapter-02-block-026"
+          ]
         }
       },
       {
@@ -690,6 +1232,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "comparison",
+          "eyebrow": "行业案例",
+          "title": "公用事业为何特殊",
+          "nodes": [
+            {
+              "label": "不利",
+              "value": "债务成本上升、价格受管制"
+            },
+            {
+              "label": "有利",
+              "value": "单位成本增长较慢、依法可获适当回报"
+            }
+          ],
+          "takeaway": "具体行业的制度与成本结构会改变通胀影响。",
+          "blockIds": [
+            "chapter-02-block-027"
+          ]
         }
       },
       {
@@ -709,6 +1270,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "conclusion",
+          "eyebrow": "章节结论",
+          "title": "合理预期不是收益保证",
+          "nodes": [
+            {
+              "label": "总体平均回报",
+              "value": "没有理由期待高于约8%"
+            },
+            {
+              "label": "市场路径",
+              "value": "会起伏不定"
+            },
+            {
+              "label": "行为风险",
+              "value": "满仓股票更易被波动误导"
+            }
+          ],
+          "takeaway": "收益预期必须同时容纳估值、时间和行为风险。",
+          "blockIds": [
+            "chapter-02-block-028"
+          ]
         }
       },
       {
@@ -728,6 +1312,29 @@
           "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "causal",
+          "eyebrow": "行为机制",
+          "title": "通胀叙事如何放大追涨",
+          "nodes": [
+            {
+              "label": "预期",
+              "value": "通胀会深化"
+            },
+            {
+              "label": "牛市上涨",
+              "value": "被理解为验证"
+            },
+            {
+              "label": "结果",
+              "value": "忽视上涨后的风险信号"
+            }
+          ],
+          "takeaway": "叙事会改变投资者对同一价格变化的解释。",
+          "blockIds": [
+            "chapter-02-block-029"
+          ]
         }
       },
       {
@@ -747,6 +1354,25 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "context",
+          "eyebrow": "章节位置",
+          "title": "转入公司利润专题",
+          "nodes": [
+            {
+              "label": "上一部分",
+              "value": "资产选择与实际收益"
+            },
+            {
+              "label": "下一部分",
+              "value": "通胀如何影响公司利润"
+            }
+          ],
+          "takeaway": "论证从资产回报转向企业内部盈利机制。",
+          "blockIds": [
+            "chapter-02-block-030"
+          ]
         }
       },
       {
@@ -766,6 +1392,21 @@
           "reason": "原文排版和上下文本身足够，应保持安静阅读。",
           "componentType": "none",
           "componentData": null
+        },
+        "companion": {
+          "visualType": "evidence",
+          "eyebrow": "原书图示",
+          "title": "图像引用尚未随HTML提供",
+          "nodes": [
+            {
+              "label": "当前状态",
+              "value": "保留图示位置与来源提示"
+            }
+          ],
+          "takeaway": "缺少原始图像时不推测其内容。",
+          "blockIds": [
+            "chapter-02-block-031"
+          ]
         }
       }
     ],

@@ -66,6 +66,7 @@ export function adaptPipelineDocument(document) {
         anchor: index + 1,
         text: blockById[blockId].text,
         contentType: blockById[blockId].contentType,
+        companion: blockById[blockId].companion || null,
       })),
     };
   });
@@ -113,6 +114,12 @@ export function adaptPipelineDocument(document) {
         knowledgePoints: knowledgePoints.length,
         assistedPoints: knowledgePoints.filter((point) => point.primaryComponent !== "none").length,
       },
+      introBlockId: introBlock?.id || null,
+      blockCompanions: Object.fromEntries(source.blocks.filter((block) => block.companion).map((block) => [block.id, {
+        ...block.companion,
+        blockId: block.id,
+        pointId: block.knowledgePointId,
+      }])),
     },
     knowledgeDimensions,
     reviewQuestions,
