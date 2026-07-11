@@ -31,6 +31,15 @@ function pointAbility(point, dimensions) {
   return point.requiredDimensions.every((id) => dimensions[id] === "covered");
 }
 
+function ReadingBlock({ block }) {
+  if (block.role === "heading") return <h2 className="source-heading">{block.text}</h2>;
+  if (block.role === "figure") return <figure className="source-figure"><div className="figure-placeholder" aria-hidden="true"><span>原书图示</span></div><figcaption>{block.text}<small>当前 HTML 仅包含图片引用，图像文件未随章节提供。</small></figcaption></figure>;
+  const isCaption = block.contentType === "data" && /^表\s*\d/i.test(block.text);
+  const isNote = block.contentType === "data" && block.text.length < 110 && !isCaption;
+  const className = ["source-block", `source-block--${block.contentType || "narrative"}`, isCaption ? "data-caption" : "", isNote ? "data-note" : ""].filter(Boolean).join(" ");
+  return <p className={className}>{block.text}</p>;
+}
+
 function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
   if (!point || point.primaryComponent === "none") return <aside className="knowledge-aid knowledge-aid--empty" aria-hidden="true" />;
   return (
@@ -199,9 +208,9 @@ export function App() {
     <header className="topbar"><span>{chapter.book}</span><div className="chapter-switch" aria-label="章节切换"><button className={chapterNumber === "01" ? "active" : ""} onClick={() => switchChapter("01")}>第 1 章</button><button className={chapterNumber === "02" ? "active" : ""} onClick={() => switchChapter("02")}>第 2 章</button></div><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
     <div className="knowledge-nav" aria-label="知识节点">{chapter.knowledgePoints.map((item) => <button key={item.id} className={activePoint === item.id ? "active" : ""} onClick={() => pointRefs.current[item.id]?.scrollIntoView({ behavior: "smooth", block: "center" })}><span className={`node-mark ${progress[item.id].recalled ? "recalled" : ""}`} />{item.title}<small>{progress[item.id].recalled ? "能够回忆" : progress[item.id].explained ? "能够解释" : progress[item.id].exposure ? "仅接触" : ""}</small></button>)}</div>
     <main className="reading-layout">
-      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><p className="lead">{chapter.intro}</p>
+      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><div className="chapter-meta"><span>完整章节</span><span>{chapter.stats?.blocks || "—"} 个原文块</span><span>{chapter.stats?.knowledgePoints || chapter.knowledgePoints.length} 个知识节点</span><span>{chapter.stats?.assistedPoints || "—"} 个辅助结构</span></div><p className="lead">{chapter.intro}</p>
         {(chapter.readingSegments || chapter.knowledgePoints.map((kp) => ({ id: kp.id, pointId: kp.id, blocks: kp.paragraphs }))).map((segment) => {
-          if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => block.role === "heading" ? <h2 key={block.id}>{block.text}</h2> : <p key={block.id}>{block.text}</p>)}</section>;
+          if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => <ReadingBlock key={block.id} block={block} />)}</section>;
           const kp = chapter.knowledgePoints.find((item) => item.id === segment.pointId);
           return <div key={segment.id}>
             <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>

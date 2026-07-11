@@ -100,6 +100,11 @@ export function adaptPipelineDocument(document) {
       intro: source.intro,
       knowledgePoints,
       readingSegments,
+      stats: {
+        blocks: source.blocks.length,
+        knowledgePoints: knowledgePoints.length,
+        assistedPoints: knowledgePoints.filter((point) => point.primaryComponent !== "none").length,
+      },
     },
     knowledgeDimensions,
     reviewQuestions,
