@@ -4,10 +4,12 @@
 
 公开原型：<https://wangheng669.github.io/book-ui-reading-prototype/>
 
-当前范围仅覆盖《聪明的投资者》第一章的两个示例知识点：
+第 2 章完整样本：<https://wangheng669.github.io/book-ui-reading-prototype/?chapter=2>
 
-- 投资与投机
-- 安全边际
+当前范围覆盖《聪明的投资者》第一章原型，以及完整制作并人工审核的第 2 章样本。第 2 章读取 reviewed JSON，不在 React 组件中写死正文。
+
+- 第 1 章：投资与投机、安全边际
+- 第 2 章：通胀下的资产选择、实际收益与时间尺度、利润传导、收益预期纪律
 
 ## 已实现
 

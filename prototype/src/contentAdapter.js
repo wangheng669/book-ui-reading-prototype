@@ -22,8 +22,10 @@ export function adaptPipelineDocument(document) {
   const knowledgePoints = source.knowledgePoints.map((point) => {
     const assistance = firstComponent(source, point);
     const componentItems = assistance?.componentData?.items || [];
+    const componentSteps = assistance?.componentData?.steps || [];
     const isStocksBonds = componentItems.some((item) => item.stocks || item.bonds);
-    const aidItems = componentItems.map((item, index) => ({
+    const sourceItems = componentItems.length ? componentItems : componentSteps;
+    const aidItems = sourceItems.map((item, index) => ({
       id: index + 1,
       label: item.label || `检查 ${index + 1}`,
       left: item.investment || item.stocks || null,
@@ -46,6 +48,7 @@ export function adaptPipelineDocument(document) {
       shortPrompt: recallByPoint[point.id]?.question || `请用自己的话解释“${point.title}”。`,
       requiredDimensions: point.requiredDimensions.map((dimension) => dimension.id),
       primaryComponent: point.primaryComponent,
+      aidSupported: ["none", "comparison", "causal-chain", "concept", "checklist"].includes(point.primaryComponent),
       aidTitle: assistance?.componentData?.title || point.title,
       comparisonLabels: isStocksBonds ? ["股票", "债券"] : ["投资", "投机"],
       aidItems,
@@ -57,6 +60,17 @@ export function adaptPipelineDocument(document) {
         contentType: blockById[blockId].contentType,
       })),
     };
+  });
+
+  const titleBlock = source.blocks.find((block) => block.role === "heading" && block.text === source.title);
+  const introBlock = source.blocks.find((block) => block.text === source.intro);
+  const bodyBlocks = source.blocks.filter((block) => block.id !== titleBlock?.id && block.id !== introBlock?.id);
+  const readingSegments = [];
+  bodyBlocks.forEach((block) => {
+    const pointId = block.knowledgePointId || null;
+    const last = readingSegments.at(-1);
+    if (!last || last.pointId !== pointId) readingSegments.push({ id: `segment-${block.id}`, pointId, blocks: [] });
+    readingSegments.at(-1).blocks.push(block);
   });
 
   const reviewQuestions = source.review.closedBookQuestions.map((question) => ({
@@ -85,6 +99,7 @@ export function adaptPipelineDocument(document) {
       title: source.title,
       intro: source.intro,
       knowledgePoints,
+      readingSegments,
     },
     knowledgeDimensions,
     reviewQuestions,
@@ -94,4 +109,3 @@ export function adaptPipelineDocument(document) {
     sourceMode: "pipeline-json",
   };
 }
-

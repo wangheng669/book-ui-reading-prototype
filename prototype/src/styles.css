@@ -8,7 +8,10 @@ button { color: inherit; }
 .topbar span:first-child { color: #65717f; font-weight: 600; }
 .topbar nav { margin-left: auto; display: flex; gap: 20px; }
 .topbar button, .text-button, .anchor-button, .primary-link { border: 0; background: none; padding: 0; cursor: pointer; color: var(--accent); }
-.knowledge-nav { position: fixed; z-index: 10; left: 30px; top: 180px; width: 176px; display: grid; gap: 34vh; }
+.chapter-switch { display: flex; gap: 4px; padding: 3px; background: #f5f7f9; }
+.chapter-switch button { padding: 5px 9px; color: #89939e; }
+.chapter-switch button.active { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(24,32,42,.08); }
+.knowledge-nav { position: fixed; z-index: 10; left: 30px; top: 180px; width: 176px; display: grid; gap: 17vh; }
 .knowledge-nav button { border: 0; background: transparent; color: #8a95a2; text-align: left; display: grid; grid-template-columns: 12px 1fr; column-gap: 10px; row-gap: 3px; cursor: pointer; font-size: 13px; }
 .knowledge-nav button.active { color: var(--accent); }
 .knowledge-nav small { grid-column: 2; font-size: 11px; color: #a4acb6; }
@@ -48,6 +51,7 @@ h2 { font-family: Georgia, "Songti SC", serif; font-size: 26px; margin: 0 0 24px
 .compare-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .compare-pair small { color: #98a2ad; }
 .compare-pair p, .detail-copy { margin: 5px 0 0; font-size: 13px; line-height: 1.65; }
+.aid-degraded { padding: 20px 0; color: #7f8a96; font-size: 13px; line-height: 1.7; border-bottom: 1px solid var(--line); }
 .recall { margin: 10px 0 90px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .recall-kicker { color: var(--accent); font-size: 12px; margin-bottom: 9px; }
 .recall h3 { margin: 0; font-size: 19px; font-weight: 600; }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { chapter, knowledgeDimensions, reviewQuestions, reviewStructureSummary, sourceMode, transferPrinciples, transferQuestion } from "./contentSource.js";
+import { chapter, chapterNumber, knowledgeDimensions, reviewQuestions, reviewStructureSummary, sourceMode, transferPrinciples, transferQuestion } from "./contentSource.js";
 
-const initialProgress = Object.fromEntries(chapter.knowledgePoints.map((p) => [p.id, {
+const createInitialProgress = () => Object.fromEntries(chapter.knowledgePoints.map((p) => [p.id, {
   exposure: false,
   explained: false,
   recalled: false,
@@ -32,7 +32,7 @@ function pointAbility(point, dimensions) {
 }
 
 function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
-  if (!point) return <aside className="knowledge-aid knowledge-aid--empty" aria-hidden="true" />;
+  if (!point || point.primaryComponent === "none") return <aside className="knowledge-aid knowledge-aid--empty" aria-hidden="true" />;
   return (
     <aside className={`knowledge-aid ${open ? "knowledge-aid--open" : ""}`} aria-label={`${point.title}辅助内容`}>
       {!open ? (
@@ -47,7 +47,9 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
             <button className="text-button" onClick={onClose}>收起</button>
           </div>
           <div className="vertical-compare">
-            {(point.aidItems || point.anchors).map((item) => (
+            {!point.aidSupported && <p className="aid-degraded">此组件类型暂未支持交互展示。原文与锚点仍完整保留。</p>}
+            {point.aidSupported && point.primaryComponent === "none" && <p className="aid-degraded">当前知识点不需要辅助组件，请继续阅读原文。</p>}
+            {(point.aidItems || point.anchors || []).map((item) => (
               <section key={item.id} className="compare-item">
                 <button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId || item.id)}>原文 {item.id}</button>
                 <h4>{item.label}</h4>
@@ -139,7 +141,7 @@ function DebugPanel({ activePoint, openAid, readingState, progress, ratios }) {
 export function App() {
   const [activePoint, setActivePoint] = useState(null);
   const [openAid, setOpenAid] = useState(null);
-  const [progress, setProgress] = useState(initialProgress);
+  const [progress, setProgress] = useState(createInitialProgress);
   const [ratios, setRatios] = useState(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
   const pointRefs = useRef({});
   const ratiosRef = useRef(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
@@ -188,15 +190,24 @@ export function App() {
   };
   const point = chapter.knowledgePoints.find((item) => item.id === activePoint);
   const readingState = openAid ? "用户主动深入查看" : activePoint ? "当前关键知识点激活" : "安静阅读";
+  const switchChapter = (number) => {
+    const url = new URL(window.location.href);
+    if (number === "01") url.searchParams.delete("chapter"); else url.searchParams.set("chapter", "2");
+    window.location.assign(url);
+  };
   return <div className="app-shell">
-    <header className="topbar"><span>{chapter.book}</span><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
+    <header className="topbar"><span>{chapter.book}</span><div className="chapter-switch" aria-label="章节切换"><button className={chapterNumber === "01" ? "active" : ""} onClick={() => switchChapter("01")}>第 1 章</button><button className={chapterNumber === "02" ? "active" : ""} onClick={() => switchChapter("02")}>第 2 章</button></div><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
     <div className="knowledge-nav" aria-label="知识节点">{chapter.knowledgePoints.map((item) => <button key={item.id} className={activePoint === item.id ? "active" : ""} onClick={() => pointRefs.current[item.id]?.scrollIntoView({ behavior: "smooth", block: "center" })}><span className={`node-mark ${progress[item.id].recalled ? "recalled" : ""}`} />{item.title}<small>{progress[item.id].recalled ? "能够回忆" : progress[item.id].explained ? "能够解释" : progress[item.id].exposure ? "仅接触" : ""}</small></button>)}</div>
     <main className="reading-layout">
       <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><p className="lead">{chapter.intro}</p>
-        {chapter.knowledgePoints.map((kp, pointIndex) => <div key={kp.id}>
-          <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><span>{String(pointIndex + 1).padStart(2, "0")}</span><div><small>知识点</small><h2>{kp.title}</h2></div></div>{kp.paragraphs.map((paragraph) => <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={paragraph.id || paragraph.anchor} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{paragraph.text}</p>)}</section>
-          <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
-        </div>)}
+        {(chapter.readingSegments || chapter.knowledgePoints.map((kp) => ({ id: kp.id, pointId: kp.id, blocks: kp.paragraphs }))).map((segment) => {
+          if (!segment.pointId) return <section className="quiet-prose" key={segment.id}>{segment.blocks.map((block) => block.role === "heading" ? <h2 key={block.id}>{block.text}</h2> : <p key={block.id}>{block.text}</p>)}</section>;
+          const kp = chapter.knowledgePoints.find((item) => item.id === segment.pointId);
+          return <div key={segment.id}>
+            <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><div><small>知识点</small><h2>{kp.title}</h2></div></div>{segment.blocks.map((block) => { const paragraph = kp.paragraphs.find((item) => item.id === block.id); return <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={block.id} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{block.text}</p>; })}</section>
+            <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
+          </div>;
+        })}
       </article>
       <KnowledgeAid point={point} open={openAid === activePoint} onOpen={() => setOpenAid(activePoint)} onClose={() => setOpenAid(null)} onAnchor={jumpToAnchor} />
     </main>
