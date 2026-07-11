@@ -20,9 +20,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: prototype
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -32,13 +29,17 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          cache-dependency-path: prototype/pnpm-lock.yaml
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+          cache-dependency-path: |
+            content-pipeline/pnpm-lock.yaml
+            prototype/pnpm-lock.yaml
+      - run: pnpm --dir content-pipeline install --frozen-lockfile
+      - run: pnpm --dir content-pipeline generate
+      - run: pnpm --dir content-pipeline test
+      - run: pnpm --dir prototype install --frozen-lockfile
+      - run: pnpm --dir prototype build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: prototype/dist
       - id: deployment
         uses: actions/deploy-pages@v4
-

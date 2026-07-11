@@ -1,0 +1,921 @@
+{
+  "chapter": {
+    "id": "chapter-01",
+    "title": "第1章 投资与投机：聪明投资者的预期收益",
+    "intro": "第1章投资与投机：聪明投资者的预期收益本章将简要介绍其余各章要论述的主要观点。尤其是我们希望在本书的一开始，就针对个人及非专业投资者，确立恰当的证券组合策略这一概念。",
+    "blocks": [
+      {
+        "id": "chapter-01-block-001",
+        "order": 1,
+        "text": "第1章投资与投机：聪明投资者的预期收益本章将简要介绍其余各章要论述的主要观点。尤其是我们希望在本书的一开始，就针对个人及非专业投资者，确立恰当的证券组合策略这一概念。",
+        "sourceHtml": "<p>第1章投资与投机：聪明投资者的预期收益本章将简要介绍其余各章要论述的主要观点。尤其是我们希望在本书的一开始，就针对个人及非专业投资者，确立恰当的证券组合策略这一概念。</p>",
+        "contentType": "transition",
+        "knowledgePointId": null,
+        "assistance": {
+          "needed": false,
+          "reason": "原文承担章节过渡，排版本身已经足够，应保持留白。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-002",
+        "order": 2,
+        "text": "投资与投机何谓“投资者”？在本书中，这一说法始终是与“投机者”相对应的。",
+        "sourceHtml": "<p>投资与投机何谓“投资者”？在本书中，这一说法始终是与“投机者”相对应的。</p>",
+        "contentType": "definition",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-003",
+        "order": 3,
+        "text": "早在1934年我们撰写的那部《证券分析》教科书中，就试图准确地定义两者之间的差别：“投资操作是以深入分析为基础，确保本金的安全，并获得适当的回报；不满足这些要求的操作就是投机。”尽管在随后的38年中，我们一直坚守这一定义，但是值得注意的是，在这一时期使用“投资者”这一术语时，情况发生了重大改变。",
+        "sourceHtml": "<p>早在1934年我们撰写的那部《证券分析》教科书中，就试图准确地定义两者之间的差别：“投资操作是以深入分析为基础，确保本金的安全，并获得适当的回报；不满足这些要求的操作就是投机。”尽管在随后的38年中，我们一直坚守这一定义，但是值得注意的是，在这一时期使用“投资者”这一术语时，情况发生了重大改变。</p>",
+        "contentType": "definition",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": true,
+          "reason": "定义分散在历史语境和反例中；对照结构能显化分析基础、本金安全和适当回报三项边界。",
+          "componentType": "comparison",
+          "componentData": {
+            "title": "投资与投机的判断边界",
+            "sourceBlockIds": [
+              "chapter-01-block-002",
+              "chapter-01-block-003",
+              "chapter-01-block-004",
+              "chapter-01-block-005",
+              "chapter-01-block-006",
+              "chapter-01-block-007",
+              "chapter-01-block-008",
+              "chapter-01-block-009"
+            ],
+            "items": [
+              {
+                "label": "分析基础",
+                "investment": "以深入分析为基础",
+                "speculation": "不满足深入分析要求",
+                "blockIds": [
+                  "chapter-01-block-003"
+                ]
+              },
+              {
+                "label": "本金安全",
+                "investment": "要求确保本金安全",
+                "speculation": "风险可能超出承受范围",
+                "blockIds": [
+                  "chapter-01-block-003",
+                  "chapter-01-block-009"
+                ]
+              },
+              {
+                "label": "回报预期",
+                "investment": "获得适当回报",
+                "speculation": "可能依赖价格变化与高盈利机会",
+                "blockIds": [
+                  "chapter-01-block-003",
+                  "chapter-01-block-009"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-01-block-004",
+        "order": 4,
+        "text": "在1929～1932年的市场大崩溃之后，所有的普通股都被看成是投机性的。（一位知名的权威人士直言不讳地宣称，只有购买债券才能称之为投资。）因此，那时我们不得不为自己的定义进行辩护，因为人们认为，我们的投资定义过于宽泛。",
+        "sourceHtml": "<p>在1929～1932年的市场大崩溃之后，所有的普通股都被看成是投机性的。（一位知名的权威人士直言不讳地宣称，只有购买债券才能称之为投资。）因此，那时我们不得不为自己的定义进行辩护，因为人们认为，我们的投资定义过于宽泛。</p>",
+        "contentType": "example",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-005",
+        "order": 5,
+        "text": "现在，我们却不得不做相反的事情。我们必须告诫读者不要受流行语的影响，把股票市场上的每一个人都视为“投资者”。在本书的上一版，我们曾引用过一家著名财经报刊在1962年6月一篇头条文章中的标题：",
+        "sourceHtml": "<p>现在，我们却不得不做相反的事情。我们必须告诫读者不要受流行语的影响，把股票市场上的每一个人都视为“投资者”。在本书的上一版，我们曾引用过一家著名财经报刊在1962年6月一篇头条文章中的标题：</p>",
+        "contentType": "misconception",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-006",
+        "order": 6,
+        "text": "小投资者看空后市，他们正在进行小额股票的卖空交易1970年10月，该报刊发表了一篇关于“鲁莽投资者”的编辑部评论文章，这次他们是竞相抢购股票。",
+        "sourceHtml": "<p>小投资者看空后市，他们正在进行小额股票的卖空交易1970年10月，该报刊发表了一篇关于“鲁莽投资者”的编辑部评论文章，这次他们是竞相抢购股票。</p>",
+        "contentType": "example",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-007",
+        "order": 7,
+        "text": "以上引文很好地说明了投资与投机这组术语多年来在使用中的混乱情形。看看我们在前文给出的投资定义，再将其与某些缺乏经验的公众投资者卖空股票的行为对比一下，这些人甚至会卖出自己并不拥有的股票，而大多在心里认为可以在低得多的价位上再将其买回来。（应当指出的是，就在1962年的那篇文章发表之时，市场已经经历了一次大跌，正在酝酿一次更大幅度的上升，在此时做空，可以说是最坏的时机。）从更广的意义上讲，刊物中后来使用的“鲁莽投资者”这一术语，可以看成是一个可笑的矛盾，有些类似于“挥金如土的守财奴”，只要这种语言误用不是恶意中伤。",
+        "sourceHtml": "<p>以上引文很好地说明了投资与投机这组术语多年来在使用中的混乱情形。看看我们在前文给出的投资定义，再将其与某些缺乏经验的公众投资者卖空股票的行为对比一下，这些人甚至会卖出自己并不拥有的股票，而大多在心里认为可以在低得多的价位上再将其买回来。（应当指出的是，就在1962年的那篇文章发表之时，市场已经经历了一次大跌，正在酝酿一次更大幅度的上升，在此时做空，可以说是最坏的时机。）从更广的意义上讲，刊物中后来使用的“鲁莽投资者”这一术语，可以看成是一个可笑的矛盾，有些类似于“挥金如土的守财奴”，只要这种语言误用不是恶意中伤。</p>",
+        "contentType": "argument",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-008",
+        "order": 8,
+        "text": "该报刊之所以会在这样的场合使用“投资者”一词，是因为在华尔街，所有的证券交易者均被简单地冠以这一称呼，而无论他们买的是何种证券，出于何种目的，以何种价格，也不论他们是在做现金交易，还是在做保证金交易。与此相对照，在1948年时，公众对普通股的态度则与此大相径庭。当时，有90%以上被访者不赞成购买普通股。大约一半人给出的理由是，买股票“像赌博一样，不安全”；也有一半左右的人的理由是，“对此不熟悉”。具有讽刺意味（但并不令人意外）的是，就在公众普遍认为所有的股票投资均具有高度投机性和巨大风险之时，股票价格其实相当有吸引力，而且，很快就会出现有史以来的最大涨幅。相反，当按过去的经历来看，股票价格已被推升到危险的高度时，买进股票反而被称为投资，所有购入股票的大众反而被称之为“投资者”了。",
+        "sourceHtml": "<p>该报刊之所以会在这样的场合使用“投资者”一词，是因为在华尔街，所有的证券交易者均被简单地冠以这一称呼，而无论他们买的是何种证券，出于何种目的，以何种价格，也不论他们是在做现金交易，还是在做保证金交易。与此相对照，在1948年时，公众对普通股的态度则与此大相径庭。当时，有90%以上被访者不赞成购买普通股。大约一半人给出的理由是，买股票“像赌博一样，不安全”；也有一半左右的人的理由是，“对此不熟悉”。具有讽刺意味（但并不令人意外）的是，就在公众普遍认为所有的股票投资均具有高度投机性和巨大风险之时，股票价格其实相当有吸引力，而且，很快就会出现有史以来的最大涨幅。相反，当按过去的经历来看，股票价格已被推升到危险的高度时，买进股票反而被称为投资，所有购入股票的大众反而被称之为“投资者”了。</p>",
+        "contentType": "comparison",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-009",
+        "order": 9,
+        "text": "区分普通股买卖中的投资与投机总是具有重要意义的。因此，这种区别的消失会引起人们的担心。我们经常指出，整个华尔街系统应当不断重申这一区别，并在与公众的交往中对此反复加以强调。否则，人们早晚会把惨重的投机损失归咎于股票买卖，那些承担此种损失的人，未曾得到过适当的警示。另外，具有讽刺意味的是，许多证券公司最近的窘境，似乎正是由于它们再次把一些投机性很强的股票纳入到自己的资本金之中。我们相信，本书的读者将对普通股买卖所隐含的风险获得相当清晰的了解，这种风险与股票的高盈利机会是密不可分的，因此，在投资核算中必须同时考虑这两个方面。",
+        "sourceHtml": "<p>区分普通股买卖中的投资与投机总是具有重要意义的。因此，这种区别的消失会引起人们的担心。我们经常指出，整个华尔街系统应当不断重申这一区别，并在与公众的交往中对此反复加以强调。否则，人们早晚会把惨重的投机损失归咎于股票买卖，那些承担此种损失的人，未曾得到过适当的警示。另外，具有讽刺意味的是，许多证券公司最近的窘境，似乎正是由于它们再次把一些投机性很强的股票纳入到自己的资本金之中。我们相信，本书的读者将对普通股买卖所隐含的风险获得相当清晰的了解，这种风险与股票的高盈利机会是密不可分的，因此，在投资核算中必须同时考虑这两个方面。</p>",
+        "contentType": "claim",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-010",
+        "order": 10,
+        "text": "以上论述表明，那种买入一组代表性普通股的纯正投资策略已经不复存在了。这种策略认为，人们总可以在没有令人担心的市场或“报价”风险的情况下购买股票。大多数时期，投资者必须认识到，所持有的普通股经常会包含一些投机成分。自己的任务则是将投机成分控制在较小的范围，并在财务和心理上作好面对短期或长期不利后果的准备。",
+        "sourceHtml": "<p>以上论述表明，那种买入一组代表性普通股的纯正投资策略已经不复存在了。这种策略认为，人们总可以在没有令人担心的市场或“报价”风险的情况下购买股票。大多数时期，投资者必须认识到，所持有的普通股经常会包含一些投机成分。自己的任务则是将投机成分控制在较小的范围，并在财务和心理上作好面对短期或长期不利后果的准备。</p>",
+        "contentType": "claim",
+        "knowledgePointId": "kp-speculation-discipline",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-011",
+        "order": 11,
+        "text": "就股票投机本身而言，需要补充两段话——股票投机有别于包含在大部分代表性普通股中的投机成分。直接的投机并不违法，也与道德无关，而且（对大多数人而言）也不会充实你的腰包。此外，某些投机是必然的和不可避免的，因为就大多数普通股而言，其赚钱和亏损的机会同在，所以必须有人去承担这些风险。就像投资一样，投机也可以是明智的。但在很多时候，投机并非明智之举，尤其是在下列情况下：(1)自以为在投资，实则投机；(2)在缺乏足够的知识和技能的情况下，把投机当成一种严肃的事情，而不是当成一种消遣；(3)投机投入的资金过多，超出了自己承担亏损的能力。",
+        "sourceHtml": "<p>就股票投机本身而言，需要补充两段话——股票投机有别于包含在大部分代表性普通股中的投机成分。直接的投机并不违法，也与道德无关，而且（对大多数人而言）也不会充实你的腰包。此外，某些投机是必然的和不可避免的，因为就大多数普通股而言，其赚钱和亏损的机会同在，所以必须有人去承担这些风险。就像投资一样，投机也可以是明智的。但在很多时候，投机并非明智之举，尤其是在下列情况下：(1)自以为在投资，实则投机；(2)在缺乏足够的知识和技能的情况下，把投机当成一种严肃的事情，而不是当成一种消遣；(3)投机投入的资金过多，超出了自己承担亏损的能力。</p>",
+        "contentType": "method",
+        "knowledgePointId": "kp-speculation-discipline",
+        "assistance": {
+          "needed": true,
+          "reason": "原文明确列出三种不明智投机，并给出账户与资金纪律，适合转为可回忆的检查清单。",
+          "componentType": "checklist",
+          "componentData": {
+            "title": "投机前的纪律检查",
+            "sourceBlockIds": [
+              "chapter-01-block-010",
+              "chapter-01-block-011",
+              "chapter-01-block-012"
+            ],
+            "items": [
+              {
+                "text": "是否把投机误认为投资？",
+                "blockIds": [
+                  "chapter-01-block-011"
+                ]
+              },
+              {
+                "text": "是否缺乏足够知识和技能？",
+                "blockIds": [
+                  "chapter-01-block-011"
+                ]
+              },
+              {
+                "text": "投入是否超过承担亏损的能力？",
+                "blockIds": [
+                  "chapter-01-block-011",
+                  "chapter-01-block-012"
+                ]
+              },
+              {
+                "text": "是否与投资账户分开？",
+                "blockIds": [
+                  "chapter-01-block-012"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-01-block-012",
+        "order": 12,
+        "text": "根据我们较为保守的观点，任何从事保证金交易的非专业人士都应认识到，事实上他是在进行投机，而且其经纪人有义务对此加以提示。任何抢购所谓“热门”股票或有类似行为的人也是在投机，或者说是在赌博。投机总是令人兴奋的，如果你能成为赌场上的赢家，其乐趣尤其妙不可言。如果你想试试运气，不妨拿出一部分资金——越少越好——并为此单开一个账户。千万不要因为市场的上涨或利润的激增而加大对该账户的投入。（此时，应考虑把资金撤出投机账户。）不要把你的投机操作与投资操作放在一个账户中进行，也不能在思想上将二者混为一谈。",
+        "sourceHtml": "<p>根据我们较为保守的观点，任何从事保证金交易的非专业人士都应认识到，事实上他是在进行投机，而且其经纪人有义务对此加以提示。任何抢购所谓“热门”股票或有类似行为的人也是在投机，或者说是在赌博。投机总是令人兴奋的，如果你能成为赌场上的赢家，其乐趣尤其妙不可言。如果你想试试运气，不妨拿出一部分资金——越少越好——并为此单开一个账户。千万不要因为市场的上涨或利润的激增而加大对该账户的投入。（此时，应考虑把资金撤出投机账户。）不要把你的投机操作与投资操作放在一个账户中进行，也不能在思想上将二者混为一谈。</p>",
+        "contentType": "method",
+        "knowledgePointId": "kp-speculation-discipline",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-013",
+        "order": 13,
+        "text": "防御型投资者的预期投资成果我们已经将防御型投资者定义为关心资金安全同时又不想多花时间和精力的人。那么，总体上他们应遵循何种路线，并且在“一般正常条件”下（如果这种条件确实存在的话），可以期望获得什么样的投资成果呢？要回答这一问题，我们首先来看7年前对这一话题的讨论，然后我们将分析影响投资者预期收益率的基本因素在后来发生了哪些重大变化，最后，我们介绍在当今（1972年早期）条件下，投资者应当做些什么并抱有怎样的预期。",
+        "sourceHtml": "<p>防御型投资者的预期投资成果我们已经将防御型投资者定义为关心资金安全同时又不想多花时间和精力的人。那么，总体上他们应遵循何种路线，并且在“一般正常条件”下（如果这种条件确实存在的话），可以期望获得什么样的投资成果呢？要回答这一问题，我们首先来看7年前对这一话题的讨论，然后我们将分析影响投资者预期收益率的基本因素在后来发生了哪些重大变化，最后，我们介绍在当今（1972年早期）条件下，投资者应当做些什么并抱有怎样的预期。</p>",
+        "contentType": "transition",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-014",
+        "order": 14,
+        "text": "16年前的探讨我们曾建议投资者将其资金分配于高等级债券和蓝筹股上；其中，债券所占的比例不低于25%，且不高过75%，而股票的比例则与之相适应。最简单的选择则是，两者各占一半，并根据市场情况的变化进行小幅（比如5%左右）调整。另一种策略是，当“感觉市场已处于危险的高位时”，将股票持有比例减少到25%；并在他“感到股价的下跌已使其吸引力与日俱增时”，将持股量提升到最大限度，即75%的比例。",
+        "sourceHtml": "<p>16年前的探讨我们曾建议投资者将其资金分配于高等级债券和蓝筹股上；其中，债券所占的比例不低于25%，且不高过75%，而股票的比例则与之相适应。最简单的选择则是，两者各占一半，并根据市场情况的变化进行小幅（比如5%左右）调整。另一种策略是，当“感觉市场已处于危险的高位时”，将股票持有比例减少到25%；并在他“感到股价的下跌已使其吸引力与日俱增时”，将持股量提升到最大限度，即75%的比例。</p>",
+        "contentType": "method",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-015",
+        "order": 15,
+        "text": "1965年，投资者可以从高等级应税债券中获得4.5%的收益率，或从免税债券中获得3.25%的收益率。当时（道琼斯指数892点），主要蓝筹股的股息率大约只有3.2%。这一事实以及其他一些情况，要求我们保持谨慎。我们的意思是，在“正常的市场水平”，投资者应从其购入的股票获得3.5%～4.5%的股息；另外，还应该稳步获得代表性股票内在价值（在“正常市场价格”下）的等额增加，从而使股息和价值增值合起来达到每年大约7.5%。债券和股票的对半分配，将获得大约6%的税前收益。此外，我们认为股票部分的收益，可以在很大程度上弥补大幅通货膨胀所造成的购买力损失。",
+        "sourceHtml": "<p>1965年，投资者可以从高等级应税债券中获得4.5%的收益率，或从免税债券中获得3.25%的收益率。当时（道琼斯指数892点），主要蓝筹股的股息率大约只有3.2%。这一事实以及其他一些情况，要求我们保持谨慎。我们的意思是，在“正常的市场水平”，投资者应从其购入的股票获得3.5%～4.5%的股息；另外，还应该稳步获得代表性股票内在价值（在“正常市场价格”下）的等额增加，从而使股息和价值增值合起来达到每年大约7.5%。债券和股票的对半分配，将获得大约6%的税前收益。此外，我们认为股票部分的收益，可以在很大程度上弥补大幅通货膨胀所造成的购买力损失。</p>",
+        "contentType": "data",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-016",
+        "order": 16,
+        "text": "应该指出，上述计算得出的预期收益率，要远远低于1949～1964年这一时期股票市场的实际上升幅度所带来的回报。那一时期上市股份的整体收益率要大大高于10%，而且人们普遍认为，股市未来的收益率也应当达到与此类似的水平。但是，很少有人愿意认真地设想这样的可能性：既然过去多年的上涨幅度已相当可观，这意味着股价“现在已经太高了”，因此，“1949年以来的优异回报，意味着未来的收益不会太好，而是很差。”21964年以后的实际情况1964年以后的一个重大变化是，最高等级债券的利率达到了创纪录的水平，尽管其价格在1970年之后有大幅度回升。优质的公司债券收益率目前可达7.5%，甚至更高，而1964年时仅为4.5%。与此同时，在1969～1970年的市场下跌期间，道琼斯股票的股息收益率也有相当大的提升，但在本书写作之时（道琼斯指数为900点），其股息收益率还不到3.5%，而1964年年底的股息收益率为3.2%。现行利率的变化，使中期（比如20年期）债券市场价格的最大下跌幅度接近于38%。",
+        "sourceHtml": "<p>应该指出，上述计算得出的预期收益率，要远远低于1949～1964年这一时期股票市场的实际上升幅度所带来的回报。那一时期上市股份的整体收益率要大大高于10%，而且人们普遍认为，股市未来的收益率也应当达到与此类似的水平。但是，很少有人愿意认真地设想这样的可能性：既然过去多年的上涨幅度已相当可观，这意味着股价“现在已经太高了”，因此，“1949年以来的优异回报，意味着未来的收益不会太好，而是很差。”21964年以后的实际情况1964年以后的一个重大变化是，最高等级债券的利率达到了创纪录的水平，尽管其价格在1970年之后有大幅度回升。优质的公司债券收益率目前可达7.5%，甚至更高，而1964年时仅为4.5%。与此同时，在1969～1970年的市场下跌期间，道琼斯股票的股息收益率也有相当大的提升，但在本书写作之时（道琼斯指数为900点），其股息收益率还不到3.5%，而1964年年底的股息收益率为3.2%。现行利率的变化，使中期（比如20年期）债券市场价格的最大下跌幅度接近于38%。</p>",
+        "contentType": "argument",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-017",
+        "order": 17,
+        "text": "这些变化有些令人困惑的地方。1964年，我们曾经详尽地讨论过，股票价格过高最终会导致价格大幅下跌的可能性，但是却没有特别关注，高等级债券的价格也可能出现同样的情况。（据我们所知，其他人也没有注意到这一点。）我们确实曾警告过（参见本书第4章），“随着利率的变动，长期债券的价格会有相当大的波动。”鉴于此后发生的情况，我们认为，这一警告及其相关的例证是不够充分的。其原因在于，如果投资者在1964年年底道琼斯指数收于874点时拥有一定数量的成分股，那么他在1971年年底仍会获得少量的利润。即使在1970年的最低点位（631点），其亏损也会小于优质长期债券带来的损失。另一方面，如果其债券投资全部为美国储蓄债券、短期公司证券或储蓄账户，其本金的市场价值在这一时期就不会有任何损失，并且会获得比投资优质股票更高的收益。因此，结果证明，从投资角度来看，如果在1964年持有“现金等价物”，就会比投资股票获得更好的回报，尽管从理论上讲，在通货膨胀时代持有股票比现金更有利。优质长期债券本金价值的下跌是货币市场的变化所致，这是一个相当深奥的问题，与个人投资者的投资策略没有太大的关系。",
+        "sourceHtml": "<p>这些变化有些令人困惑的地方。1964年，我们曾经详尽地讨论过，股票价格过高最终会导致价格大幅下跌的可能性，但是却没有特别关注，高等级债券的价格也可能出现同样的情况。（据我们所知，其他人也没有注意到这一点。）我们确实曾警告过（参见本书第4章），“随着利率的变动，长期债券的价格会有相当大的波动。”鉴于此后发生的情况，我们认为，这一警告及其相关的例证是不够充分的。其原因在于，如果投资者在1964年年底道琼斯指数收于874点时拥有一定数量的成分股，那么他在1971年年底仍会获得少量的利润。即使在1970年的最低点位（631点），其亏损也会小于优质长期债券带来的损失。另一方面，如果其债券投资全部为美国储蓄债券、短期公司证券或储蓄账户，其本金的市场价值在这一时期就不会有任何损失，并且会获得比投资优质股票更高的收益。因此，结果证明，从投资角度来看，如果在1964年持有“现金等价物”，就会比投资股票获得更好的回报，尽管从理论上讲，在通货膨胀时代持有股票比现金更有利。优质长期债券本金价值的下跌是货币市场的变化所致，这是一个相当深奥的问题，与个人投资者的投资策略没有太大的关系。</p>",
+        "contentType": "argument",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-018",
+        "order": 18,
+        "text": "这只不过是过去的经验带给我们的无数例证之一，它再次证明，未来的证券价格是根本无法预测的。债券的波动幅度几乎总会大大低于股票，而且一般说来，投资者购买任何期限的优质债券，都不用担心其市场价值的变化。但这一规则也有例外，而1964年以后的这段时间，恰恰属于此种例外。在以后的章节，我们将对债券价格的变动进行更多的讨论。",
+        "sourceHtml": "<p>这只不过是过去的经验带给我们的无数例证之一，它再次证明，未来的证券价格是根本无法预测的。债券的波动幅度几乎总会大大低于股票，而且一般说来，投资者购买任何期限的优质债券，都不用担心其市场价值的变化。但这一规则也有例外，而1964年以后的这段时间，恰恰属于此种例外。在以后的章节，我们将对债券价格的变动进行更多的讨论。</p>",
+        "contentType": "claim",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-019",
+        "order": 19,
+        "text": "31971年年底和1972年年初的预期和投资策略在临近1971年年底时，优质中期公司债券的税前收益率可达8%，优质的州或市政证券的税后收益则可达5.7%。至于较短期的债券，如美国政府发行的5年期债券，其收益率为6%。在后一种情况下，债券购买者用不着担心债券市场价值缩水的问题，因为他总是可以确定，在相对较短的债券持有期间到期时，其投资（连同6%的利息）会得到全额偿还。与此同时，1971年道琼斯指数重返900点时，其成分股的股息率仅为3.5%。",
+        "sourceHtml": "<p>31971年年底和1972年年初的预期和投资策略在临近1971年年底时，优质中期公司债券的税前收益率可达8%，优质的州或市政证券的税后收益则可达5.7%。至于较短期的债券，如美国政府发行的5年期债券，其收益率为6%。在后一种情况下，债券购买者用不着担心债券市场价值缩水的问题，因为他总是可以确定，在相对较短的债券持有期间到期时，其投资（连同6%的利息）会得到全额偿还。与此同时，1971年道琼斯指数重返900点时，其成分股的股息率仅为3.5%。</p>",
+        "contentType": "data",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-020",
+        "order": 20,
+        "text": "像过去一样，现在让我们假定，我们需要做出的最基本的投资决策，仍然是如何在高等级债券（或其他所谓的“现金等价物”）和道琼斯成分股之类的蓝筹股之间分配资金。在目前的情况下，如果我们既没有强有力的理由预计股市会在未来一段时间出现大幅上涨，同时也无法预测它会出现大幅下跌，那么，投资者应采取何种策略呢？首先我们要指出，如果不会出现重大的负面影响，防御型投资者可以期望获得3.5%的股息收入，外加平均4%的股票增值收益。",
+        "sourceHtml": "<p>像过去一样，现在让我们假定，我们需要做出的最基本的投资决策，仍然是如何在高等级债券（或其他所谓的“现金等价物”）和道琼斯成分股之类的蓝筹股之间分配资金。在目前的情况下，如果我们既没有强有力的理由预计股市会在未来一段时间出现大幅上涨，同时也无法预测它会出现大幅下跌，那么，投资者应采取何种策略呢？首先我们要指出，如果不会出现重大的负面影响，防御型投资者可以期望获得3.5%的股息收入，外加平均4%的股票增值收益。</p>",
+        "contentType": "method",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-021",
+        "order": 21,
+        "text": "这种增值主要来自于各上市公司未分配利润的再投资，我们将在以后解释这一点。这样，投资者股票的税前收益率大约为7.5%，略低于高等级债券的收益。按税后收益计算，其股票收益率为5.3%，与优质免税中期债券的收益相同。",
+        "sourceHtml": "<p>这种增值主要来自于各上市公司未分配利润的再投资，我们将在以后解释这一点。这样，投资者股票的税前收益率大约为7.5%，略低于高等级债券的收益。按税后收益计算，其股票收益率为5.3%，与优质免税中期债券的收益相同。</p>",
+        "contentType": "data",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-022",
+        "order": 22,
+        "text": "与债券相比，股票预期收益率远逊色于我们在1964年所作的分析。（这是自从1964年来债券利息的升幅远高于股息的增长这一基本事实的必然推论。）我们也不能忽略以下事实，即优质债券的利息和本金偿付的可靠性，要远高于股息和股价增值。因此，我们不得不得出以下结论：现在（1971年即将结束之时），投资债券显然要比投资股票更为有利可图。如果我们可以确定此结论的正确性，我们将劝告防御型投资者将全部资金投入债券，而不要购买任何股票，直至债券利息与股息的关系发生有利于股票的转变。",
+        "sourceHtml": "<p>与债券相比，股票预期收益率远逊色于我们在1964年所作的分析。（这是自从1964年来债券利息的升幅远高于股息的增长这一基本事实的必然推论。）我们也不能忽略以下事实，即优质债券的利息和本金偿付的可靠性，要远高于股息和股价增值。因此，我们不得不得出以下结论：现在（1971年即将结束之时），投资债券显然要比投资股票更为有利可图。如果我们可以确定此结论的正确性，我们将劝告防御型投资者将全部资金投入债券，而不要购买任何股票，直至债券利息与股息的关系发生有利于股票的转变。</p>",
+        "contentType": "comparison",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": true,
+          "reason": "债券与股票的收益、可靠性及不确定因素跨多个数据段落，纵向比较能减少来回查找。",
+          "componentType": "comparison",
+          "componentData": {
+            "title": "防御型投资者：债券与股票",
+            "sourceBlockIds": [
+              "chapter-01-block-013",
+              "chapter-01-block-014",
+              "chapter-01-block-015",
+              "chapter-01-block-016",
+              "chapter-01-block-017",
+              "chapter-01-block-018",
+              "chapter-01-block-019",
+              "chapter-01-block-020",
+              "chapter-01-block-021",
+              "chapter-01-block-022",
+              "chapter-01-block-023",
+              "chapter-01-block-024"
+            ],
+            "items": [
+              {
+                "label": "历史配置",
+                "bonds": "25%～75%",
+                "stocks": "与债券比例相适应",
+                "blockIds": [
+                  "chapter-01-block-014"
+                ]
+              },
+              {
+                "label": "1971年前后收益",
+                "bonds": "优质中期公司债券约8%",
+                "stocks": "股息与增值合计约7.5%",
+                "blockIds": [
+                  "chapter-01-block-019",
+                  "chapter-01-block-021"
+                ]
+              },
+              {
+                "label": "可靠性",
+                "bonds": "利息和本金偿付更可靠",
+                "stocks": "仍受利润、估值和投机浪潮影响",
+                "blockIds": [
+                  "chapter-01-block-022",
+                  "chapter-01-block-024"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "chapter-01-block-023",
+        "order": 23,
+        "text": "但是，我们显然不能就此认定，今后债券的表现肯定会好于股票。",
+        "sourceHtml": "<p>但是，我们显然不能就此认定，今后债券的表现肯定会好于股票。</p>",
+        "contentType": "claim",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      },
+      {
+        "id": "chapter-01-block-024",
+        "order": 24,
+        "text": "读者马上会想到，通货膨胀将是一个重要的不利因素。在下一章，我们将根据美国20世纪通货膨胀的经验，说明在目前的利差条件下，该因素并不支持偏向于股票的选择。但通货膨胀加速的可能性总是存在的，尽管我们认为它还比较遥远，它将使股票资产比固定利率的债券更具吸引力。此外，还有另一种可能性（对此，我们同样认为出现的几率不高），即美国企业的利润大增，同时不会出现通货膨胀，从而使未来几年内，普通股的价值大幅增长。最后，我们可能会目睹另一种更常见的情况，即在没有内在价值支持的条件下，股票市场出现巨大的投机浪潮。以上任何一种情况的出现，以及其他我们可能想到的原因，都可能导致投资者后悔把100%的资金投入债券，尽管其当前的利率较股票更具吸引力。",
+        "sourceHtml": "<p>读者马上会想到，通货膨胀将是一个重要的不利因素。在下一章，我们将根据美国20世纪通货膨胀的经验，说明在目前的利差条件下，该因素并不支持偏向于股票的选择。但通货膨胀加速的可能性总是存在的，尽管我们认为它还比较遥远，它将使股票资产比固定利率的债券更具吸引力。此外，还有另一种可能性（对此，我们同样认为出现的几率不高），即美国企业的利润大增，同时不会出现通货膨胀，从而使未来几年内，普通股的价值大幅增长。最后，我们可能会目睹另一种更常见的情况，即在没有内在价值支持的条件下，股票市场出现巨大的投机浪潮。以上任何一种情况的出现，以及其他我们可能想到的原因，都可能导致投资者后悔把100%的资金投入债券，尽管其当前的利率较股票更具吸引力。</p>",
+        "contentType": "causality",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "assistance": {
+          "needed": false,
+          "reason": "该段由所属知识点的单一主要组件覆盖，正文保持连续阅读。",
+          "componentType": "none",
+          "componentData": null
+        }
+      }
+    ],
+    "knowledgePoints": [
+      {
+        "id": "kp-investment-vs-speculation",
+        "title": "投资与投机的定义边界",
+        "summary": "投资必须同时满足深入分析、本金安全和适当回报；市场称呼或结果不能替代这一判断。",
+        "blockIds": [
+          "chapter-01-block-002",
+          "chapter-01-block-003",
+          "chapter-01-block-004",
+          "chapter-01-block-005",
+          "chapter-01-block-006",
+          "chapter-01-block-007",
+          "chapter-01-block-008",
+          "chapter-01-block-009"
+        ],
+        "primaryComponent": "comparison",
+        "requiredDimensions": [
+          {
+            "id": "definition",
+            "label": "投资定义",
+            "description": "说明投资以深入分析、本金安全和适当回报为必要条件。",
+            "blockIds": [
+              "chapter-01-block-003"
+            ],
+            "signals": [
+              [
+                "深入分析",
+                "分析"
+              ],
+              [
+                "本金安全",
+                "安全"
+              ],
+              [
+                "适当回报",
+                "回报"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "terminology",
+            "label": "术语边界",
+            "description": "说明交易者身份或盈利结果不能自动把行为变成投资。",
+            "blockIds": [
+              "chapter-01-block-005",
+              "chapter-01-block-006",
+              "chapter-01-block-007",
+              "chapter-01-block-008",
+              "chapter-01-block-009"
+            ],
+            "signals": [
+              [
+                "称呼",
+                "投资者",
+                "交易者"
+              ],
+              [
+                "目的",
+                "价格",
+                "保证金"
+              ],
+              [
+                "结果",
+                "盈利",
+                "风险"
+              ]
+            ],
+            "minimumSignals": 2
+          }
+        ]
+      },
+      {
+        "id": "kp-speculation-discipline",
+        "title": "投机的风险与纪律",
+        "summary": "投机并非天然违法，但必须被识别、限制资金并与投资操作分开。",
+        "blockIds": [
+          "chapter-01-block-010",
+          "chapter-01-block-011",
+          "chapter-01-block-012"
+        ],
+        "primaryComponent": "checklist",
+        "requiredDimensions": [
+          {
+            "id": "speculation-risk",
+            "label": "投机风险",
+            "description": "识别不明智投机的三种情形与资金承受边界。",
+            "blockIds": [
+              "chapter-01-block-010",
+              "chapter-01-block-011",
+              "chapter-01-block-012"
+            ],
+            "signals": [
+              [
+                "误以为投资",
+                "实则投机"
+              ],
+              [
+                "知识",
+                "技能"
+              ],
+              [
+                "亏损能力",
+                "资金过多",
+                "少量资金"
+              ],
+              [
+                "分开账户",
+                "单开账户"
+              ]
+            ],
+            "minimumSignals": 2
+          }
+        ]
+      },
+      {
+        "id": "kp-defensive-expected-return",
+        "title": "防御型投资者的预期收益",
+        "summary": "配置决策要比较债券与股票的收益和可靠性，同时承认通胀、利润与市场投机带来的不确定性。",
+        "blockIds": [
+          "chapter-01-block-013",
+          "chapter-01-block-014",
+          "chapter-01-block-015",
+          "chapter-01-block-016",
+          "chapter-01-block-017",
+          "chapter-01-block-018",
+          "chapter-01-block-019",
+          "chapter-01-block-020",
+          "chapter-01-block-021",
+          "chapter-01-block-022",
+          "chapter-01-block-023",
+          "chapter-01-block-024"
+        ],
+        "primaryComponent": "comparison",
+        "requiredDimensions": [
+          {
+            "id": "allocation",
+            "label": "资产配置",
+            "description": "解释防御型投资者在债券和股票之间配置的原则。",
+            "blockIds": [
+              "chapter-01-block-013",
+              "chapter-01-block-014"
+            ],
+            "signals": [
+              [
+                "债券",
+                "高等级债券"
+              ],
+              [
+                "股票",
+                "蓝筹股"
+              ],
+              [
+                "25%",
+                "75%",
+                "一半"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "expected-return",
+            "label": "预期收益",
+            "description": "比较债券与股票预期收益及其可靠性，保留不确定性。",
+            "blockIds": [
+              "chapter-01-block-015",
+              "chapter-01-block-016",
+              "chapter-01-block-017",
+              "chapter-01-block-018",
+              "chapter-01-block-019",
+              "chapter-01-block-020",
+              "chapter-01-block-021",
+              "chapter-01-block-022",
+              "chapter-01-block-023",
+              "chapter-01-block-024"
+            ],
+            "signals": [
+              [
+                "收益率",
+                "股息",
+                "利息"
+              ],
+              [
+                "可靠性",
+                "本金偿付"
+              ],
+              [
+                "通货膨胀",
+                "企业利润",
+                "投机浪潮"
+              ],
+              [
+                "不能确定",
+                "无法预测"
+              ]
+            ],
+            "minimumSignals": 3
+          }
+        ]
+      }
+    ],
+    "recallQuestions": [
+      {
+        "id": "recall-kp-1",
+        "knowledgePointId": "kp-investment-vs-speculation",
+        "question": "一项操作要满足哪些条件才属于投资？为什么盈利结果本身不够？",
+        "blockIds": [
+          "chapter-01-block-002",
+          "chapter-01-block-003",
+          "chapter-01-block-004",
+          "chapter-01-block-005",
+          "chapter-01-block-006",
+          "chapter-01-block-007",
+          "chapter-01-block-008",
+          "chapter-01-block-009"
+        ],
+        "requiredDimensionIds": [
+          "definition",
+          "terminology"
+        ]
+      },
+      {
+        "id": "recall-kp-2",
+        "knowledgePointId": "kp-speculation-discipline",
+        "question": "怎样判断投机已经超出明智和可承受的范围？",
+        "blockIds": [
+          "chapter-01-block-010",
+          "chapter-01-block-011",
+          "chapter-01-block-012"
+        ],
+        "requiredDimensionIds": [
+          "speculation-risk"
+        ]
+      },
+      {
+        "id": "recall-kp-3",
+        "knowledgePointId": "kp-defensive-expected-return",
+        "question": "防御型投资者比较债券与股票时，不能只看哪一个数字？还要考虑什么？",
+        "blockIds": [
+          "chapter-01-block-013",
+          "chapter-01-block-014",
+          "chapter-01-block-015",
+          "chapter-01-block-016",
+          "chapter-01-block-017",
+          "chapter-01-block-018",
+          "chapter-01-block-019",
+          "chapter-01-block-020",
+          "chapter-01-block-021",
+          "chapter-01-block-022",
+          "chapter-01-block-023",
+          "chapter-01-block-024"
+        ],
+        "requiredDimensionIds": [
+          "allocation",
+          "expected-return"
+        ]
+      }
+    ],
+    "review": {
+      "closedBookQuestions": [
+        {
+          "id": "recall-kp-1",
+          "knowledgePointId": "kp-investment-vs-speculation",
+          "question": "一项操作要满足哪些条件才属于投资？为什么盈利结果本身不够？",
+          "blockIds": [
+            "chapter-01-block-002",
+            "chapter-01-block-003",
+            "chapter-01-block-004",
+            "chapter-01-block-005",
+            "chapter-01-block-006",
+            "chapter-01-block-007",
+            "chapter-01-block-008",
+            "chapter-01-block-009"
+          ],
+          "requiredDimensionIds": [
+            "definition",
+            "terminology"
+          ]
+        },
+        {
+          "id": "recall-kp-2",
+          "knowledgePointId": "kp-speculation-discipline",
+          "question": "怎样判断投机已经超出明智和可承受的范围？",
+          "blockIds": [
+            "chapter-01-block-010",
+            "chapter-01-block-011",
+            "chapter-01-block-012"
+          ],
+          "requiredDimensionIds": [
+            "speculation-risk"
+          ]
+        },
+        {
+          "id": "recall-kp-3",
+          "knowledgePointId": "kp-defensive-expected-return",
+          "question": "防御型投资者比较债券与股票时，不能只看哪一个数字？还要考虑什么？",
+          "blockIds": [
+            "chapter-01-block-013",
+            "chapter-01-block-014",
+            "chapter-01-block-015",
+            "chapter-01-block-016",
+            "chapter-01-block-017",
+            "chapter-01-block-018",
+            "chapter-01-block-019",
+            "chapter-01-block-020",
+            "chapter-01-block-021",
+            "chapter-01-block-022",
+            "chapter-01-block-023",
+            "chapter-01-block-024"
+          ],
+          "requiredDimensionIds": [
+            "allocation",
+            "expected-return"
+          ]
+        }
+      ],
+      "structureSummary": [
+        {
+          "text": "先用分析、本金安全和适当回报区分投资与投机。",
+          "blockIds": [
+            "chapter-01-block-002",
+            "chapter-01-block-003",
+            "chapter-01-block-004",
+            "chapter-01-block-005",
+            "chapter-01-block-006",
+            "chapter-01-block-007",
+            "chapter-01-block-008",
+            "chapter-01-block-009"
+          ]
+        },
+        {
+          "text": "承认投机成分，但限制资金、能力错配和账户混同。",
+          "blockIds": [
+            "chapter-01-block-010",
+            "chapter-01-block-011",
+            "chapter-01-block-012"
+          ]
+        },
+        {
+          "text": "再根据收益、可靠性和不确定因素安排防御型资产配置。",
+          "blockIds": [
+            "chapter-01-block-013",
+            "chapter-01-block-014",
+            "chapter-01-block-015",
+            "chapter-01-block-016",
+            "chapter-01-block-017",
+            "chapter-01-block-018",
+            "chapter-01-block-019",
+            "chapter-01-block-020",
+            "chapter-01-block-021",
+            "chapter-01-block-022",
+            "chapter-01-block-023",
+            "chapter-01-block-024"
+          ]
+        }
+      ],
+      "transferQuestion": {
+        "question": "一位投资者因热门消息使用保证金买入股票，并认为只要最终盈利就属于投资。请用本章原则判断这项行为，并说明应如何限制风险。",
+        "principles": [
+          {
+            "id": "definition",
+            "label": "投资定义",
+            "description": "说明投资以深入分析、本金安全和适当回报为必要条件。",
+            "blockIds": [
+              "chapter-01-block-003"
+            ],
+            "signals": [
+              [
+                "深入分析",
+                "分析"
+              ],
+              [
+                "本金安全",
+                "安全"
+              ],
+              [
+                "适当回报",
+                "回报"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "terminology",
+            "label": "术语边界",
+            "description": "说明交易者身份或盈利结果不能自动把行为变成投资。",
+            "blockIds": [
+              "chapter-01-block-005",
+              "chapter-01-block-006",
+              "chapter-01-block-007",
+              "chapter-01-block-008",
+              "chapter-01-block-009"
+            ],
+            "signals": [
+              [
+                "称呼",
+                "投资者",
+                "交易者"
+              ],
+              [
+                "目的",
+                "价格",
+                "保证金"
+              ],
+              [
+                "结果",
+                "盈利",
+                "风险"
+              ]
+            ],
+            "minimumSignals": 2
+          },
+          {
+            "id": "speculation-risk",
+            "label": "投机风险",
+            "description": "识别不明智投机的三种情形与资金承受边界。",
+            "blockIds": [
+              "chapter-01-block-010",
+              "chapter-01-block-011",
+              "chapter-01-block-012"
+            ],
+            "signals": [
+              [
+                "误以为投资",
+                "实则投机"
+              ],
+              [
+                "知识",
+                "技能"
+              ],
+              [
+                "亏损能力",
+                "资金过多",
+                "少量资金"
+              ],
+              [
+                "分开账户",
+                "单开账户"
+              ]
+            ],
+            "minimumSignals": 2
+          }
+        ],
+        "blockIds": [
+          "chapter-01-block-002",
+          "chapter-01-block-003",
+          "chapter-01-block-004",
+          "chapter-01-block-005",
+          "chapter-01-block-006",
+          "chapter-01-block-007",
+          "chapter-01-block-008",
+          "chapter-01-block-009",
+          "chapter-01-block-010",
+          "chapter-01-block-011",
+          "chapter-01-block-012"
+        ]
+      }
+    }
+  }
+}

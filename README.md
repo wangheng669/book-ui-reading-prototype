@@ -38,3 +38,5 @@ prototype/      React + Vite 交互原型
 ```
 
 更详细的状态流、数据结构和未实现范围见 [`prototype/README.md`](prototype/README.md)。
+
+内容生产原型见 [`content-pipeline/README.md`](content-pipeline/README.md)：真实单章 HTML → 分阶段规则/Prompt → Schema JSON → 人工审核 → 阅读原型。

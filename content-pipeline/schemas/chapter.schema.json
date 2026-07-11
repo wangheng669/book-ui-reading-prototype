@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/chapter.schema.json",
+  "title": "Book UI Chapter Content",
+  "type": "object",
+  "required": ["chapter"],
+  "properties": {
+    "chapter": { "$ref": "#/$defs/chapter" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "contentType": {
+      "enum": ["preface", "narrative", "transition", "definition", "claim", "comparison", "causality", "argument", "example", "data", "method", "misconception", "summary"]
+    },
+    "componentType": {
+      "enum": ["none", "concept", "comparison", "causal-chain", "argument-map", "example", "data-chart", "checklist", "misconception", "review"]
+    },
+    "assistance": {
+      "type": "object",
+      "required": ["needed", "reason", "componentType", "componentData"],
+      "properties": {
+        "needed": { "type": "boolean" },
+        "reason": { "type": "string", "minLength": 1 },
+        "componentType": { "$ref": "#/$defs/componentType" },
+        "componentData": { "type": ["object", "null"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "needed": { "const": false } }, "required": ["needed"] },
+          "then": { "properties": { "componentType": { "const": "none" }, "componentData": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "needed": { "const": true } }, "required": ["needed"] },
+          "then": { "properties": { "componentType": { "not": { "const": "none" } }, "componentData": { "type": "object" } } }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "block": {
+      "type": "object",
+      "required": ["id", "order", "text", "sourceHtml", "contentType", "knowledgePointId", "assistance"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^chapter-[0-9]{2}-block-[0-9]{3}$" },
+        "order": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "sourceHtml": { "type": "string", "minLength": 1 },
+        "contentType": { "$ref": "#/$defs/contentType" },
+        "knowledgePointId": { "type": ["string", "null"] },
+        "assistance": { "$ref": "#/$defs/assistance" }
+      },
+      "additionalProperties": false
+    },
+    "dimension": {
+      "type": "object",
+      "required": ["id", "label", "description", "blockIds", "signals", "minimumSignals"],
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "description": { "type": "string" },
+        "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "signals": {
+          "type": "array",
+          "items": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+          "minItems": 2
+        },
+        "minimumSignals": { "type": "integer", "minimum": 2 }
+      },
+      "additionalProperties": false
+    },
+    "knowledgePoint": {
+      "type": "object",
+      "required": ["id", "title", "summary", "blockIds", "primaryComponent", "requiredDimensions"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "primaryComponent": { "$ref": "#/$defs/componentType" },
+        "requiredDimensions": { "type": "array", "items": { "$ref": "#/$defs/dimension" }, "minItems": 1 }
+      },
+      "additionalProperties": false
+    },
+    "recallQuestion": {
+      "type": "object",
+      "required": ["id", "knowledgePointId", "question", "blockIds", "requiredDimensionIds"],
+      "properties": {
+        "id": { "type": "string" },
+        "knowledgePointId": { "type": "string" },
+        "question": { "type": "string" },
+        "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "requiredDimensionIds": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": ["closedBookQuestions", "structureSummary", "transferQuestion"],
+      "properties": {
+        "closedBookQuestions": { "type": "array", "items": { "$ref": "#/$defs/recallQuestion" }, "minItems": 2, "maxItems": 3 },
+        "structureSummary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "blockIds"],
+            "properties": { "text": { "type": "string" }, "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 } },
+            "additionalProperties": false
+          }
+        },
+        "transferQuestion": {
+          "type": "object",
+          "required": ["question", "principles", "blockIds"],
+          "properties": {
+            "question": { "type": "string" },
+            "principles": { "type": "array", "items": { "$ref": "#/$defs/dimension" }, "minItems": 2 },
+            "blockIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "chapter": {
+      "type": "object",
+      "required": ["id", "title", "intro", "blocks", "knowledgePoints", "recallQuestions", "review"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "intro": { "type": "string" },
+        "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" }, "minItems": 1 },
+        "knowledgePoints": { "type": "array", "items": { "$ref": "#/$defs/knowledgePoint" }, "minItems": 1 },
+        "recallQuestions": { "type": "array", "items": { "$ref": "#/$defs/recallQuestion" } },
+        "review": { "$ref": "#/$defs/review" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

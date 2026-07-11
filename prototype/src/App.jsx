@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { chapter, knowledgeDimensions, reviewQuestions, transferPrinciples, transferQuestion } from "./content.js";
+import { chapter, knowledgeDimensions, reviewQuestions, reviewStructureSummary, sourceMode, transferPrinciples, transferQuestion } from "./contentSource.js";
 
 const initialProgress = Object.fromEntries(chapter.knowledgePoints.map((p) => [p.id, {
   exposure: false,
@@ -11,7 +11,7 @@ const initialProgress = Object.fromEntries(chapter.knowledgePoints.map((p) => [p
 
 function evaluate(text, anchors) {
   const source = text.trim();
-  return anchors.map((item) => ({ ...item, covered: item.keywords.some((word) => source.includes(word)) }));
+  return anchors.map((item) => item.signals ? ({ ...item, ...evaluateSignals(source, item) }) : ({ ...item, covered: item.keywords.some((word) => source.includes(word)) }));
 }
 
 function evaluateSignals(text, item) {
@@ -43,18 +43,18 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
       ) : (
         <div className="aid-panel">
           <div className="aid-heading">
-            <div><small>当前知识点</small><h3>{point.title}</h3></div>
+            <div><small>当前知识点</small><h3>{point.aidTitle || point.title}</h3></div>
             <button className="text-button" onClick={onClose}>收起</button>
           </div>
           <div className="vertical-compare">
-            {point.anchors.map((item) => (
+            {(point.aidItems || point.anchors).map((item) => (
               <section key={item.id} className="compare-item">
-                <button className="anchor-button" onClick={() => onAnchor(point.id, item.id)}>原文 {item.id}</button>
+                <button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId || item.id)}>原文 {item.id}</button>
                 <h4>{item.label}</h4>
-                {item.investment ? (
+                {(item.left || item.investment) ? (
                   <div className="compare-pair">
-                    <div><small>投资</small><p>{item.investment}</p></div>
-                    <div><small>投机</small><p>{item.speculation}</p></div>
+                    <div><small>{point.comparisonLabels?.[0] || "投资"}</small><p>{item.left || item.investment}</p></div>
+                    <div><small>{point.comparisonLabels?.[1] || "投机"}</small><p>{item.right || item.speculation}</p></div>
                   </div>
                 ) : <p className="detail-copy">{item.detail}</p>}
               </section>
@@ -69,11 +69,12 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
 function Recall({ point, onResult, onAnchor }) {
   const [mode, setMode] = useState("prompt");
   const [answer, setAnswer] = useState("");
-  const result = useMemo(() => evaluate(answer, point.anchors), [answer, point.anchors]);
+  const dimensions = point.recallDimensions || point.anchors;
+  const result = useMemo(() => evaluate(answer, dimensions), [answer, dimensions]);
   const submit = () => {
     if (!answer.trim()) return;
     setMode("feedback");
-    onResult(result.filter((r) => r.covered).length >= 2);
+    onResult(result.length > 0 && result.every((item) => item.covered));
   };
   return (
     <section className="recall" aria-label={`${point.title}主动回忆`}>
@@ -82,7 +83,7 @@ function Recall({ point, onResult, onAnchor }) {
       {mode === "prompt" && <div className="recall-actions"><button className="primary-link" onClick={() => setMode("answer")}>用自己的话回答</button><button className="text-button" onClick={() => setMode("later")}>稍后再说</button></div>}
       {mode === "later" && <p className="muted">已略过。你可以继续阅读，章节末仍可复盘。</p>}
       {mode === "answer" && <div className="answer-area"><textarea autoFocus value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="不必使用书中的原句……" /><div><button className="solid-button" onClick={submit}>提交回答</button><button className="text-button" onClick={() => setMode("prompt")}>取消</button></div></div>}
-      {mode === "feedback" && <div className="feedback"><p>与你刚读过的内容相比：</p>{result.map((item) => <div className="feedback-row" key={item.id}><span className="feedback-state">{item.covered ? "已提及" : "可补充"}</span><strong>{item.label}</strong><button className="anchor-button" onClick={() => onAnchor(point.id, item.id)}>原文 {item.id}</button></div>)}<details><summary>主动展开原文完整对照</summary><div className="source-compare">{result.map((item) => <p key={item.id}><b>{item.label}：</b>{item.investment ? `${item.investment}；${item.speculation}` : item.detail}</p>)}</div></details></div>}
+      {mode === "feedback" && <div className="feedback"><p>与你刚读过的内容相比：</p>{result.map((item) => <div className="feedback-row" key={item.id}><span className="feedback-state">{item.covered ? "已提及" : "可补充"}</span><strong>{item.label}</strong><button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId || item.id)}>原文 {item.id}</button></div>)}<details><summary>主动展开原文完整对照</summary><div className="source-compare">{result.map((item) => <p key={item.id}><b>{item.label}：</b>{item.detail || (item.investment ? `${item.investment}；${item.speculation}` : "见对应原文")}</p>)}</div></details></div>}
     </section>
   );
 }
@@ -120,7 +121,7 @@ function ReviewStageTwo({ progress, answers, transfer, setTransfer, onAnchor }) 
   const transferResult = useMemo(() => transferPrinciples.map((principle) => ({ ...principle, ...evaluateSignals(transfer, principle) })), [transfer]);
   return <div className="review-two">
     <div className="node-statuses">{chapter.knowledgePoints.map((point) => { const state = progress[point.id]; const ability = state.recalled ? "能够回忆" : state.explained ? "能够解释" : "仅接触"; return <div className="node-row" key={point.id}><span className="node-dot" /><strong>{point.title}</strong><span>{ability}</span>{state.review && <em>建议复习</em>}</div>; })}</div>
-    <section className="structure"><h3>结构梳理</h3><p><b>投资：</b>分析依据 → 安全边际 → 本金安全与合理回报</p><p><b>投机：</b>价格预期 → 短期波动收益 → 更高不确定性</p><p><b>共同条件：</b>判断永远可能出错，因此需要为错误保留缓冲。</p></section>
+    <section className="structure"><h3>结构梳理</h3>{reviewStructureSummary.map((item, index) => <p key={index}>{item.text}</p>)}</section>
     <section className="review-feedback"><h3>知识维度对照</h3>{Object.entries(knowledgeDimensions).map(([id, dimension]) => { const state = progress[dimension.pointId].dimensions[id]; return <div key={id}><span>{state === "covered" ? "已提及" : "可补充"}</span><p>{dimension.label}</p><button className="anchor-button" onClick={() => onAnchor(dimension.pointId, dimension.anchor)}>原文 {dimension.anchor}</button></div>; })}</section>
     <section className="transfer"><h3>迁移思考</h3><p>{transferQuestion}</p><textarea value={transfer} onChange={(e) => { setTransfer(e.target.value); setTransferSubmitted(false); }} placeholder="说明你的判断依据……" />{!transferSubmitted && <button className="solid-button transfer-submit" disabled={!transfer.trim()} onClick={() => setTransferSubmitted(true)}>提交判断</button>}{transferSubmitted && <div className="transfer-feedback"><p>你的判断使用了这些原则：</p>{transferResult.map((principle) => <div key={principle.id}><span>{principle.covered ? "已使用" : "可补充"}</span><strong>{principle.label}</strong><button className="anchor-button" onClick={() => onAnchor(principle.pointId, principle.anchor)}>原文 {principle.anchor}</button></div>)}</div>}</section>
   </div>;
@@ -130,7 +131,7 @@ function DebugPanel({ activePoint, openAid, readingState, progress, ratios }) {
   if (!import.meta.env.DEV) return null;
   return <aside className="debug-panel" aria-label="开发状态调试">
     <strong>DEV STATE</strong>
-    <dl><dt>activePoint</dt><dd>{activePoint || "null"}</dd><dt>openAid</dt><dd>{openAid || "null"}</dd><dt>readingState</dt><dd>{readingState}</dd></dl>
+    <dl><dt>contentSource</dt><dd>{sourceMode}</dd><dt>activePoint</dt><dd>{activePoint || "null"}</dd><dt>openAid</dt><dd>{openAid || "null"}</dd><dt>readingState</dt><dd>{readingState}</dd></dl>
     {chapter.knowledgePoints.map((point) => <section key={point.id}><b>{point.id}</b><code>ratio {Number(ratios[point.id] || 0).toFixed(3)}</code><code>{JSON.stringify(progress[point.id])}</code></section>)}
   </aside>;
 }
@@ -181,7 +182,9 @@ export function App() {
   }, []);
 
   const jumpToAnchor = (pointId, anchor) => {
-    document.getElementById(`${pointId}-anchor-${anchor}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const point = chapter.knowledgePoints.find((item) => item.id === pointId);
+    const paragraph = typeof anchor === "string" ? point?.paragraphs.find((item) => item.id === anchor) : point?.paragraphs.find((item) => item.anchor === anchor);
+    document.getElementById(`${pointId}-anchor-${paragraph?.anchor || anchor}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
   const point = chapter.knowledgePoints.find((item) => item.id === activePoint);
   const readingState = openAid ? "用户主动深入查看" : activePoint ? "当前关键知识点激活" : "安静阅读";
@@ -189,12 +192,10 @@ export function App() {
     <header className="topbar"><span>{chapter.book}</span><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
     <div className="knowledge-nav" aria-label="知识节点">{chapter.knowledgePoints.map((item) => <button key={item.id} className={activePoint === item.id ? "active" : ""} onClick={() => pointRefs.current[item.id]?.scrollIntoView({ behavior: "smooth", block: "center" })}><span className={`node-mark ${progress[item.id].recalled ? "recalled" : ""}`} />{item.title}<small>{progress[item.id].recalled ? "能够回忆" : progress[item.id].explained ? "能够解释" : progress[item.id].exposure ? "仅接触" : ""}</small></button>)}</div>
     <main className="reading-layout">
-      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.title}</p><h1>投资、投机与安全边际</h1><p className="lead">{chapter.intro}</p><section className="quiet-prose"><h2>先区分行为，再讨论收益</h2><p>在金融市场中，许多讨论都直接落在“赚了还是亏了”。如果赚了，就被说成投资；如果亏了，就被视作投机。这种看法看似直观，却错把结果当成了标准。</p><p>更可靠的方式是先看行为本身，再看结果如何。市场的涨跌只是检验行为的外部环境，并不定义行为。</p></section>
+      <article className="article" id="chapter-start"><p className="eyebrow">{chapter.book}</p><h1>{chapter.title}</h1><p className="lead">{chapter.intro}</p>
         {chapter.knowledgePoints.map((kp, pointIndex) => <div key={kp.id}>
-          <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><span>{String(pointIndex + 1).padStart(2, "0")}</span><div><small>知识点</small><h2>{kp.title}</h2></div></div>{kp.paragraphs.map((paragraph) => <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={paragraph.anchor} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{paragraph.text}</p>)}</section>
-          <section className="quiet-prose"><p>{pointIndex === 0 ? "真正能让人走得更远的，是建立在独立思考、充分证据与理性自律之上的投资流程。先把行为分清楚，才能在面对诱惑与波动时守住应有的选择。" : "安全边际并不消除不确定性，它只是承认不确定性，并在决策中为判断失误留下余地。这也是稳健投资与自信预测之间最重要的差别。"}</p></section>
+          <section className={`knowledge-section ${activePoint === kp.id ? "is-active" : ""}`} data-point={kp.id} ref={(node) => { pointRefs.current[kp.id] = node; }}><div className="section-heading"><span>{String(pointIndex + 1).padStart(2, "0")}</span><div><small>知识点</small><h2>{kp.title}</h2></div></div>{kp.paragraphs.map((paragraph) => <p id={`${kp.id}-anchor-${paragraph.anchor}`} key={paragraph.id || paragraph.anchor} className="anchored-paragraph"><button className="inline-anchor" onClick={() => setOpenAid(kp.id)}>{paragraph.anchor}</button>{paragraph.text}</p>)}</section>
           <Recall point={kp} onAnchor={jumpToAnchor} onResult={(success) => setProgress((current) => ({ ...current, [kp.id]: { ...current[kp.id], explained: success || current[kp.id].explained } }))} />
-          {pointIndex === 0 && <section className="quiet-prose bridge"><h2>从行为判断走向风险控制</h2><p>区分投资与投机之后，下一个问题是：即使分析过程合理，我们又该怎样面对不可避免的错误？这需要一种不依赖完美预测的保护机制。</p><p>投资者无法控制市场的短期方向，但可以控制自己愿意付出的价格、接受的假设，以及在不确定条件下保留多少余地。</p></section>}
         </div>)}
       </article>
       <KnowledgeAid point={point} open={openAid === activePoint} onOpen={() => setOpenAid(activePoint)} onClose={() => setOpenAid(null)} onAnchor={jumpToAnchor} />

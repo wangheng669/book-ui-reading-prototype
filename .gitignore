@@ -7,3 +7,5 @@ prototype/qa-comparison.png
 prototype/AGENTS.md
 prototype/design-qa.md
 *.log
+content-pipeline/input/source-page.html
+content-pipeline/node_modules/
