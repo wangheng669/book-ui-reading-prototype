@@ -59,6 +59,7 @@ textarea { width: 100%; resize: vertical; min-height: 88px; border: 1px solid #c
 textarea:focus { border-color: #8299ad; box-shadow: 0 0 0 3px rgba(56,91,124,.08); }
 .answer-area > div { display: flex; gap: 18px; margin-top: 12px; }
 .solid-button { border: 1px solid var(--accent); background: var(--accent); color: white; padding: 8px 15px; cursor: pointer; }
+.solid-button:disabled { opacity: .4; cursor: default; }
 .feedback { margin-top: 20px; }
 .feedback > p { font-size: 13px; color: #6d7884; }
 .feedback-row { min-height: 42px; display: grid; grid-template-columns: 64px 1fr auto; align-items: center; border-top: 1px solid var(--line); font-size: 13px; }
@@ -90,5 +91,18 @@ summary { cursor: pointer; }
 .review-feedback > div { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; align-items: center; min-height: 48px; border-top: 1px solid var(--line); font-size: 13px; }
 .review-feedback span { color: var(--accent); }
 .transfer textarea { min-height: 82px; }
+.transfer-submit { margin-top: 12px; }
+.transfer-feedback { margin-top: 20px; border-top: 1px solid var(--line); }
+.transfer-feedback > p { color: #6d7884; font-size: 13px; }
+.transfer-feedback > div { min-height: 44px; display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; align-items: center; border-top: 1px solid var(--line); font-size: 13px; }
+.transfer-feedback span { color: var(--accent); }
+.debug-panel { position: fixed; z-index: 50; right: 12px; bottom: 12px; width: 330px; max-height: 42vh; overflow: auto; padding: 12px; background: rgba(20,27,34,.94); color: #dce5ed; font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+.debug-panel > strong { color: #9fc0dc; letter-spacing: .08em; }
+.debug-panel dl { display: grid; grid-template-columns: 90px 1fr; gap: 2px 8px; margin: 8px 0; }
+.debug-panel dt { color: #8da0b2; }
+.debug-panel dd { margin: 0; overflow-wrap: anywhere; }
+.debug-panel section { border-top: 1px solid rgba(255,255,255,.12); padding-top: 7px; margin-top: 7px; }
+.debug-panel section b, .debug-panel section code { display: block; overflow-wrap: anywhere; white-space: normal; }
+.debug-panel section code { color: #aebbc7; }
 @media (max-width: 1180px) { body { min-width: 900px; } .knowledge-nav { display: none; } .reading-layout { width: 900px; grid-template-columns: 650px 220px; gap: 30px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }

@@ -2,6 +2,8 @@
 
 一个用于验证“把书转换成适合理解与记忆的网站”的桌面端交互原型。
 
+公开原型：<https://wangheng669.github.io/book-ui-reading-prototype/>
+
 当前范围仅覆盖《聪明的投资者》第一章的两个示例知识点：
 
 - 投资与投机
@@ -36,4 +38,3 @@ prototype/      React + Vite 交互原型
 ```
 
 更详细的状态流、数据结构和未实现范围见 [`prototype/README.md`](prototype/README.md)。
-

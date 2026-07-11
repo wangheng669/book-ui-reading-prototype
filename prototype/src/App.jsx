@@ -1,11 +1,34 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { chapter, reviewQuestions, transferQuestion } from "./content.js";
+import { chapter, knowledgeDimensions, reviewQuestions, transferPrinciples, transferQuestion } from "./content.js";
 
-const initialProgress = Object.fromEntries(chapter.knowledgePoints.map((p) => [p.id, { exposure: false, explained: false, recalled: false, review: false }]));
+const initialProgress = Object.fromEntries(chapter.knowledgePoints.map((p) => [p.id, {
+  exposure: false,
+  explained: false,
+  recalled: false,
+  review: false,
+  dimensions: Object.fromEntries(p.requiredDimensions.map((id) => [id, "missing"])),
+}]));
 
 function evaluate(text, anchors) {
   const source = text.trim();
   return anchors.map((item) => ({ ...item, covered: item.keywords.some((word) => source.includes(word)) }));
+}
+
+function evaluateSignals(text, item) {
+  const normalized = text.trim();
+  const matchedSignals = item.signals.filter((alternatives) => alternatives.some((term) => normalized.includes(term))).length;
+  return { covered: matchedSignals >= item.requiredSignals, matchedSignals, requiredSignals: item.requiredSignals };
+}
+
+function evaluateDimensions(answers, pointId) {
+  return Object.fromEntries(Object.entries(knowledgeDimensions).filter(([, dimension]) => dimension.pointId === pointId).map(([id, dimension]) => {
+    const relevantAnswers = reviewQuestions.filter((question) => question.pointId === pointId && question.dimensions.includes(id)).map((question) => answers[question.id] || "").join(" ");
+    return [id, evaluateSignals(relevantAnswers, dimension).covered ? "covered" : "missing"];
+  }));
+}
+
+function pointAbility(point, dimensions) {
+  return point.requiredDimensions.every((id) => dimensions[id] === "covered");
 }
 
 function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
@@ -71,10 +94,12 @@ function Review({ progress, setProgress, onAnchor }) {
   const finishRecall = () => {
     setProgress((current) => {
       const next = structuredClone(current);
-      reviewQuestions.forEach((question) => {
-        const recalled = question.keywords.some((key) => answers[question.id].includes(key));
-        next[question.pointId].recalled ||= recalled;
-        next[question.pointId].review ||= !recalled;
+      chapter.knowledgePoints.forEach((point) => {
+        const dimensions = evaluateDimensions(answers, point.id);
+        const recalled = pointAbility(point, dimensions);
+        next[point.id].dimensions = dimensions;
+        next[point.id].recalled ||= recalled;
+        next[point.id].review = !recalled;
       });
       return next;
     });
@@ -91,36 +116,75 @@ function Review({ progress, setProgress, onAnchor }) {
 }
 
 function ReviewStageTwo({ progress, answers, transfer, setTransfer, onAnchor }) {
+  const [transferSubmitted, setTransferSubmitted] = useState(false);
+  const transferResult = useMemo(() => transferPrinciples.map((principle) => ({ ...principle, ...evaluateSignals(transfer, principle) })), [transfer]);
   return <div className="review-two">
     <div className="node-statuses">{chapter.knowledgePoints.map((point) => { const state = progress[point.id]; const ability = state.recalled ? "能够回忆" : state.explained ? "能够解释" : "仅接触"; return <div className="node-row" key={point.id}><span className="node-dot" /><strong>{point.title}</strong><span>{ability}</span>{state.review && <em>建议复习</em>}</div>; })}</div>
     <section className="structure"><h3>结构梳理</h3><p><b>投资：</b>分析依据 → 安全边际 → 本金安全与合理回报</p><p><b>投机：</b>价格预期 → 短期波动收益 → 更高不确定性</p><p><b>共同条件：</b>判断永远可能出错，因此需要为错误保留缓冲。</p></section>
-    <section className="review-feedback"><h3>闭卷回答中的遗漏</h3>{reviewQuestions.map((q, index) => { const missing = !q.keywords.some((key) => answers[q.id].includes(key)); return <div key={q.id}><span>{missing ? "可补充" : "已提及"}</span><p>{q.question}</p><button className="anchor-button" onClick={() => onAnchor(q.pointId, index % 3 + 1)}>原文 {index + 1}</button></div>; })}</section>
-    <section className="transfer"><h3>迁移思考</h3><p>{transferQuestion}</p><textarea value={transfer} onChange={(e) => setTransfer(e.target.value)} placeholder="说明你的判断依据……" /><p className="muted">反馈关注：是否使用了过程、证据与风险态度，而不是答案措辞。</p></section>
+    <section className="review-feedback"><h3>知识维度对照</h3>{Object.entries(knowledgeDimensions).map(([id, dimension]) => { const state = progress[dimension.pointId].dimensions[id]; return <div key={id}><span>{state === "covered" ? "已提及" : "可补充"}</span><p>{dimension.label}</p><button className="anchor-button" onClick={() => onAnchor(dimension.pointId, dimension.anchor)}>原文 {dimension.anchor}</button></div>; })}</section>
+    <section className="transfer"><h3>迁移思考</h3><p>{transferQuestion}</p><textarea value={transfer} onChange={(e) => { setTransfer(e.target.value); setTransferSubmitted(false); }} placeholder="说明你的判断依据……" />{!transferSubmitted && <button className="solid-button transfer-submit" disabled={!transfer.trim()} onClick={() => setTransferSubmitted(true)}>提交判断</button>}{transferSubmitted && <div className="transfer-feedback"><p>你的判断使用了这些原则：</p>{transferResult.map((principle) => <div key={principle.id}><span>{principle.covered ? "已使用" : "可补充"}</span><strong>{principle.label}</strong><button className="anchor-button" onClick={() => onAnchor(principle.pointId, principle.anchor)}>原文 {principle.anchor}</button></div>)}</div>}</section>
   </div>;
+}
+
+function DebugPanel({ activePoint, openAid, readingState, progress, ratios }) {
+  if (!import.meta.env.DEV) return null;
+  return <aside className="debug-panel" aria-label="开发状态调试">
+    <strong>DEV STATE</strong>
+    <dl><dt>activePoint</dt><dd>{activePoint || "null"}</dd><dt>openAid</dt><dd>{openAid || "null"}</dd><dt>readingState</dt><dd>{readingState}</dd></dl>
+    {chapter.knowledgePoints.map((point) => <section key={point.id}><b>{point.id}</b><code>ratio {Number(ratios[point.id] || 0).toFixed(3)}</code><code>{JSON.stringify(progress[point.id])}</code></section>)}
+  </aside>;
 }
 
 export function App() {
   const [activePoint, setActivePoint] = useState(null);
   const [openAid, setOpenAid] = useState(null);
   const [progress, setProgress] = useState(initialProgress);
+  const [ratios, setRatios] = useState(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
   const pointRefs = useRef({});
+  const ratiosRef = useRef(Object.fromEntries(chapter.knowledgePoints.map((point) => [point.id, 0])));
+  const activePointRef = useRef(null);
+  const clearTimerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      const id = visible?.target.dataset.point || null;
-      setActivePoint(id);
-      if (id) setProgress((current) => ({ ...current, [id]: { ...current[id], exposure: true } }));
-      setOpenAid((current) => current === id ? current : null);
-    }, { rootMargin: "-28% 0px -42% 0px", threshold: [0.1, 0.35, 0.65] });
+      entries.forEach((entry) => { ratiosRef.current[entry.target.dataset.point] = entry.isIntersecting ? entry.intersectionRatio : 0; });
+      setRatios({ ...ratiosRef.current });
+      const ranked = Object.entries(ratiosRef.current).sort((a, b) => b[1] - a[1]);
+      const [bestId, bestRatio] = ranked[0] || [null, 0];
+      const currentId = activePointRef.current;
+      const currentRatio = currentId ? ratiosRef.current[currentId] || 0 : 0;
+      let nextId = currentId;
+      if (bestRatio >= 0.08) {
+        if (!currentId || currentRatio < 0.04 || bestId !== currentId && bestRatio - currentRatio >= 0.12) nextId = bestId;
+        if (clearTimerRef.current) window.clearTimeout(clearTimerRef.current);
+        clearTimerRef.current = null;
+      } else if (!currentId || currentRatio === 0) {
+        if (!clearTimerRef.current) clearTimerRef.current = window.setTimeout(() => {
+          const latestBest = Math.max(...Object.values(ratiosRef.current));
+          if (latestBest < 0.04) {
+            activePointRef.current = null;
+            setActivePoint(null);
+            setOpenAid(null);
+          }
+          clearTimerRef.current = null;
+        }, 220);
+      }
+      if (nextId !== currentId) {
+        activePointRef.current = nextId;
+        setActivePoint(nextId);
+        setProgress((current) => ({ ...current, [nextId]: { ...current[nextId], exposure: true } }));
+        setOpenAid((current) => current === nextId ? current : null);
+      }
+    }, { rootMargin: "-28% 0px -42% 0px", threshold: [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 1] });
     Object.values(pointRefs.current).forEach((node) => node && observer.observe(node));
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); if (clearTimerRef.current) window.clearTimeout(clearTimerRef.current); };
   }, []);
 
   const jumpToAnchor = (pointId, anchor) => {
     document.getElementById(`${pointId}-anchor-${anchor}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
   const point = chapter.knowledgePoints.find((item) => item.id === activePoint);
+  const readingState = openAid ? "用户主动深入查看" : activePoint ? "当前关键知识点激活" : "安静阅读";
   return <div className="app-shell">
     <header className="topbar"><span>{chapter.book}</span><span>{chapter.title}</span><nav><button onClick={() => document.getElementById("chapter-start")?.scrollIntoView({ behavior: "smooth" })}>本章开头</button><button onClick={() => document.getElementById("review")?.scrollIntoView({ behavior: "smooth" })}>章节复盘</button></nav></header>
     <div className="knowledge-nav" aria-label="知识节点">{chapter.knowledgePoints.map((item) => <button key={item.id} className={activePoint === item.id ? "active" : ""} onClick={() => pointRefs.current[item.id]?.scrollIntoView({ behavior: "smooth", block: "center" })}><span className={`node-mark ${progress[item.id].recalled ? "recalled" : ""}`} />{item.title}<small>{progress[item.id].recalled ? "能够回忆" : progress[item.id].explained ? "能够解释" : progress[item.id].exposure ? "仅接触" : ""}</small></button>)}</div>
@@ -136,5 +200,6 @@ export function App() {
       <KnowledgeAid point={point} open={openAid === activePoint} onOpen={() => setOpenAid(activePoint)} onClose={() => setOpenAid(null)} onAnchor={jumpToAnchor} />
     </main>
     <Review progress={progress} setProgress={setProgress} onAnchor={jumpToAnchor} />
+    <DebugPanel activePoint={activePoint} openAid={openAid} readingState={readingState} progress={progress} ratios={ratios} />
   </div>;
 }

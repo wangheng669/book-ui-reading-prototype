@@ -7,6 +7,7 @@ export const chapter = {
     {
       id: "investment-speculation",
       title: "投资与投机",
+      requiredDimensions: ["definition", "basis", "income-source", "risk-attitude"],
       shortPrompt: "投资与投机最核心的区别是什么？",
       anchors: [
         { id: 1, label: "依据", investment: "独立研究与充分证据", speculation: "市场情绪与价格预期", keywords: ["依据", "分析", "证据"] },
@@ -22,6 +23,7 @@ export const chapter = {
     {
       id: "margin-of-safety",
       title: "安全边际",
+      requiredDimensions: ["safety-margin-role"],
       shortPrompt: "安全边际为什么能保护投资者？",
       anchors: [
         { id: 1, label: "不确定性", detail: "承认估值与未来判断可能出错", keywords: ["不确定", "错误", "估值"] },
@@ -38,9 +40,54 @@ export const chapter = {
 };
 
 export const reviewQuestions = [
-  { id: "q1", pointId: "investment-speculation", question: "投资与投机的核心区别是什么？", keywords: ["依据", "分析", "风险"] },
-  { id: "q2", pointId: "margin-of-safety", question: "安全边际解决的是什么问题？", keywords: ["错误", "缓冲", "损失"] },
-  { id: "q3", pointId: "investment-speculation", question: "为什么盈利结果不能反推行为是投资？", keywords: ["过程", "依据", "结果"] },
+  { id: "q1", pointId: "investment-speculation", question: "投资与投机的核心区别是什么？", dimensions: ["basis", "income-source", "risk-attitude"] },
+  { id: "q2", pointId: "margin-of-safety", question: "安全边际解决的是什么问题？", dimensions: ["safety-margin-role"] },
+  { id: "q3", pointId: "investment-speculation", question: "为什么盈利结果不能反推行为是投资？", dimensions: ["definition"] },
 ];
 
 export const transferQuestion = "某只股票因热门消息连续上涨，一位买入者没有估值依据，只计划在更高价格卖出。你会如何判断这项行为？为什么？";
+
+export const knowledgeDimensions = {
+  definition: {
+    label: "定义",
+    pointId: "investment-speculation",
+    anchor: 1,
+    signals: [["过程", "行为", "方法"], ["结果", "盈利", "赚钱"]],
+    requiredSignals: 2,
+  },
+  basis: {
+    label: "依据",
+    pointId: "investment-speculation",
+    anchor: 1,
+    signals: [["分析", "研究"], ["依据", "证据", "估值"]],
+    requiredSignals: 2,
+  },
+  "income-source": {
+    label: "收益来源",
+    pointId: "investment-speculation",
+    anchor: 2,
+    signals: [["价值", "分红", "合理回报"], ["波动", "价差", "更高价格"]],
+    requiredSignals: 2,
+  },
+  "risk-attitude": {
+    label: "风险态度",
+    pointId: "investment-speculation",
+    anchor: 3,
+    signals: [["风险", "不确定"], ["本金安全", "控制风险", "安全边际"]],
+    requiredSignals: 2,
+  },
+  "safety-margin-role": {
+    label: "安全边际作用",
+    pointId: "margin-of-safety",
+    anchor: 2,
+    signals: [["错误", "估值偏差", "不确定"], ["缓冲", "余地", "差距"], ["损失", "本金", "保护"]],
+    requiredSignals: 2,
+  },
+};
+
+export const transferPrinciples = [
+  { id: "process", label: "先判断过程，而非结果", pointId: "investment-speculation", anchor: 1, signals: [["过程", "行为"], ["结果", "上涨", "盈利"]], requiredSignals: 2 },
+  { id: "evidence", label: "使用独立分析与估值依据", pointId: "investment-speculation", anchor: 1, signals: [["估值", "价值"], ["依据", "分析", "研究"]], requiredSignals: 2 },
+  { id: "income", label: "识别收益来自价格波动", pointId: "investment-speculation", anchor: 2, signals: [["价格", "价差"], ["波动", "更高价格", "卖出"]], requiredSignals: 2 },
+  { id: "risk", label: "说明风险与安全边际", pointId: "margin-of-safety", anchor: 2, signals: [["风险", "不确定"], ["安全边际", "缓冲", "本金"]], requiredSignals: 2 },
+];
