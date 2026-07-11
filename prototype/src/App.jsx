@@ -84,7 +84,7 @@ function AidWorkspace({ point, onClose, onAnchor }) {
 
 function AidPrompt({ point, onOpen }) {
   if (!point.interaction || point.primaryComponent === "none") return null;
-  return <button className="aid-inline-prompt" onClick={onOpen}><span>本段有理解互动</span><strong>{point.interaction.cta}</strong><b>在右侧开始 →</b></button>;
+  return <button className="aid-inline-prompt" onClick={onOpen}><span>右侧互动已展开</span><strong>{point.interaction.cta}</strong><b>查看互动 →</b></button>;
 }
 
 function Recall({ point, onResult, onAnchor }) {
@@ -196,7 +196,8 @@ export function App() {
         activePointRef.current = nextId;
         setActivePoint(nextId);
         setProgress((current) => ({ ...current, [nextId]: { ...current[nextId], exposure: true } }));
-        setOpenAid((current) => current === nextId ? current : null);
+        const nextPoint = chapter.knowledgePoints.find((item) => item.id === nextId);
+        setOpenAid(nextPoint?.primaryComponent !== "none" ? nextId : null);
       }
     }, { rootMargin: "-28% 0px -42% 0px", threshold: [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 1] });
     Object.values(pointRefs.current).forEach((node) => node && observer.observe(node));
