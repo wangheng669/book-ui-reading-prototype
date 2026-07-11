@@ -380,7 +380,22 @@
                 "chapter-02-block-013",
                 "chapter-02-block-014",
                 "chapter-02-block-015"
-              ]
+              ],
+              "horizon": {
+                "min": 1,
+                "max": 25,
+                "default": 5,
+                "breakpoint": 5
+              },
+              "calculator": {
+                "nominalMin": 3,
+                "nominalMax": 10,
+                "nominalDefault": 6,
+                "inflationMin": 0,
+                "inflationMax": 8,
+                "inflationDefault": 3,
+                "note": "简化示意：用名义收益减去通胀率观察购买力变化，不代表完整投资回报计算。"
+              }
             }
           }
         }

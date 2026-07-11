@@ -58,24 +58,29 @@ function KnowledgeAid({ point, open, onOpen, onClose, onAnchor }) {
 
 function AidWorkspace({ point, onClose, onAnchor }) {
   const [selected, setSelected] = useState(null);
-  const [perspective, setPerspective] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState(0);
   const interaction = point.interaction;
+  const [horizon, setHorizon] = useState(interaction?.horizon?.default || 5);
+  const [nominal, setNominal] = useState(interaction?.calculator?.nominalDefault || 6);
+  const [inflation, setInflation] = useState(interaction?.calculator?.inflationDefault || 3);
   const selectedOption = interaction?.options.find((option) => option.id === selected);
+  const perspective = horizon <= (interaction?.horizon?.breakpoint || 5) ? 1 : 0;
   const activePerspective = point.aidItems[perspective];
   return <div className="aid-panel">
     <div className="aid-heading"><div><small>当前知识点 · 互动</small><h3>{point.aidTitle || point.title}</h3></div><button className="text-button" onClick={onClose}>收起</button></div>
     {!point.aidSupported && <p className="aid-degraded">此组件类型暂未支持交互展示。原文与锚点仍完整保留。</p>}
     {interaction?.mode === "perspective" ? <div className="perspective-workspace">
       <p className="aid-question">{interaction.prompt}</p>
-      <div className="perspective-tabs">{point.aidItems.map((item, index) => <button key={item.id} className={perspective === index ? "active" : ""} onClick={() => setPerspective(index)}>{item.label}</button>)}</div>
-      <div className="perspective-content"><small>当前观察</small><p>{activePerspective?.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, activePerspective?.targetBlockId)}>查看对应原文</button></div>
+      <div className="horizon-control"><div><span>观察期限</span><strong>{horizon} 年</strong></div><input aria-label="观察期限" type="range" min={interaction.horizon.min} max={interaction.horizon.max} value={horizon} onChange={(event) => setHorizon(Number(event.target.value))} /><div className="scale-labels"><span>近期</span><span>长期</span></div></div>
+      <div className="perspective-tabs">{point.aidItems.map((item, index) => <button key={item.id} className={perspective === index ? "active" : ""} onClick={() => setHorizon(index === 1 ? interaction.horizon.breakpoint : interaction.horizon.max)}>{item.label}</button>)}</div>
+      <div className="perspective-content"><small>{horizon <= interaction.horizon.breakpoint ? "近期观察" : "长期观察"}</small><p>{activePerspective?.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, activePerspective?.targetBlockId)}>查看对应原文</button></div>
+      {interaction.calculator && <div className="return-sandbox"><div className="sandbox-heading"><span>购买力变化示意</span><strong>约 {nominal - inflation}%</strong></div><label><span>名义收益 {nominal}%</span><input aria-label="名义收益" type="range" min={interaction.calculator.nominalMin} max={interaction.calculator.nominalMax} value={nominal} onChange={(event) => setNominal(Number(event.target.value))} /></label><label><span>通胀率 {inflation}%</span><input aria-label="通胀率" type="range" min={interaction.calculator.inflationMin} max={interaction.calculator.inflationMax} value={inflation} onChange={(event) => setInflation(Number(event.target.value))} /></label><small>{interaction.calculator.note}</small></div>}
       <p className="aid-takeaway">切换时间尺度，不是为了选一个正确答案，而是避免用长期平均掩盖近期风险，或用近期波动否定长期证据。</p>
     </div> : <div className="judgment-workspace">
       <small>先判断，再展开结构</small><p className="aid-question">{interaction?.prompt}</p>
       <div className="aid-options">{interaction?.options.map((option) => <button key={option.id} className={selected === option.id ? "selected" : ""} onClick={() => { setSelected(option.id); setVisibleSteps(interaction.mode === "causal" ? 1 : point.aidItems.length); }}>{option.text}</button>)}</div>
       {selectedOption && <div className="aid-feedback"><p><span>这条思考路径</span>{selectedOption.perspective}</p><p>{interaction.analysis}</p></div>}
-      {selectedOption && <div className={`aid-structure aid-structure--${interaction.mode}`}>{point.aidItems.slice(0, visibleSteps).map((item, index) => <section key={item.id}><span>{index + 1}</span><div><strong>{item.label}</strong><p>{item.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId)}>原文 {item.id}</button></div></section>)}</div>}
+      {selectedOption && <div className={`aid-structure aid-structure--${interaction.mode}`}>{point.aidItems.slice(0, visibleSteps).map((item, index) => <section key={item.id}><span>{index + 1}</span><div><strong>{item.label}</strong><p>{item.detail}</p><button className="anchor-button" onClick={() => onAnchor(point.id, item.targetBlockId)}>原文 {item.id}</button></div>{interaction.mode === "causal" && index < point.aidItems.length - 1 && <i aria-hidden="true">↓</i>}</section>)}</div>}
       {selectedOption && interaction.mode === "causal" && visibleSteps < point.aidItems.length && <button className="reveal-step" onClick={() => setVisibleSteps((count) => count + 1)}>展开下一环</button>}
     </div>}
     {interaction && <div className="aid-source-range"><span>依据范围</span>{interaction.anchors.map((anchor) => <button className="anchor-button" key={anchor.blockId} onClick={() => onAnchor(point.id, anchor.blockId)}>原文 {anchor.anchor}</button>)}</div>}
