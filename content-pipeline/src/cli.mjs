@@ -14,7 +14,7 @@ const fixture = option("fixture", "chapter-02");
 const chapterId = option("chapter-id", fixture);
 const input = path.resolve(root, option("input", `input/${chapterId}.html`));
 const selector = option("selector", undefined);
-const outputDir = path.resolve(root, option("output", `output/${chapterId}`));
+const outputDir = path.resolve(root, option("output", `generated/${chapterId}`));
 const fixtureDir = path.join(root, "fixtures", fixture);
 const names = ["01-segments", "02-classified", "03-knowledge-points", "04-assistance-decisions", "05-components", "06-memory"];
 const read = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
@@ -46,7 +46,5 @@ if (mode === "fixture") {
 names.forEach((name, index) => write(path.join(outputDir, `${name}.json`), stages[index]));
 const chapter = assemble(stages);
 validateChapter(chapter, path.join(root, "schemas/chapter.schema.json"));
-write(path.join(outputDir, "chapter.json"), chapter);
 write(path.join(outputDir, `${chapterId}.raw.json`), chapter);
-write(path.join(outputDir, "run-metadata.json"), { mode, fixture: mode === "fixture" ? fixture : null, generatedAt: new Date().toISOString(), model: mode === "model" ? process.env.OPENAI_MODEL : null });
 console.log(`${mode}: ${chapter.chapter.id}, ${chapter.chapter.blocks.length} blocks -> ${outputDir}`);

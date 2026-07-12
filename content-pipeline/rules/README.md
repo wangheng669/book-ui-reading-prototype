@@ -1,22 +1,14 @@
-# 规则来源与拆分
+# 分阶段规则
 
-以下项目文件作为只读设计输入，本目录不修改或复制其全文：
+只读产品规则位于 `docs/product/`。流水线按六个阶段加载对应文件：
 
-- `outputs/Book UI Design V0.1.docx`
-- `outputs/Book Content Component Rules V0.1.md`
-- `outputs/Reading Interaction States V0.1.md`
-- `outputs/Memory Interaction Rules V0.1.md`
-
-为避免单一超长 Prompt，规则按任务边界拆分：
-
-| 文件 | 负责内容 |
+| 文件 | 职责 |
 |---|---|
 | `01-segmentation.md` | HTML 清理、原文保留、稳定 block id |
-| `02-content-types.md` | 单 block 内容类型 |
-| `03-knowledge-points.md` | 跨 block 聚合与最低必要维度 |
-| `04-assistance.md` | 是否介入、留白与主要组件选择 |
-| `05-recall.md` | 知识点轻量主动回忆 |
-| `06-review.md` | 章节闭卷、结构复盘和迁移题 |
+| `02-content-types.md` | 内容类型判断 |
+| `03-knowledge-points.md` | 高价值知识点与必要维度 |
+| `04-assistance.md` | 介入、留白与组件选择 |
+| `05-components.md` | 组件数据与原文引用 |
+| `06-memory.md` | 主动回忆、闭卷复盘与迁移题 |
 
-每个阶段 Prompt 只读取对应规则和前一步产物；最终输出仍须通过 Schema 与人工审核。
-
+每个阶段只读取对应规则、Prompt和前序结果；最终章节必须通过 Schema 与人工审核。

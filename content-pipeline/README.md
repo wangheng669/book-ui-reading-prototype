@@ -1,25 +1,39 @@
-# Content Pipeline V0.2
+# Content Pipeline
 
-单章、六阶段内容生产原型。通用执行器不包含章节标题、selector、分类、知识点、组件或题目。
+单章内容生产与审核目录。通用执行器不包含章节标题、知识点、组件或题目的章节专属逻辑。
 
-## 两种运行模式
+## 目录职责
 
-```bash
-pnpm generate:fixture -- --fixture chapter-02
-OPENAI_API_KEY=... OPENAI_MODEL=... pnpm generate:model -- --input input/chapter-02.html --chapter-id chapter-02
+```text
+input/       章节 HTML
+fixtures/    CI 使用的六阶段固定结果
+rules/       六阶段规则
+prompts/     六阶段任务 Prompt
+schemas/     最终章节 JSON Schema
+review/      人工审核、质量与修订记录
+output/      前端真正消费的 raw / reviewed JSON
+src/         分段、组装、校验和审核脚本
+tests/       回归测试
+generated/   临时阶段输出（忽略，不提交）
 ```
 
-- `fixture` 读取 `fixtures/<chapter>/` 已提交的六阶段结果，供 CI、测试和前端演示使用，不访问模型。
-- `model` 依次调用六个阶段；每阶段只加载同编号规则和 Prompt，并保存独立结果。没有 API key 或 model 时明确失败，绝不静默回退。
-- 可用 `--selector "main article"` 限定正文；selector 不存在会明确报错。未指定时优先 `main`，否则使用 `body`。
-
-输出位于 `output/<chapter>/`，包含 `01-segments.json` 至 `06-memory.json`、`chapter.json`、raw 结果和运行元数据。第二章人工修订通过 `src/apply-review.mjs` 从 raw 生成 reviewed，变更记录在 `review/chapter-02-revisions.json`。
-
-## 测试
+## 常用命令
 
 ```bash
-pnpm generate:fixture
+pnpm install
+pnpm generate:fixture -- --fixture chapter-02
+pnpm validate
 pnpm test
 ```
 
-测试覆盖原文不改写、DOM 顺序、稳定 ID、引用存在性、知识点引用、留白约束、单一主要组件、回忆题归属、`minimumSignals >= 2` 与最终 Schema。
+`fixture` 模式把六阶段结果写入 `generated/<chapter>/`，用于CI和调试；正式前端只读取 `output/chapter-01.json` 与 `output/chapter-02/chapter-02.reviewed.json`。
+
+`model` 模式仍保留接口，但当前产品阶段不使用；缺少配置时会明确失败，不会回退为fixture。
+
+## 核心约束
+
+- 原文文本、DOM顺序和block id保持稳定。
+- 所有知识点、组件、companion和回忆题引用必须存在。
+- `needed=false` 时必须为 `componentType=none`。
+- 每个知识点最多一个主要组件，回答维度 `minimumSignals >= 2`。
+- 第二章人工定稿由 `src/apply-review.mjs` 从raw生成，修改记录位于 `review/chapter-02-revisions.json`。

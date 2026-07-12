@@ -1,5 +1,7 @@
 .DS_Store
 work/
+audit/
+content-pipeline/generated/
 prototype/node_modules/
 prototype/dist/
 prototype/implementation-reading.png

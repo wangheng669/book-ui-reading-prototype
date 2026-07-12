@@ -8,7 +8,7 @@ import { validateChapter } from "../src/validate.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const segments = JSON.parse(fs.readFileSync(path.join(root, "fixtures/chapter-02/01-segments.json"), "utf8"));
-const final = JSON.parse(fs.readFileSync(path.join(root, "output/chapter-02/chapter.json"), "utf8"));
+const final = JSON.parse(fs.readFileSync(path.join(root, "output/chapter-02/chapter-02.reviewed.json"), "utf8"));
 
 test("原文、顺序和 block id 保持稳定", () => {
   assert.deepEqual(final.chapter.blocks.map((b) => b.text), segments.blocks.map((b) => b.text));
