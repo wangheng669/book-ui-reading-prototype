@@ -1,5 +1,7 @@
 # Book UI Reading Prototype
 
+第 1 章正文来自指定书籍页面的 `section#chapter-10`，由 `content-pipeline/src/build-chapter-01.mjs` 原样抽取并生成结构化阅读数据。源页面本身在末段“最后，”处结束，项目不擅自补写。
+
 把真实书籍章节转换为“正文阅读 + 段落级理解画布 + 主动回忆”的桌面端原型。
 
 - [公开原型](https://wangheng669.github.io/book-ui-reading-prototype/)

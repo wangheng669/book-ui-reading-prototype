@@ -71,9 +71,10 @@ export function adaptPipelineDocument(document) {
     };
   });
 
-  const titleBlock = source.blocks.find((block) => block.role === "heading" && block.text === source.title);
+  const normalizeTitle = (text) => text.replace(/\s+/g, "");
+  const titleBlockIds = new Set(source.blocks.filter((block) => normalizeTitle(block.text) === normalizeTitle(source.title)).map((block) => block.id));
   const introBlock = source.blocks.find((block) => block.text === source.intro);
-  const bodyBlocks = source.blocks.filter((block) => block.id !== titleBlock?.id && block.id !== introBlock?.id);
+  const bodyBlocks = source.blocks.filter((block) => !titleBlockIds.has(block.id) && block.id !== introBlock?.id);
   const readingSegments = [];
   bodyBlocks.forEach((block) => {
     const pointId = block.knowledgePointId || null;

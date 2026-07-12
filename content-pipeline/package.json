@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:chapter-01": "node src/build-chapter-01.mjs",
     "generate:fixture": "node run-pipeline.mjs fixture",
     "generate:model": "node run-pipeline.mjs model",
     "validate": "node src/validate-output.mjs",

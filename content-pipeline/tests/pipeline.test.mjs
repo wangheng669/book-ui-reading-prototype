@@ -9,6 +9,7 @@ import { validateChapter } from "../src/validate.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const segments = JSON.parse(fs.readFileSync(path.join(root, "fixtures/chapter-02/01-segments.json"), "utf8"));
 const final = JSON.parse(fs.readFileSync(path.join(root, "output/chapter-02/chapter-02.reviewed.json"), "utf8"));
+const chapterOne = JSON.parse(fs.readFileSync(path.join(root, "output/chapter-01.json"), "utf8"));
 
 test("原文、顺序和 block id 保持稳定", () => {
   assert.deepEqual(final.chapter.blocks.map((b) => b.text), segments.blocks.map((b) => b.text));
@@ -37,4 +38,15 @@ test("引用、组件和回忆约束成立", () => {
 
 test("不存在的 selector 明确报错", () => {
   assert.throws(() => extractSemanticBlocks({ inputPath: path.join(root, "input/chapter-02.html"), selector: "#not-found", chapterId: "chapter-02" }), /CSS selector 不存在/);
+});
+
+test("第一章使用完整源章节并通过所有引用约束", () => {
+  assert.equal(validateChapter(chapterOne, path.join(root, "schemas/chapter.schema.json")), true);
+  assert.equal(chapterOne.chapter.blocks.length, 31);
+  assert.equal(chapterOne.chapter.blocks.at(-1).text.endsWith("最后，"), true);
+  assert.equal(chapterOne.chapter.blocks.filter((block) => block.companion).length, 29);
+  const extracted = extractSemanticBlocks({ inputPath: path.join(root, "input/chapter-01.html"), selector: "section#chapter-10", chapterId: "chapter-01" });
+  assert.deepEqual(chapterOne.chapter.blocks.map((block) => block.text), extracted.map((block) => block.text));
+  const blockIds = new Set(chapterOne.chapter.blocks.map((block) => block.id));
+  chapterOne.chapter.blocks.flatMap((block) => block.companion?.blockIds || []).forEach((id) => assert.ok(blockIds.has(id), id));
 });
